@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c17844bc-71c0-499b-a5d2-61abafcac04b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/Container.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Section.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Hooks/useWindowSize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-    </list>
+    <list default="true" id="c17844bc-71c0-499b-a5d2-61abafcac04b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676142897782</updated>
       <workItem from="1676142900046" duration="10075000" />
-      <workItem from="1676190029117" duration="5440000" />
+      <workItem from="1676190029117" duration="5775000" />
     </task>
     <servers />
   </component>

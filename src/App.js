@@ -1,10 +1,17 @@
+import React from 'react'
+import Container from './Components/Container'
+import Section from './Components/Section'
+
 function App() {
     return (
-        <main>
-            <section>1</section>
-            <section>2</section>
-            <section>3</section>
-        </main>
+        <Container>
+            <Section full={true}>
+                <h1>Section 1</h1>
+            </Section>
+            <Section full={true}>
+                <h1>Section 2</h1>
+            </Section>
+        </Container>
     )
 }
 

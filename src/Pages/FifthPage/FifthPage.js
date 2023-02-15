@@ -39,7 +39,9 @@ function FifthPage() {
             animate.start('hidden')
             setStartTyping(false)
             setShowBtn(false)
-            document.querySelector('.moreBtn').classList.remove('animateFromLeft')
+            document.querySelectorAll('.moreBtn').forEach((btn) => {
+                btn.classList.remove('animateFromLeft')
+            })
         }
     }, [animate, inView])
     return (

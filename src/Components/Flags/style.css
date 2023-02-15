@@ -1,0 +1,11 @@
+.flags-select{
+    border: 1px solid red;
+}
+
+.header .head-container .head-navLink ul.dropdown-menu{
+    margin-top: 10px;
+}
+
+.header .head-container .head-navLink ul.dropdown-menu li a{
+    color: crimson !important;
+}

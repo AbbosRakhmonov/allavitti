@@ -1,18 +1,13 @@
 import React from 'react'
-import Container from './Components/Container'
-import Section from './Components/Section'
-
+import Home from './pages/GeneralHomePage/Home'
+import Articles from './pages/Articles/Articles'
+import {Route, Routes} from 'react-router-dom'
 function App() {
     return (
-        <Container>
-            <Section full={true}>
-                <h1>Section 1</h1>
-            </Section>
-            <Section full={true}>
-                <h1>Section 2</h1>
-            </Section>
-        </Container>
+     <Routes>
+         <Route path='/articles' element={<Articles/>}/>
+         <Route path='/' element={<Home/>}/>
+     </Routes>   
     )
 }
-
 export default App

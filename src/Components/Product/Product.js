@@ -2,13 +2,16 @@ import React from 'react'
 import './style.css'
 import {IoIosEye, IoIosHeart} from 'react-icons/io'
 import {Link} from 'react-router-dom'
+import Zoom from 'react-medium-image-zoom'
 
 function Product({product, inView}) {
     const {name, price, image, description} = product
     return (
         <div className={`productCard ${inView ? 'animateProductCard' : ''}`}>
             <div className="cardTop">
-                <img className={'frontImg'} src={image} alt={name}/>
+                <Zoom>
+                    <img className={'frontImg'} src={image} alt={name}/>
+                </Zoom>
                 <h3 className={'productName'}>{name}</h3>
                 <p className={'productDescription'}>{description}</p>
             </div>

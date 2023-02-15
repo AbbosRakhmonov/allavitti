@@ -2,9 +2,10 @@ import React, {useEffect, useState} from 'react'
 import './style.css'
 import {motion, useAnimationControls} from 'framer-motion'
 import {useInView} from 'react-intersection-observer'
-import Vitiligo from '../../Images/Vitiligo.webp'
-import Woman from '../../Images/woman.png'
+import Vitiligo from '../../Assets/Images/Vitiligo.webp'
+import Woman from '../../Assets/Images/woman.png'
 import Typewriter from 'typewriter-effect'
+import MoreBtn from '../../Components/MoreBtn/MoreBtn'
 
 const backgroundVariants = {
     visible: {
@@ -35,6 +36,7 @@ const smallText = 'Хар бир инсоннинг узига хос тери �
 
 function ThirdPage() {
     const [startTyping, setStartTyping] = useState(false)
+    const [showBtn, setShowBtn] = useState(false)
     const backgroundAnimation = useAnimationControls()
     const {ref, inView} = useInView({threshold: 0.5})
 
@@ -44,9 +46,14 @@ function ThirdPage() {
             setTimeout(() => {
                 setStartTyping(true)
             }, 1000)
+            setTimeout(() => {
+                setShowBtn(true)
+            }, 9800)
         } else {
             backgroundAnimation.start('hidden')
             setStartTyping(false)
+            setShowBtn(false)
+            document.querySelector('.moreBtn').classList.remove('animateFromLeft')
         }
     }, [backgroundAnimation, inView])
     return (
@@ -83,6 +90,8 @@ function ThirdPage() {
                                     .start()
                             }}
                         />}
+                        <MoreBtn linkName={'Batafsil'} linkPath={'/articles/1'} color={'secondary'}
+                                 classes={`mt-3 moreBtn ${showBtn ? 'animateFromLeft' : ''}`}/>
                     </motion.div>
                 </div>
                 <div

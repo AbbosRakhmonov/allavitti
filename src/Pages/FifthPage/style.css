@@ -22,7 +22,7 @@
     height: 100%;
     width: 47%;
     border-radius: 0 0 0 100%;
-    background: url("../../Images/fifth-bg.jpg") no-repeat 75% 0;
+    background: url("../../Assets/Images/fifth-bg.jpg") no-repeat 75% 0;
     background-size: cover;
     position: absolute;
     top: 0;
@@ -150,4 +150,12 @@
     100% {
         width: 180px;
     }
+}
+
+.bg-lightDark {
+    background-color: #394956;
+}
+
+.bg-lightDark:hover {
+    background-color: rgba(241, 99, 11, 0.92);
 }

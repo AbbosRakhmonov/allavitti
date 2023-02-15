@@ -1,13 +1,27 @@
 import React from 'react'
-import Home from './pages/GeneralHomePage/Home'
-import Articles from './pages/Articles/Articles'
-import {Route, Routes} from 'react-router-dom'
+import Container from './Components/Container'
+import Section from './Components/Section'
+import FirstPage from './Pages/FirstPage/FirstPage'
+import ProductsPage from './Pages/ProductsPage/ProductsPage'
+import ThirdPage from './Pages/ThirdPage/ThirdPage'
+import FifthPage from './Pages/FifthPage/FifthPage'
+
 function App() {
     return (
-     <Routes>
-         <Route path='/articles' element={<Articles/>}/>
-         <Route path='/' element={<Home/>}/>
-     </Routes>   
+        <Container>
+            <Section full={true}>
+                <FirstPage/>
+            </Section>
+            <Section full={true}>
+                <ProductsPage/>
+            </Section>
+            <Section full={true}>
+                <ThirdPage/>
+            </Section>
+            <Section full={true}>
+                <FifthPage/>
+            </Section>
+        </Container>
     )
 }
 export default App

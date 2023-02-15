@@ -1,3 +1,8 @@
+:root {
+    --secondSectionColor: #528A80;
+    --muteTextColor: #c4c4c4;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -26,3 +31,18 @@ body {
     scroll-snap-align: start;
 }
 
+.mute-text {
+    color: var(--muteTextColor);
+}
+
+section {
+    overflow: auto;
+}
+
+section::-webkit-scrollbar {
+    display: none;
+}
+
+.secondaryText {
+    font-size: 18px;
+}

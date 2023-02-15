@@ -1,0 +1,101 @@
+.secondSection {
+    background-color: var(--secondSectionColor);
+}
+
+.overlayTextCover {
+    z-index: 5;
+    background: linear-gradient(90deg, rgb(2, 24, 56) 0%, rgba(65, 65, 65, 0.14) 100%);
+    backdrop-filter: blur(10px) saturate(120%);
+}
+
+.backgroundImageCover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgb(2, 24, 56) 0%, rgba(65, 65, 65, 0.14) 100%);
+    backdrop-filter: blur(10px) saturate(120%);
+}
+
+.animateBackgroundImageCover::before {
+    animation: backgroundCoverImage 1s linear;
+}
+
+.backgroundImageCover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.secondSection_rightSide {
+    width: 40%;
+}
+
+.overlayText {
+    width: 60%;
+}
+
+.thirdSectionTitle span {
+    position: relative;
+}
+
+.thirdSectionTitle span:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 122px;
+    height: 100%;
+    background-color: #FF9A00;
+    transform-origin: right;
+    z-index: -1;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(2px);
+    border-radius: 5px 0 0 5px;
+    opacity: 1;
+}
+
+.thirdSectionTitleAnimate span:after {
+    animation: rightToLeft 1.5s ease-out;
+}
+
+.scaleImg {
+    animation: scaleImage 1s ease;
+}
+
+@keyframes rightToLeft {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 122px;
+        opacity: 1;
+    }
+}
+
+@keyframes backgroundCoverImage {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+
+}
+
+@keyframes scaleImage {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}

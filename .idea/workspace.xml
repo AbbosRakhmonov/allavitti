@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c17844bc-71c0-499b-a5d2-61abafcac04b" name="Changes" comment="" />
+    <list default="true" id="c17844bc-71c0-499b-a5d2-61abafcac04b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Backgrounds/SecondBg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Product/Product.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Product/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Images/Vitiligo.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Images/graph.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Images/p1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Images/p2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Images/p3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Images/p4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Images/woman.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/FifthPage/FifthPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/FifthPage/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ProductsPage/ProductsPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ProductsPage/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ThirdPage/ThirdPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ThirdPage/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +35,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -36,11 +58,18 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Rakhmonov\Desktop\allavitti\src\Components\Product" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -67,7 +96,11 @@
       <option name="presentableId" value="Default" />
       <updated>1676142897782</updated>
       <workItem from="1676142900046" duration="10075000" />
-      <workItem from="1676190029117" duration="5775000" />
+      <workItem from="1676190029117" duration="8653000" />
+      <workItem from="1676200001635" duration="17399000" />
+      <workItem from="1676377692128" duration="24319000" />
+      <workItem from="1676417911950" duration="11895000" />
+      <workItem from="1676482177362" duration="1748000" />
     </task>
     <servers />
   </component>

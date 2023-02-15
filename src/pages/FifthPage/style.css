@@ -1,0 +1,153 @@
+.fifthSection {
+    background-color: #E7EFFC;
+    overflow: hidden;
+}
+
+.fifth-bg {
+    background-color: rgba(0, 149, 255, 0.27);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.fifth-bg-animate {
+    backdrop-filter: blur(3px);
+    animation: bottomToTop 1s ease-in-out;
+}
+
+.circle-right {
+    height: 100%;
+    width: 47%;
+    border-radius: 0 0 0 100%;
+    background: url("../../Images/fifth-bg.jpg") no-repeat 75% 0;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 15;
+    box-shadow: inset 10px 0 0 rgba(255, 255, 255, 0.64);
+}
+
+.circle-overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 47%;
+    opacity: 0;
+    background-color: rgba(57, 73, 86, 0.8);
+    border-radius: 0 0 0 100%;
+}
+
+.animate-circle {
+    animation: circleAnimation 1s ease-in-out;
+}
+
+.animate-circle-overlay {
+    animation: pulse 1s linear 0.9s;
+}
+
+.fifthSection_content {
+    width: 90%;
+    height: 100%;
+    z-index: 10;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.fifthTitle {
+    position: relative;
+    color: #202834;
+}
+
+.fifthTitle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 180px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.66);
+    z-index: -1;
+    border-radius: 0 5px 5px 0;
+}
+
+.fifthTitleAnimate::before {
+    animation: leftToRight 1.5s ease;
+}
+
+.fifthTitle span {
+    transition: 1s ease all;
+}
+
+.fifthTitleAnimate span {
+    color: #E7EFFC;
+    transition-delay: 0.5s;
+}
+
+.fifthTitle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5px;
+    bottom: 0;
+    width: 4px;
+    height: 50px;
+    background-color: rgba(241, 99, 11, 0.92);
+    z-index: -1;
+}
+
+.text-orange {
+    color: rgba(0, 0, 0, 0.92);
+}
+
+@keyframes bottomToTop {
+    0% {
+        transform: translateY(100%);
+        backdrop-filter: blur(0);
+    }
+    100% {
+        transform: translateY(0);
+        backdrop-filter: blur(3px);
+    }
+}
+
+@keyframes circleAnimation {
+    0% {
+        width: 0;
+        box-shadow: none;
+    }
+    100% {
+        width: 47%;
+        box-shadow: inset 10px 0 0 rgba(255, 255, 255, 0.64);
+    }
+}
+
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(0, 191, 255, 0.7);
+    }
+    to {
+        transform: scale(3);
+        opacity: 0;
+        box-shadow: 0 0 0 10px rgba(0, 191, 255, 0);
+    }
+}
+
+@keyframes leftToRight {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 180px;
+    }
+}

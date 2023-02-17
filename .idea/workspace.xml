@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c17844bc-71c0-499b-a5d2-61abafcac04b" name="Changes" comment="" />
+    <list default="true" id="c17844bc-71c0-499b-a5d2-61abafcac04b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Assets/Fonts/AllavittiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Assets/Fonts/AllavittiLight.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Assets/Fonts/AllavittiLightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Assets/Fonts/AllavittiRegular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Assets/Fonts/AllavittiSemiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Article/Article.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Article/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Articles/Articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Articles/Articles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Articles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Articles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/FifthPage/FifthPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/FifthPage/FifthPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Navbar/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Navbar/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +49,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="articles" />
+                    <option name="lastUsedInstant" value="1676502095" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="master" />
                     <option name="lastUsedInstant" value="1676486893" />
@@ -114,6 +133,7 @@
       <workItem from="1676377692128" duration="24319000" />
       <workItem from="1676417911950" duration="11895000" />
       <workItem from="1676482177362" duration="3028000" />
+      <workItem from="1676580437601" duration="15432000" />
     </task>
     <servers />
   </component>

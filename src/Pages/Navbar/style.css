@@ -1,7 +1,7 @@
 .nav-block{
-    padding: 0px 7rem;
-    background: rgba(0,28,73,0.4);
- }
+    padding: 0 4rem;
+    background: rgba(0, 28, 73, 0.4);
+}
  
  .nav{
      display: flex;
@@ -10,21 +10,23 @@
      padding: 2px 0px;
      width: 100%;
  }
+
+.nav .nav__brand {
+    font-size: 36px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: 'Allavitti', sans-serif;
+}
  
- .nav .nav__brand{
-     font-size: 36px;
-     color: #fff;
-     font-weight: 600;
-     text-decoration: none;
- }
- 
- .nav .nav__link{
+ .nav .nav__link {
      text-decoration: none;
      color: darkgray;
      font-size: 16px;
      font-weight: bold;
      cursor: pointer;
      transition: 0.3s ease-in;
+     font-family: 'Allavitti', sans-serif;
  }
  
  .nav .nav__link:hover{

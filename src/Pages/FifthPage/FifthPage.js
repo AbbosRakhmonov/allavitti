@@ -83,7 +83,7 @@ function FifthPage() {
                             }}
                         />}
                     </motion.div>
-                    <MoreBtn linkName={'Batafsil'} linkPath={'/articles/3'}
+                    <MoreBtn linkName={'Batafsil'} linkPath={'/articles/4'}
                              classes={`mt-3 moreBtn text-light bg-lightDark ${showBtn ? 'animateFromLeft' : ''}`}/>
                 </div>
             </div>

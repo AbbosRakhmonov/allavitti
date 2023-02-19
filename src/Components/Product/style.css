@@ -134,3 +134,17 @@
         transform: translateY(0) scale(1);
     }
 }
+
+@media (max-width: 768px) {
+    .productCard {
+        backdrop-filter: none;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .buyBtn {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+}
+

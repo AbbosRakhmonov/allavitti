@@ -26,7 +26,7 @@ function Section({full, children, variants = initialVariants}) {
 
     return (
         <motion.div
-            className={`snap-child-start`}
+            className={`snap-child-start section-wrapper`}
             ref={ref}
             animate={animation}
             initial="hidden"

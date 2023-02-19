@@ -1,7 +1,7 @@
 import React from 'react'
 import './style.css'
 
-function Article({article, onClickTitle, activeArticleId}) {
+function ArticleCard({article, onClickTitle, activeArticleId}) {
     const {title, texts, id} = article
     return (
         <div className={`article-card ${id === activeArticleId ? 'activeArticle' : ''}`}>
@@ -13,4 +13,4 @@ function Article({article, onClickTitle, activeArticleId}) {
     )
 }
 
-export default Article
+export default ArticleCard

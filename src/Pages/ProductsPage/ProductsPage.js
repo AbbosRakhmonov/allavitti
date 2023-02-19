@@ -62,7 +62,7 @@ function ProductsPage() {
             </h4>
             <p className={`mb-4 productSectionText ${inView ? 'productSectionTextsAnimated' : ''}`}>Har bir maxsulotimiz
                 o`ziga xos sifat va mos kafolatga ega !</p>
-            <div className="productsContainer px-5">
+            <div className="productsContainer px-md-3 px-lg-5">
                 {map(products, (product) => <Product key={uniqueId('product_')} inView={inView} product={product}/>)}
             </div>
         </section>

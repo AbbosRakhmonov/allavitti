@@ -74,6 +74,10 @@ body {
     color: var(--muteTextColor);
 }
 
+.section-wrapper {
+    position: relative;
+}
+
 section {
     overflow: auto;
 }
@@ -213,5 +217,18 @@ section::-webkit-scrollbar {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb { /* Foreground */
+    background: #202834;
+}
+
+::-webkit-scrollbar-track { /* Background */
+    background: #ffffff;
+    border-radius: 10px;
 }
 

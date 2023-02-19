@@ -65,24 +65,25 @@
     color: #202834;
 }
 
-.fifthTitle::before {
+.fifthTitle span::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 180px;
-    height: 50px;
+    width: 105%;
+    height: 105%;
     background-color: rgba(0, 0, 0, 0.66);
     z-index: -1;
     border-radius: 0 5px 5px 0;
 }
 
-.fifthTitleAnimate::before {
+.fifthTitleAnimate span::before {
     animation: leftToRight 1.5s ease;
 }
 
 .fifthTitle span {
+    position: relative;
     transition: 1s ease all;
 }
 
@@ -91,14 +92,14 @@
     transition-delay: 0.5s;
 }
 
-.fifthTitle::after {
+.fifthTitle span::after {
     content: '';
     position: absolute;
     top: 0;
     left: -5px;
     bottom: 0;
     width: 4px;
-    height: 50px;
+    height: 100%;
     background-color: rgba(241, 99, 11, 0.92);
     z-index: -1;
 }
@@ -148,7 +149,7 @@
         width: 0;
     }
     100% {
-        width: 180px;
+        width: 105%;
     }
 }
 
@@ -158,4 +159,64 @@
 
 .bg-lightDark:hover {
     background-color: rgba(241, 99, 11, 0.92);
+}
+
+/* Responsive Sizes */
+
+@media (max-width: 480px) {
+    .fifthSection {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-image: url("../../Assets/Images/fifth-bg.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-origin: content-box;
+        background-position: right;
+        background-size: cover;
+    }
+
+    .fifthSection_content {
+        width: 100%;
+        background-image: linear-gradient(180deg, rgba(255, 128, 0, 0.65) 0, rgba(255, 255, 255, 0.5) 100%);
+    }
+
+    .fifthTitle {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .circle-right {
+        display: none;
+    }
+
+    .overlayText .secondaryText {
+        font-size: 1.1rem;
+    }
+
+}
+
+/* desktop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .fifthSection {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-image: url("../../Assets/Images/fifth-bg.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-origin: content-box;
+        background-position: right;
+        background-size: cover;
+    }
+
+    .fifthSection_content {
+        width: 100%;
+        background-image: linear-gradient(180deg, rgba(255, 128, 0, 0.65) 0, rgba(255, 255, 255, 0.5) 100%);
+    }
+
+    .circle-right {
+        display: none;
+    }
+
 }

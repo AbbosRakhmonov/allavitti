@@ -5,6 +5,7 @@ import {motion, useAnimationControls} from 'framer-motion'
 import {useInView} from 'react-intersection-observer'
 import Typewriter from 'typewriter-effect'
 import MoreBtn from '../../Components/MoreBtn/MoreBtn'
+import DetectScreenSize from '../../Hooks/DetectScreenSize'
 
 const headerVariant = {
     visible: (custom) => ({
@@ -21,11 +22,15 @@ const headerVariant = {
 const smallText = 'Ўлкамизда хам кўп учрайдиган тери касаллиги терига ранг берувчи пигментларни йўк бўлиши сабабли учрайдиган тери касаллигидир.\n' +
     'Халок булган пигментлар терига ранг бермаганлиги сабабли пес каби ок доғлар юзага келиб чикади.Баъзида бу доғлар нуқта шаклида, баъзида эса тангадек катталикка эга бўлиши мумкин. Vitiligo бир тери касаллиги булиб, Guatr ва бошқа бир касалликларга ўхшаш бир кўриниши бор. Шунинг учун ҳам...'
 
+const smallTextForMobile = 'Ўлкамизда хам кўп учрайдиган тери касаллиги терига ранг берувчи пигментларни йўк бўлиши сабабли учрайдиган тери касаллигидир.\n' +
+    'Халок булган пигментлар терига ранг бермаганлиги сабабли...'
+
 function FifthPage() {
     const [startTyping, setStartTyping] = useState(false)
     const [showBtn, setShowBtn] = useState(false)
     const animate = useAnimationControls()
     const {ref, inView} = useInView({threshold: 0.5})
+    const {isMobile} = DetectScreenSize()
     useEffect(() => {
         if (inView) {
             animate.start('visible')
@@ -34,16 +39,13 @@ function FifthPage() {
             }, 1000)
             setTimeout(() => {
                 setShowBtn(true)
-            }, 7700)
+            }, isMobile ? 4000 : 7700)
         } else {
             animate.start('hidden')
             setStartTyping(false)
             setShowBtn(false)
-            document.querySelectorAll('.moreBtn').forEach((btn) => {
-                btn.classList.remove('animateFromLeft')
-            })
         }
-    }, [animate, inView])
+    }, [animate, inView, isMobile])
     return (
         <section ref={ref} className={'position-relative h-100 fifthSection'}>
             <SecondBg/>
@@ -51,7 +53,7 @@ function FifthPage() {
             <div className={`circle-right ${inView ? 'animate-circle' : ''}`}></div>
             <div className={`circle-overlay ${inView ? 'animate-circle-overlay' : ''}`}></div>
             <div className={'fifthSection_content'}>
-                <div className="overlayText px-5 align-self-center">
+                <div className="overlayText px-lg-5 align-self-center">
                     <motion.h1 animate={animate}
                                initial="hidden"
                                custom={1}
@@ -72,7 +74,7 @@ function FifthPage() {
                                 wrapperClassName: 'text-orange secondaryText'
                             }}
                             onInit={(typewriter) => {
-                                typewriter.typeString(smallText)
+                                typewriter.typeString(isMobile ? smallTextForMobile : smallText)
                                     .callFunction((state) => {
                                         // turn off animation
                                         state.elements.cursor.style.animation = 'none'

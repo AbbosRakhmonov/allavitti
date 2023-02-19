@@ -6,6 +6,7 @@ import Vitiligo from '../../Assets/Images/Vitiligo.webp'
 import Woman from '../../Assets/Images/woman.png'
 import Typewriter from 'typewriter-effect'
 import MoreBtn from '../../Components/MoreBtn/MoreBtn'
+import DetectScreenSize from '../../Hooks/DetectScreenSize'
 
 const backgroundVariants = {
     visible: {
@@ -32,6 +33,8 @@ const headerVariant = {
 }
 
 const smallText = 'Хар бир инсоннинг узига хос тери ранги бўлади. Теримиздаги рангларни пигментлар туфайли оламиз. Меланоасит билан биргаликда теримиз ўзига хос равишда рангга эга бўлади. Витилиго эса бу пигментларни ўлдириб, теримизда оқ келиб чиқишига сабаб бўлувчи бир тери касаллигидир. Витилиго тананинг хужайралар билан келиша олмаган дермотологик ходисадир. Витилиго халқ орасида 1-1,5% инсонларда учрайди. Кўпинча кўл, юз, бўйин ва базиларида жинсий аъзоларда пайдо булади. Витилигога чалинган одам халқ орасида ўзини рухий жиҳатдан ёмон хис қилади...'
+const smallTextForMobile = 'Хар бир инсоннинг узига хос тери ранги бўлади. Теримиздаги рангларни пигментлар туфайли оламиз. Меланоасит билан биргаликда теримиз ўзига хос равишда рангга эга бўлади. Витилиго эса ...'
+const smallTextForTablet = 'Хар бир инсоннинг узига хос тери ранги бўлади. Теримиздаги рангларни пигментлар туфайли оламиз. Меланоасит билан биргаликда теримиз ўзига хос равишда рангга эга бўлади. Витилиго эса бу пигментларни ўлдириб, теримизда оқ келиб чиқишига сабаб бўлувчи бир тери касаллигидир. Витилиго тананинг хужайралар билан келиша олмаган дермотологик ходисадир ...'
 
 
 function ThirdPage() {
@@ -39,6 +42,7 @@ function ThirdPage() {
     const [showBtn, setShowBtn] = useState(false)
     const backgroundAnimation = useAnimationControls()
     const {ref, inView} = useInView({threshold: 0.5})
+    const {isMobile, isTablet} = DetectScreenSize()
 
     useEffect(() => {
         if (inView) {
@@ -48,20 +52,17 @@ function ThirdPage() {
             }, 1000)
             setTimeout(() => {
                 setShowBtn(true)
-            }, 9800)
+            }, isMobile ? 4000 : isTablet ? 7000 : 9800)
         } else {
             backgroundAnimation.start('hidden')
             setStartTyping(false)
             setShowBtn(false)
-            document.querySelectorAll('.moreBtn').forEach((btn) => {
-                btn.classList.remove('animateFromLeft')
-            })
         }
-    }, [backgroundAnimation, inView])
+    }, [backgroundAnimation, inView, isMobile])
     return (
         <section ref={ref} className={'secondSection position-relative h-100'}>
-            <motion.div className={'position-absolute w-100 h-100 overflow-hidden d-flex'} style={{zIndex: 6}}>
-                <div className="overlayText px-5 align-self-center">
+            <motion.div className={'position-absolute topBox w-100 h-100'} style={{zIndex: 6}}>
+                <div className="overlayText px-lg-5 align-self-center">
                     <motion.h1 animate={backgroundAnimation}
                                initial="hidden"
                                custom={1}
@@ -82,7 +83,7 @@ function ThirdPage() {
                                 wrapperClassName: 'mute-text secondaryText'
                             }}
                             onInit={(typewriter) => {
-                                typewriter.typeString(smallText)
+                                typewriter.typeString(isMobile ? smallTextForMobile : isTablet ? smallTextForTablet : smallText)
                                     .callFunction((state) => {
                                         // turn off animation
                                         state.elements.cursor.style.animation = 'none'

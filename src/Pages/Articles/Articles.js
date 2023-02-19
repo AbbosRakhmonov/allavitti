@@ -1,11 +1,10 @@
-import React, {useState} from 'react'
+import React, {useEffect, useRef} from 'react'
 import Navbar from '../Navbar/Navbar'
-import {useNavigate, useParams} from 'react-router-dom'
-import {map, uniqueId} from 'lodash'
+import {useParams} from 'react-router-dom'
 import './style.css'
 import {motion} from 'framer-motion'
-import Article from '../../Components/Article/Article'
-import {IoChevronForward} from 'react-icons/io5'
+import {map, uniqueId} from 'lodash'
+import ArticlesMenu from '../../Components/ArticlesMenu/ArticlesMenu'
 
 const articles = [
     {
@@ -144,38 +143,28 @@ const variants = {
     }
 }
 
-
 function Articles() {
+    const ref = useRef()
     const {id = 1} = useParams()
-    const navigate = useNavigate()
-    const [openArticles, setOpenArticles] = useState(true)
-    const onClickTitle = (e) => {
-        const id = e.target.getAttribute('data_id')
-        navigate(`/articles/${id}`)
-    }
-    const handleClickButton = () => {
-        setOpenArticles(!openArticles)
-    }
-    const Title = ({title}) => (<motion.h1
-        initial={'hidden'}
-        animate={'visible'}
-        variants={variants}
-        transition={{duration: 0.5}}
-        className={'article-title mb-4'}>{articles[Number(id) - 1].title}</motion.h1>)
-
+    const {title, texts} = articles[Number(id) - 1]
+    useEffect(() => {
+        ref.current?.scrollIntoView({behavior: 'smooth'})
+    }, [id])
     return (
         <section className={'d-flex flex-column min-vh-100 bg-lightWhite'}>
             <Navbar/>
-            <div className="position-relative flex-grow-1">
-                <div className="articles-wrapper d-flex">
-                    <div className="articles-content p-5 position-relative">
-                        <button type={'button'} className={`actionBtn ${!openArticles ? 'openArticleBoxButton' : ''}`}
-                                onClick={handleClickButton}>
-                            <IoChevronForward/>
-                        </button>
-                        <Title title={articles[Number(id) - 1].title}/>
+            <div className={`bottomOfSection`}>
+                <div className="leftOfBottomSection position-absolute vh-100">
+                    <div className="articles-content p-md-5" ref={ref}>
+                        <motion.h1
+                            key={title}
+                            initial={'hidden'}
+                            animate={'visible'}
+                            variants={variants}
+                            transition={{duration: 0.5}}
+                            className={'article-title mb-4'}>{title}</motion.h1>
                         {
-                            map(articles[Number(id) - 1].texts, (text) =>
+                            map(texts, (text) =>
                                 <motion.p
                                     initial={'hidden'}
                                     animate={'visible'}
@@ -185,15 +174,8 @@ function Articles() {
                                     className={'article-text'}>{text}</motion.p>)
                         }
                     </div>
-                    <div className={`articles-menu ${!openArticles ? 'closedMenu' : ''}`}>
-                        {
-                            map(articles, (article) => <Article key={uniqueId('article_')}
-                                                                activeArticleId={Number(id)}
-                                                                article={article}
-                                                                onClickTitle={onClickTitle}/>)
-                        }
-                    </div>
                 </div>
+                <ArticlesMenu id={id} articles={articles}/>
             </div>
         </section>
     )

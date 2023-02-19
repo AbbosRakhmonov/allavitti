@@ -1,25 +1,40 @@
-.articles-wrapper {
-    position: absolute;
+.bottomOfSection {
+    flex: 1;
+    position: relative;
+}
+
+.bottomOfSection:has(.closedMenu) .leftOfBottomSection {
+    width: 100%;
+}
+
+.leftOfBottomSection {
+    width: 75%;
     left: 0;
     top: 0;
-    width: 100%;
-    align-items: start;
+    overflow: auto;
+    transition: all 0.3s linear;
 }
 
-.articles-content {
-    flex-basis: 100%;
+.rightOfBottomSection {
+    width: 25%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 0.3s linear;
 }
 
+.leftOfBottomSection::-webkit-scrollbar {
+    width: 0;
+}
 
 .articles-menu {
-    flex-basis: 35%;
     overflow: auto;
     background-color: #202834;
     padding: 3rem 1.5rem;
     position: sticky;
     top: 0;
+    right: 0;
     height: 100vh;
-    transition: all 0.3s linear;
 }
 
 .bg-lightWhite {
@@ -42,7 +57,7 @@
     color: #ffffff;
     position: absolute;
     font-size: 1.2rem;
-    right: -22px;
+    left: -22px;
     top: 5px;
     z-index: 10;
     padding: 0.6rem;
@@ -61,10 +76,83 @@
 
 .openArticleBoxButton {
     transform: rotate(-180deg);
-    right: 0;
 }
 
 .closedMenu {
-    flex-basis: 0;
     transform: translateX(100%);
 }
+
+/* Responsive Sizes */
+
+@media (max-width: 768px) {
+    .rightOfBottomSection {
+        width: 100%;
+        transform: translateX(100%);
+    }
+
+    .leftOfBottomSection {
+        width: 100%;
+    }
+
+    .articles-content {
+        padding: 2.2rem 1rem;
+    }
+
+    .article-title {
+        font-size: 1.4rem;
+    }
+
+    .article-text {
+        font-size: 1rem;
+        line-height: 2;
+    }
+
+    .closedMenu {
+        transform: translateX(0);
+    }
+
+    .actionBtn {
+        font-size: 1rem;
+        padding: 0.5rem;
+        right: auto;
+        left: -6%;
+        transform: rotate(-180deg);
+    }
+
+    .openArticleBoxButton {
+        transform: rotate(0);
+        left: -4%;
+    }
+}
+
+
+/* tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+    .article-title {
+        font-size: 2.2rem;
+    }
+
+    .article-text {
+        font-size: 1.1rem;
+    }
+
+    .actionBtn {
+        font-size: 1.2rem;
+        padding: 0.6rem;
+        left: -22px;
+    }
+
+    .openArticleBoxButton {
+        left: -16px;
+    }
+}
+
+/* desktop */
+@media (min-width: 769px) and (max-width: 1024px) {
+}
+
+/* large desktop */
+@media (min-width: 1025px) and (max-width: 1280px) {
+}
+
+

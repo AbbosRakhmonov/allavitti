@@ -2,6 +2,11 @@
     background-color: var(--secondSectionColor);
 }
 
+.topBox {
+    display: flex;
+    overflow: hidden;
+}
+
 .overlayTextCover {
     z-index: 5;
     background: linear-gradient(90deg, rgb(2, 24, 56) 0%, rgba(65, 65, 65, 0.14) 100%);
@@ -49,7 +54,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 122px;
+    width: 105%;
     height: 100%;
     background-color: #FF9A00;
     transform-origin: right;
@@ -74,7 +79,7 @@
         opacity: 0;
     }
     100% {
-        width: 122px;
+        width: 105%;
         opacity: 1;
     }
 }
@@ -97,5 +102,96 @@
     }
     to {
         transform: scale(1);
+    }
+}
+
+/* Responsive Sizes */
+
+@media (max-width: 480px) {
+    .topBox {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 20%;
+        row-gap: 25px;
+        overflow: hidden auto;
+    }
+
+    .overlayText {
+        width: 100%;
+        padding: 0 5%;
+        text-align: center;
+    }
+
+    .backgroundImageCover img {
+        object-position: right;
+    }
+
+    .secondSection_rightSide {
+        width: 70%;
+    }
+
+    .thirdSectionTitle {
+        font-size: 1.4rem;
+    }
+
+    .overlayText .secondaryText {
+        font-size: 1rem;
+    }
+}
+
+/* tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+    .topBox {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        row-gap: 25px;
+    }
+
+    .overlayText {
+        width: 100%;
+        padding: 0 5%;
+        text-align: center;
+    }
+
+    .backgroundImageCover img {
+        object-position: right;
+    }
+
+    .secondSection_rightSide {
+        width: 40%;
+    }
+}
+
+/* desktop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .topBox {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        row-gap: 50px;
+    }
+
+    .overlayText {
+        width: 100%;
+        padding: 0 2%;
+        text-align: center;
+    }
+
+    .backgroundImageCover img {
+        object-position: right;
+    }
+
+    .secondSection_rightSide {
+        width: 50%;
+    }
+
+    .overlayText .secondaryText {
+        font-size: 1.5rem;
+    }
+
+    .overlayText .moreBtn {
+        font-size: 1.2rem;
     }
 }

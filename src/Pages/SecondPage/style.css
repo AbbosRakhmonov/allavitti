@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.row, .col-7, .col-5{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.diagnosis{
+  /* background-color: blueviolet; */
+  background: linear-gradient(145deg, #192839 50%, #1ab4e2 115%);
+}
+
+.diagnosis .diagnosis-img{
+    height: 100vh;
+    background-color: #fff;
+    border-radius: 0 100% 0 0;
+    margin-top: 2px !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  
+}
+
+.diagnosis .diagnosis-img .paper-signet{
+    background-image: url('./../../assets/images/paper2.jpg');
+    background-size: cover;
+    width: 80%;
+    height: 80%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    top: 40px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 50% 0 0;
+}
+
+.diagnosis .diagnosis-img .paper-signet img{
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top:80px;
+    left: 30px;
+    
+}
+
+.diagnosis .allavitti-text{
+    padding: 50px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.diagnosis .allavitti-text h3{
+    padding-bottom: 10px;
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.diagnosis .allavitti-text p{
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+}
+
+
+.text-white{
+    color: #fff;
+}
+
+.diagnosisTitle {
+    position: relative;
+    color: #fff;
+}
+
+.fifthTitleAnimate .diagnosisSpan{
+    padding: 5px 2px 5px 1px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: crimson;
+    color: #fff;
+    transition: 0.5s ease-in all;
+}
+
+.bg-lightDanger{
+    background-color: crimson !important;
+    transition: 0.3s ease-in all;
+}
+
+.bg-lightDanger:hover{
+    background-color: rgb(8, 91, 132) !important;
+}

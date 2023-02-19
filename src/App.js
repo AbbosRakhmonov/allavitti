@@ -5,7 +5,8 @@ import FirstPage from './Pages/FirstPage/FirstPage'
 import ProductsPage from './Pages/ProductsPage/ProductsPage'
 import ThirdPage from './Pages/ThirdPage/ThirdPage'
 import FifthPage from './Pages/FifthPage/FifthPage'
-
+import SecondPage from './Pages/SecondPage/SecondPage'
+import Footer from './Pages/Footer/Footer'
 function App() {
     return (
         <Container>
@@ -19,7 +20,13 @@ function App() {
                 <ThirdPage/>
             </Section>
             <Section full={true}>
+                <SecondPage/>
+            </Section>
+            <Section full={true}>
                 <FifthPage/>
+            </Section>
+            <Section>
+                 <Footer/>
             </Section>
         </Container>
     )

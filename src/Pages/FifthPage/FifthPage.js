@@ -50,7 +50,7 @@ function FifthPage() {
         <section ref={ref} className={'position-relative h-100 fifthSection'}>
             <SecondBg/>
             <div className={`fifth-bg ${inView ? 'fifth-bg-animate' : ''}`}></div>
-            <div className={`circle-right ${inView ? 'animate-circle' : ''}`}></div>
+             <div className={`circle-right ${inView ? 'animate-circle' : ''}`}></div>
             <div className={`circle-overlay ${inView ? 'animate-circle-overlay' : ''}`}></div>
             <div className={'fifthSection_content'}>
                 <div className="overlayText px-lg-5 align-self-center">

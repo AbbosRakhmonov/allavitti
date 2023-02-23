@@ -7,6 +7,7 @@ import Woman from './../../assets/images/woman.png';
 import Typewriter from 'typewriter-effect'
 import MoreBtn from '../../Components/MoreBtn/MoreBtn'
 import DetectScreenSize from '../../Hooks/DetectScreenSize'
+import { useTranslation } from "react-i18next";
 
 const backgroundVariants = {
     visible: {
@@ -32,17 +33,21 @@ const headerVariant = {
     }
 }
 
-const smallText = 'Хар бир инсоннинг узига хос тери ранги бўлади. Теримиздаги рангларни пигментлар туфайли оламиз. Меланоасит билан биргаликда теримиз ўзига хос равишда рангга эга бўлади. Витилиго эса бу пигментларни ўлдириб, теримизда оқ келиб чиқишига сабаб бўлувчи бир тери касаллигидир. Витилиго тананинг хужайралар билан келиша олмаган дермотологик ходисадир. Витилиго халқ орасида 1-1,5% инсонларда учрайди. Кўпинча кўл, юз, бўйин ва базиларида жинсий аъзоларда пайдо булади. Витилигога чалинган одам халқ орасида ўзини рухий жиҳатдан ёмон хис қилади...'
-const smallTextForMobile = 'Хар бир инсоннинг узига хос тери ранги бўлади. Теримиздаги рангларни пигментлар туфайли оламиз. Меланоасит билан биргаликда теримиз ўзига хос равишда рангга эга бўлади. Витилиго эса ...'
-const smallTextForTablet = 'Хар бир инсоннинг узига хос тери ранги бўлади. Теримиздаги рангларни пигментлар туфайли оламиз. Меланоасит билан биргаликда теримиз ўзига хос равишда рангга эга бўлади. Витилиго эса бу пигментларни ўлдириб, теримизда оқ келиб чиқишига сабаб бўлувчи бир тери касаллигидир. Витилиго тананинг хужайралар билан келиша олмаган дермотологик ходисадир ...'
+
 
 
 function ThirdPage() {
+
+    const {t} = useTranslation();
     const [startTyping, setStartTyping] = useState(false)
     const [showBtn, setShowBtn] = useState(false)
     const backgroundAnimation = useAnimationControls()
     const {ref, inView} = useInView({threshold: 0.5})
     const {isMobile, isTablet} = DetectScreenSize()
+
+    const smallText = t('third_title_desktop')
+    const smallTextForMobile = t('third_title_mobile')
+    const smallTextForTablet = t('third_title_tablet')
 
     useEffect(() => {
         if (inView) {
@@ -67,8 +72,7 @@ function ThirdPage() {
                                initial="hidden"
                                custom={1}
                                variants={headerVariant}
-                               className={`text-light mb-4 thirdSectionTitle ${inView ? 'thirdSectionTitleAnimate' : ''}`}>Витилиго
-                        ўзи <span>нима?</span>
+                               className={`text-light mb-4 thirdSectionTitle ${inView ? 'thirdSectionTitleAnimate' : ''}`}>{t('third_page_h1')}
                     </motion.h1>
                     <motion.div
                         animate={backgroundAnimation}
@@ -93,7 +97,7 @@ function ThirdPage() {
                                     .start()
                             }}
                         />}
-                        <MoreBtn linkName={'Batafsil'} linkPath={'/articles/1'} color={'secondary'}
+                        <MoreBtn linkName={t('third_page_btn')} linkPath={'/articles/1'} color={'secondary'}
                                  classes={`mt-3 moreBtn ${showBtn ? 'animateFromLeft' : ''}`}/>
                     </motion.div>
                 </div>

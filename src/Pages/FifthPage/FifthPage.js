@@ -6,6 +6,7 @@ import {useInView} from 'react-intersection-observer'
 import Typewriter from 'typewriter-effect'
 import MoreBtn from '../../Components/MoreBtn/MoreBtn'
 import DetectScreenSize from '../../Hooks/DetectScreenSize'
+import { useTranslation } from "react-i18next";
 
 const headerVariant = {
     visible: (custom) => ({
@@ -19,13 +20,10 @@ const headerVariant = {
     }
 }
 
-const smallText = 'Ўлкамизда хам кўп учрайдиган тери касаллиги терига ранг берувчи пигментларни йўк бўлиши сабабли учрайдиган тери касаллигидир.\n' +
-    'Халок булган пигментлар терига ранг бермаганлиги сабабли пес каби ок доғлар юзага келиб чикади.Баъзида бу доғлар нуқта шаклида, баъзида эса тангадек катталикка эга бўлиши мумкин. Vitiligo бир тери касаллиги булиб, Guatr ва бошқа бир касалликларга ўхшаш бир кўриниши бор. Шунинг учун ҳам...'
-
-const smallTextForMobile = 'Ўлкамизда хам кўп учрайдиган тери касаллиги терига ранг берувчи пигментларни йўк бўлиши сабабли учрайдиган тери касаллигидир.\n' +
-    'Халок булган пигментлар терига ранг бермаганлиги сабабли...'
-
 function FifthPage() {
+    const {t} = useTranslation();
+    const smallText = t('fifth_title_desktop')
+    const smallTextForMobile = t('fifth_title_mobile')
     const [startTyping, setStartTyping] = useState(false)
     const [showBtn, setShowBtn] = useState(false)
     const animate = useAnimationControls()
@@ -59,7 +57,7 @@ function FifthPage() {
                                custom={1}
                                variants={headerVariant}
                                className={`fifthTitle mb-4 ${inView ? 'fifthTitleAnimate' : ''}`}>
-                        <span>Витилиго</span> қандай касаллик тури?
+                          {t('fifth_page_h1')}
                     </motion.h1>
                     <motion.div
                         animate={animate}
@@ -85,7 +83,7 @@ function FifthPage() {
                             }}
                         />}
                     </motion.div>
-                    <MoreBtn linkName={'Batafsil'} linkPath={'/articles/4'}
+                    <MoreBtn linkName={t('fifth_page_btn')} linkPath={'/articles/4'}
                              classes={`mt-3 moreBtn text-light bg-lightDark ${showBtn ? 'animateFromLeft' : ''}`}/>
                 </div>
             </div>

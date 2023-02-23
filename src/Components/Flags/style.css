@@ -9,3 +9,24 @@
 .header .head-container .head-navLink ul.dropdown-menu li a{
     color: crimson !important;
 }
+
+.dropdown-btn-style{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.dropdown-btn-style img{
+    width: 30px;
+    height: 20px;
+    object-fit: cover;
+}
+
+.dropdown-menu-style{
+    margin-top: 10px;
+}
+
+.dropdown-item-active{
+    background-color: rgb(40, 11, 68);
+    color: #fff;
+}

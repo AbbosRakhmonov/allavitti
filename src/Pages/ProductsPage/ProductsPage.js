@@ -9,10 +9,12 @@ import './style.css'
 import {useAnimationControls} from 'framer-motion'
 import {useInView} from 'react-intersection-observer'
 import ParticlesBg from 'particles-bg'
+import { useTranslation } from "react-i18next";
 
 function ProductsPage() {
     const animation = useAnimationControls()
     const {ref, inView} = useInView({threshold: 0.5})
+    const {t} = useTranslation();
 
     useEffect(() => {
         if (inView) {
@@ -24,44 +26,43 @@ function ProductsPage() {
     const products = [
         {
             id: 1,
-            name: 'ACM Viticolor gel',
+            name: t('product_1_name'),
             price: 10000,
             image: P1,
-            description: 'Ushbu tuzatuvchi jel uzoq vaqt davomida (3 dan 5 kungacha) depigmentatsiyalangan joylarni bo\'yaydi',
+            description: t('product_1_title'),
             bg: 'rgba(36,2,63,0.84)'
         },
         {
             id: 2,
-            name: 'ACM Vitix gel',
+            name:  t('product_2_name'),
             price: 10000,
             image: P2,
-            description: 'Yuz va tana uchun bu kundalik parvarishlash depigmentatsiyalangan joylar (Vitiligo) bilan terini tartibga soladi.',
+            description: t('product_2_title'),
             bg: 'rgba(161,40,3,0.84)'
         },
         {
             id: 3,
-            name: 'ACM Viticolor gel',
+            name: t('product_3_name'),
             price: 10000,
             image: P3,
-            description: 'Vitix planshetlari hujayralarni oksidlovchi stressdan himoya qilishga yordam beradi.',
+            description: t('product_3_title'),
             bg: 'rgba(0,70,108,0.84)'
         },
         {
             id: 4,
-            name: 'ACM Viticolor gel',
+            name: t('product_4_name'),
             price: 10000,
             image: P4,
-            description: 'Oziq-ovqatning hujayra energiyasiga aylanishiga yordam beradi va yurak-qon tomir, qon aylanish va asab tizimining sog\'lig\'iga hissa qo\'shadi.',
+            description: t('product_4_title'),
             bg: 'rgba(161,171,0,0.84)'
         }
     ]
     return (
         <section ref={ref} className={'h-100 d-flex flex-column productsSection py-4'}>
             <ParticlesBg bg={true} type={'circle'}/>
-            <h4 className={`productSectionTitle ${inView ? 'productSectionTextsAnimated' : ''}`}><span>Bizning Maxsulotlarimiz</span>
+            <h4 className={`productSectionTitle ${inView ? 'productSectionTextsAnimated' : ''}`}><span>{t('our_product')}</span>
             </h4>
-            <p className={`mb-4 productSectionText ${inView ? 'productSectionTextsAnimated' : ''}`}>Har bir maxsulotimiz
-                o`ziga xos sifat va mos kafolatga ega !</p>
+            <p className={`mb-4 productSectionText ${inView ? 'productSectionTextsAnimated' : ''}`}>{t('our_product_title')}</p>
             <div className="productsContainer px-md-3 px-lg-5">
                 {map(products, (product) => <Product key={uniqueId('product_')} inView={inView} product={product}/>)}
             </div>

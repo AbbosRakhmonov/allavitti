@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import './style.css'
 import Flags from "../../Components/Flags/Flags";
 import {NavLink} from 'react-router-dom'
-function Navbar(){
+import { useTranslation } from "react-i18next";
 
+function Navbar(){
+    const {t} = useTranslation();
     const [active, setActive] = useState('nav__menu');
     const [toggleIcon, setToggleIcon] = useState('nav__toggler')
     const navToggle = () => {
@@ -15,13 +17,13 @@ function Navbar(){
     return(
       <div className="nav-block">
  <nav className="nav">
-            <a href="#" className="nav__brand">Allavitti</a>
+            <NavLink to='/' className="nav__brand">Allavitti</NavLink>
             <ul className={active}>
                <li className="nav__item">
-                  <NavLink className="nav__link" to='/'>Bosh sahifa</NavLink>
+                  <NavLink className="nav__link" to='/'>{t('link_home')}</NavLink>
                </li>
                <li className="nav__item">
-                  <NavLink className="nav__link" to='/articles'>Maqolalar</NavLink>
+                  <NavLink className="nav__link" to='/articles'>{t('link_articles')}</NavLink>
                </li>
                <li className="nav__item">
                    <Flags/>

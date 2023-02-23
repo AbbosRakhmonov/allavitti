@@ -16,6 +16,8 @@ import Img7 from "../../assets/images/treated/dav7.png";
 import Img8 from "../../assets/images/treated/dav8.png";
 import { IoClose } from "react-icons/io5";
 import {motion, useAnimationControls} from 'framer-motion'
+import { useTranslation } from "react-i18next";
+
 const footLeft = {
   visible: (custom) => ({
       x: 0,
@@ -52,6 +54,7 @@ const footCenter = {
   }
 }
 function Footer() {
+  const {t} = useTranslation();
   const animate = useAnimationControls()
   const {ref, inView} = useInView({threshold: 0.5})
   let data = [
@@ -124,7 +127,7 @@ function Footer() {
               <div className="foot-first">
                 <img src={Logo} />
                 <p>
-                  203, Envato Labs, Behind Alis Steet, Melbourne, Australia.
+                   {t('foot_text')}
                 </p>
                 <ul>
                   <li>
@@ -168,31 +171,31 @@ function Footer() {
                variants={footCenter}
                >
               <div className="foot-last">
-                <h4>Useful Links</h4>
+                <h4>{t('foot_top_text_1')}</h4>
                 <ul>
                   <li>
                     <Link to="/" className="foot-link">
-                      Витилиго ўзи нима?
+                      {t('link_home')}
                     </Link>
                   </li>
                   <li>
                     <Link to="/" className="foot-link">
-                      Витилиго ташхиси қандай қўйилади?
+                      {t('link_articles')}
                     </Link>
                   </li>
                   <li>
                     <Link to="/" className="foot-link">
-                      Витилиго қандай касаллик тури
+                      {t('link_first')}
                     </Link>
                   </li>
                   <li>
                     <Link to="/" className="foot-link">
-                      Витилиго ташхиси қандай қўйилади?
+                      {t('link_second')}
                     </Link>
                   </li>
                   <li>
-                    <Link to="/" className="foot-link">
-                      Витилиго қандай касаллик тури
+                     <Link to="/" className="foot-link">
+                       {t('link_thirt')}
                     </Link>
                   </li>
                 </ul>
@@ -205,7 +208,7 @@ function Footer() {
               variants={footRight}
               className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12">
               <div className="foot-thirt">
-                <h4>Our Results</h4>
+                <h4>{t('foot_top_text_2')}</h4>
                 <div className="row">
                   {data?.map((item, index) => {
                     return (

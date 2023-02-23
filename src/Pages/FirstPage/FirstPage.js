@@ -1,9 +1,14 @@
 import React from 'react'
 import './style.css'
 import Navbar from '../Navbar/Navbar'
-import MoreBtn from '../../Components/MoreBtn/MoreBtn'
-
+// import MoreBtn from '../../Components/MoreBtn/MoreBtn'
+import { useTranslation } from "react-i18next";
+import { MDBBtn } from 'mdb-react-ui-kit';
+import { IoArrowDownSharp } from "react-icons/io5";
 function FirstPage() {
+
+    const {t} = useTranslation();
+
     return (
         <div className="main">
             <div className="main-background">
@@ -11,11 +16,9 @@ function FirstPage() {
                     <Navbar/>
                 </div>
                 <div className="main-text">
-                    <h3>Allvitto Saytiga Xush Kelibsiz</h3>
-                    <p>If there are medicine take-back programs in your country, you should contact the respective
-                        authority to arrange for the disposal of the medicine. For example, in the USA, the Drug
-                        Enforcement Administration regularly hosts National Prescription Drug Take-Back events.</p>
-                    <MoreBtn linkPath="/" color='secondary' classes={'btn-secondary'} linkName="Batafsil"/>
+                    <h3>{t('welcome_to_react')}</h3>
+                    <p>{t('first_page_title')}</p>
+                    <MDBBtn color='secondary'><IoArrowDownSharp size={`1.5rem`}/></MDBBtn>
                 </div>
             </div>
         </div>

@@ -6,6 +6,8 @@ import {useInView} from 'react-intersection-observer'
 import Typewriter from 'typewriter-effect'
 import MoreBtn from './../../Components/MoreBtn/MoreBtn'
 import SecondBg from "../../Backgrounds/SecondBg";
+import { useTranslation } from "react-i18next";
+
 const headerVariant = {
     visible: (custom) => ({
         x: 0,
@@ -30,14 +32,15 @@ const AnimateBg = {
     }
 }
 
-const smallText = 'Тери ранигини берувчи пигментларда melonasitлар йўқ бўлиши оқибатида пайдо бўлган бу касалликда тери ўз рангини йўқотиши туфайли оқ бўр ранги кичик доначалар бир катталигидаги доғлар пайдо бўлади. Аниқ бир ёши бўламагаилиги билан баробар Витилиго асосан 20 ёшда янада кўпрок учрайди. Витилиго бази Dermotologik касалликлардан ажралиб турсада, аниқ бир ташхис ва тестлар қилиниши керак бўлади. Агарда  ...'
-
 function SecondPage() {
+    const {t} = useTranslation();
     const [startTyping, setStartTyping] = useState(false)
     const [showBtn, setShowBtn] = useState(false)
     const animate = useAnimationControls()
     const {ref, inView} = useInView({threshold: 0.5})
-
+    const smallText = t('second_title_desktop')
+    const smallTextForMobile = t('second_title_mobile')
+    const smallTextForTablet = t('second_title_tablet')
     useEffect(() => {
         if (inView) {
             animate.start('visible')
@@ -80,7 +83,7 @@ function SecondPage() {
                                custom={1}
                                variants={headerVariant}
                                className={`diagnosisTitle mb-4 ${inView ? 'fifthTitleAnimate' : ''}`}>
-                        Витилиго ташхиси қандай <span className='diagnosisSpan'>қўйилади?</span>
+                               {t('second_page_h1')}
                     </motion.h1>
                     <motion.div
                         animate={animate}
@@ -106,7 +109,7 @@ function SecondPage() {
                             }}
                         />}
                     </motion.div>
-                    <MoreBtn linkName={'Batafsil'} linkPath={'/articles/3'}
+                    <MoreBtn linkName={t('second_page_btn')} linkPath={'/articles/3'}
                              classes={`mt-3 moreBtn text-light bg-lightDanger ${showBtn ? 'animateFromLeft' : ''}`} color=""/>
             </div>
         </div>

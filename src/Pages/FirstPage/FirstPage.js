@@ -5,7 +5,7 @@ import Navbar from '../Navbar/Navbar'
 import { useTranslation } from "react-i18next";
 import { MDBBtn } from 'mdb-react-ui-kit';
 import { IoArrowDownSharp } from "react-icons/io5";
-import ScrollBtn from '../../Components/ScrollDownBtn/ScrollBtn';
+import ScrollBtn from './../../Components/ScrollDownBtn/ScrollBtn'
 function FirstPage() {
 
     const {t} = useTranslation();

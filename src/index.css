@@ -37,7 +37,7 @@
 
 
 :root {
-    --secondSectionColor: #528A80;
+    --secondSectionColor: rgba(82, 138, 128, 0.06);
     --muteTextColor: #c4c4c4;
 }
 
@@ -221,6 +221,7 @@ section::-webkit-scrollbar {
 
 ::-webkit-scrollbar {
     width: 5px;
+    z-index: 5000;
 }
 
 ::-webkit-scrollbar-thumb { /* Foreground */

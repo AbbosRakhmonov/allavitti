@@ -4,7 +4,7 @@ import {MdEmail, MdPhone} from 'react-icons/md'
 import {FaTelegram, FaYoutube} from 'react-icons/fa'
 import {AiOutlineFacebook, AiOutlineInstagram} from 'react-icons/ai'
 import {useInView} from 'react-intersection-observer'
-import {Link} from 'react-router-dom'
+import {HashLink} from 'react-router-hash-link'
 import './style.css'
 import Img1 from '../../Assets/Images/treated/dav1.png'
 import Img2 from '../../Assets/Images/treated/dav2.png'
@@ -92,14 +92,6 @@ function Footer() {
     },
   ];
 
-  // const [model, setModel] = useState(false);
-  // const [tempImgSrc, setTempImgSrc] = useState("");
-
-  // const getImg = (imgSrc) => {
-  //   setTempImgSrc(imgSrc);
-  //   setModel(true);
-  // };
-
   useEffect(() => {
     if (inView) {
         animate.start('visible')
@@ -109,29 +101,24 @@ function Footer() {
 }, [animate, inView])
 
   return (
-    <>
-      {/* <div className={model ? "model open" : "model"} id='foot_page_id'>
-        <img src={tempImgSrc} />
-        <IoClose className="img-close" onClick={() => setModel(false)} />
-      </div> */}
-      <div className="footer" ref={ref}>
+      <div className="footer h-100" ref={ref}>
         <div className="container">
           <div className="row">
-            <motion.div 
-               className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 foot-first-col"
-               animate={animate}
-               initial="hidden"
-               custom={1}
-               variants={footLeft}
-               >
+            <motion.div
+                className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 foot-first-col"
+                animate={animate}
+                initial="hidden"
+                custom={1}
+                variants={footLeft}
+            >
               <div className="foot-first">
-                <img src={Logo} />
+                <img src={Logo} alt={'allavitti.com'}/>
                 <p>
-                   {t('foot_text')}
+                  {t('foot_text')}
                 </p>
                 <ul>
                   <li>
-                    <MdPhone className="foot-icons" />
+                    <MdPhone className="foot-icons"/>
                     +998 99 753 17 57
                   </li>
                   <li>
@@ -141,92 +128,89 @@ function Footer() {
                 </ul>
                 <ul>
                   <li>
-                    <a href="#" className="teleg">
-                      <FaTelegram size={`1.25rem`} />
-                    </a>
+                    <HashLink smooth to="#" className="teleg">
+                      <FaTelegram size={`1.25rem`}/>
+                    </HashLink>
                   </li>
                   <li>
-                    <a href="#" className="yout">
-                      <FaYoutube size={`1.25rem`} />
-                    </a>
+                    <HashLink smooth to="#" className="yout">
+                      <FaYoutube size={`1.25rem`}/>
+                    </HashLink>
                   </li>
                   <li>
-                    <a href="#" className="insta">
-                      <AiOutlineInstagram size={`1.25rem`} />
-                    </a>
+                    <HashLink smooth to="#" className="insta">
+                      <AiOutlineInstagram size={`1.25rem`}/>
+                    </HashLink>
                   </li>
                   <li>
-                    <a href="#" className="face">
-                      <AiOutlineFacebook size={`1.25rem`} />
-                    </a>
+                    <HashLink smooth to="#" className="face">
+                      <AiOutlineFacebook size={`1.25rem`}/>
+                    </HashLink>
                   </li>
                 </ul>
               </div>
             </motion.div>
-            <motion.div 
-               className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 foot-col-second"
-               animate={animate}
-               initial="hidden"
-               custom={1}
-               variants={footCenter}
-               >
+            <motion.div
+                className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 foot-col-second"
+                animate={animate}
+                initial="hidden"
+                custom={1}
+                variants={footCenter}
+            >
               <div className="foot-last">
                 <h4>{t('foot_top_text_1')}</h4>
                 <ul>
                   <li>
-                    <a href="#first_page_id" className="foot-link">
+                    <HashLink smooth to="#first_page_id" className="foot-link">
                       {t('link_home')}
-                    </a>
+                    </HashLink>
                   </li>
                   <li>
-                    <a href="#product_page_id" className="foot-link">
+                    <HashLink smooth to="#product_page_id" className="foot-link">
                       {t('our_product')}
-                    </a>
+                    </HashLink>
                   </li>
                   <li>
-                    <Link to="/articles" className="foot-link">
+                    <HashLink smooth to="/articles" className="foot-link">
                       {t('link_articles')}
-                    </Link>
+                    </HashLink>
                   </li>
                   <li>
-                    <a href="#third_page_id" className="foot-link">
+                    <HashLink smooth to="#third_page_id" className="foot-link">
                       {t('link_first')}
-                    </a>
+                    </HashLink>
                   </li>
                   <li>
-                    <a href="#bg" className="foot-link">
+                    <HashLink smooth to="#bg" className="foot-link">
                       {t('link_second')}
-                    </a>
+                    </HashLink>
                   </li>
                   <li>
-                     <a href="#fifth_page_id" className="foot-link">
-                       {t('link_thirt')}
-                    </a>
+                    <HashLink smooth to="#fifth_page_id" className="foot-link">
+                      {t('link_thirt')}
+                    </HashLink>
                   </li>
                 </ul>
               </div>
             </motion.div>
-            <motion.div 
-              animate={animate}
-              initial="hidden"
-              custom={1}
-              variants={footRight}
-              className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12">
+            <motion.div
+                animate={animate}
+                initial="hidden"
+                custom={1}
+                variants={footRight}
+                className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12">
               <div className="foot-thirt">
                 <h4>{t('foot_top_text_2')}</h4>
                 <div className="row">
                   {data?.map((item, index) => {
-                    return (
-                      <div
+                    return (<div
                         className=" col-3 pics"
                         key={index}
-                        // onClick={() => getImg(item.imgSrc)}
-                      >
-                        <Zoom>
-                           <img src={item.imgSrc} className={'footImgZoom'} />
-                        </Zoom>
-                      </div>
-                    );
+                    >
+                      <Zoom>
+                        <img src={item.imgSrc} className={'footImgZoom'} alt={'natijalar'}/>
+                      </Zoom>
+                    </div>)
                   })}
                 </div>
               </div>
@@ -234,7 +218,6 @@ function Footer() {
           </div>
         </div>
       </div>
-    </>
   );
 }
 

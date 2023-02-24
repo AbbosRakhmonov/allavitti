@@ -52,15 +52,14 @@ function FifthPage() {
             <div className={`circle-overlay ${inView ? 'animate-circle-overlay' : ''}`}></div>
             <div className={'fifthSection_content'}>
                 <div className="overlayText px-lg-5 align-self-center">
-               
                     <motion.h1 animate={animate}
                                initial="hidden"
                                custom={1}
                                variants={headerVariant}
-                               className={`fifthTitle mb-4 ${inView ? 'fifthTitleAnimate' : ''}`}>         
-                             <Trans i18nKey="fifth_page_h1">
-                                   <span>Витилиго</span> қандай касаллик тури?
-                                </Trans>  
+                               className={`fifthTitle mb-4 ${inView ? 'fifthTitleAnimate' : ''}`}>
+                        <Trans i18nKey="fifth_page_h1">
+                            <span className={'separately-word'}>Витилиго</span> қандай касаллик тури?
+                        </Trans>
                     </motion.h1>
                     <motion.div
                         animate={animate}

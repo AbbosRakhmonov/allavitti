@@ -1,10 +1,28 @@
 .secondSection {
-    background-color: var(--secondSectionColor);
+    background-image: linear-gradient(90deg, rgb(2, 24, 56) 0%, rgba(65, 65, 65, 0.14) 100%), url("../../Assets/Images/Vitiligo.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: content-box;
+    position: relative;
+}
+
+.secondSection::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 5px;
+    bottom: 0;
+    background: linear-gradient(90deg, rgb(2, 24, 56) 0%, rgba(65, 65, 65, 0.14) 100%);
+    backdrop-filter: blur(10px) saturate(120%);
+    z-index: 0;
 }
 
 .topBox {
     display: flex;
-    overflow: hidden;
+    overflow: hidden auto;
+    padding: 1rem 0;
 }
 
 .overlayTextCover {
@@ -12,30 +30,6 @@
     background: linear-gradient(90deg, rgb(2, 24, 56) 0%, rgba(65, 65, 65, 0.14) 100%);
     backdrop-filter: blur(10px) saturate(120%);
 }
-
-.backgroundImageCover::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, rgb(2, 24, 56) 0%, rgba(65, 65, 65, 0.14) 100%);
-    backdrop-filter: blur(10px) saturate(120%);
-}
-
-.animateBackgroundImageCover::before {
-    animation: backgroundCoverImage 1s linear;
-}
-
-.backgroundImageCover img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
 
 .secondSection_rightSide {
     width: 40%;
@@ -47,6 +41,7 @@
 
 .thirdSectionTitle span {
     position: relative;
+    z-index: 2;
 }
 
 .thirdSectionTitle span:after {
@@ -84,18 +79,6 @@
     }
 }
 
-@keyframes backgroundCoverImage {
-    from {
-        width: 0;
-        opacity: 0;
-    }
-    to {
-        width: 100%;
-        opacity: 1;
-    }
-
-}
-
 @keyframes scaleImage {
     from {
         transform: scale(0);
@@ -108,6 +91,10 @@
 /* Responsive Sizes */
 
 @media (max-width: 480px) {
+    .secondSection {
+        background-position: right;
+    }
+
     .topBox {
         flex-direction: column-reverse;
         align-items: center;
@@ -142,6 +129,10 @@
 
 /* tablet */
 @media (min-width: 481px) and (max-width: 768px) {
+    .secondSection {
+        background-position: right;
+    }
+
     .topBox {
         flex-direction: column-reverse;
         align-items: center;
@@ -196,7 +187,14 @@
     }
 }
 
-.third_color_btn{
+@media (min-width: 1025px) {
+    .topBox {
+        height: 100%;
+    }
+
+}
+
+.third_color_btn {
     background-color: #FF9A00;
     color: #fff;
 }

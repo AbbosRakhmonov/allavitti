@@ -6,7 +6,7 @@ import {useInView} from 'react-intersection-observer'
 import Typewriter from 'typewriter-effect'
 import MoreBtn from './../../Components/MoreBtn/MoreBtn'
 import SecondBg from '../../Backgrounds/SecondBg'
-import {useTranslation, Trans} from 'react-i18next'
+import {Trans, useTranslation} from 'react-i18next'
 import DetectScreenSize from '../../Hooks/DetectScreenSize'
 
 const headerVariant = {
@@ -53,20 +53,17 @@ function SecondPage() {
         () => {
           setShowBtn(true);
         },
-        isMobile ? 4000 : isTablet ? 7000 : 9800
+          isMobile ? 4000 : isTablet ? 5500 : 7500
       );
     } else {
-      animate.start("hidden");
-      setStartTyping(false);
-      setShowBtn(false);
-      document.querySelectorAll(".moreBtn").forEach((btn) => {
-        btn.classList.remove("animateFromLeft");
-      });
+      animate.start('hidden')
+      setStartTyping(false)
+      setShowBtn(false)
     }
-  }, [animate, inView, isMobile]);
+  }, [animate, inView, isMobile, isTablet]);
 
   return (
-    <div className="diagnosis" id="bg" ref={ref}>
+    <section className="diagnosis" id="bg" ref={ref}>
       <SecondBg />
       <div className={`second-bg ${inView ? "second-bg-animate" : ""}`}></div>
       <div className="row2">
@@ -78,7 +75,7 @@ function SecondPage() {
             variants={AnimateBg}
             className="paper-signet"
           >
-            <img src={Signet} />
+            <img src={Signet} alt={'pechat'} loading={'lazy'}/>
           </motion.div>
         </div>
         <div className="allavitti-text">
@@ -89,7 +86,7 @@ function SecondPage() {
               custom={1}
               variants={headerVariant}
               className={`diagnosisTitle mb-4 ${
-                inView ? "fifthTitleAnimate" : ""
+                  inView ? 'diagnosisTitleAnimate' : ''
               }`}
             >
               <Trans i18nKey="second_page_h1">
@@ -142,7 +139,7 @@ function SecondPage() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

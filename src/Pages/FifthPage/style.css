@@ -1,6 +1,5 @@
 .fifthSection {
     background-color: #E7EFFC;
-    overflow: hidden;
 }
 
 .fifth-bg {
@@ -65,7 +64,7 @@
     color: #202834;
 }
 
-.fifthTitle span::before {
+.fifthTitle .separately-word::before {
     content: '';
     position: absolute;
     top: 0;
@@ -78,21 +77,21 @@
     border-radius: 0 5px 5px 0;
 }
 
-.fifthTitleAnimate span::before {
+.fifthTitleAnimate .separately-word::before {
     animation: leftToRight 1.5s ease;
 }
 
-.fifthTitle span {
+.fifthTitle .separately-word {
     position: relative;
-    transition: 1s ease all;
+    transition: all 1s ease;
 }
 
-.fifthTitleAnimate span {
+.fifthTitleAnimate .separately-word {
     color: #E7EFFC;
     transition-delay: 0.5s;
 }
 
-.fifthTitle span::after {
+.fifthTitle .separately-word::after {
     content: '';
     position: absolute;
     top: 0;
@@ -199,7 +198,6 @@
 /* desktop */
 @media (min-width: 769px) and (max-width: 1024px) {
     .fifthSection {
-        display: flex;
         flex-direction: column;
         text-align: center;
         background-image: url("../../Assets/Images/fifth-bg.jpg");

@@ -4,12 +4,11 @@ ul{
     padding: 0;
 }
 .footer{
-    padding: 40px 0px;
+    padding: 40px 0;
     width: 100%;
     background: linear-gradient(145deg, #192839 50%, #1ab4e2 115%);
-    box-shadow: 0px 8px 32px 0px rgba(19,19,20,0.37);
+    box-shadow: 0 8px 32px 0 rgba(19, 19, 20, 0.37);
     backdrop-filter: blur(4px);
-    border: 3px solid rgba(255,255,255,0.18);
 }
 .foot-col-second{
     display: flex;

@@ -2,24 +2,11 @@ import React, {useEffect, useState} from 'react'
 import './style.css'
 import {motion, useAnimationControls} from 'framer-motion'
 import {useInView} from 'react-intersection-observer'
-import Vitiligo from '../../Assets/Images/Vitiligo.webp'
 import Woman from '../../Assets/Images/woman.png'
 import Typewriter from 'typewriter-effect'
 import MoreBtn from '../../Components/MoreBtn/MoreBtn'
 import DetectScreenSize from '../../Hooks/DetectScreenSize'
-import { useTranslation, Trans } from "react-i18next";
-
-const backgroundVariants = {
-    visible: {
-        opacity: 1,
-        x: 0,
-        transition: {duration: 1, delayChildren: 0.2, staggerChildren: 0.1}
-    },
-    hidden: {
-        opacity: 0,
-        x: 100
-    }
-}
+import {Trans, useTranslation} from 'react-i18next'
 
 const headerVariant = {
     visible: (custom) => ({
@@ -34,7 +21,6 @@ const headerVariant = {
 }
 
 function ThirdPage() {
-
     const {t} = useTranslation();
     const [startTyping, setStartTyping] = useState(false)
     const [showBtn, setShowBtn] = useState(false)
@@ -43,8 +29,6 @@ function ThirdPage() {
     const {isMobile, isTablet} = DetectScreenSize()
 
     const smallText = t('third_title_desktop')
-    const smallTextForMobile = t('third_title_mobile')
-    const smallTextForTablet = t('third_title_tablet')
 
     useEffect(() => {
         if (inView) {
@@ -60,18 +44,18 @@ function ThirdPage() {
             setStartTyping(false)
             setShowBtn(false)
         }
-    }, [backgroundAnimation, inView, isMobile])
+    }, [backgroundAnimation, inView, isMobile, isTablet])
     return (
         <section ref={ref} className={'secondSection position-relative h-100'} id='third_page_id'>
-            <motion.div className={'position-absolute topBox w-100 h-100'} style={{zIndex: 6}}>
+            <motion.div className={'topBox w-100 position-relative'} style={{zIndex: 6}}>
                 <div className="overlayText px-lg-5 align-self-center">
                     <motion.h1 animate={backgroundAnimation}
                                initial="hidden"
                                custom={1}
                                variants={headerVariant}
                                className={`text-light mb-4 thirdSectionTitle ${inView ? 'thirdSectionTitleAnimate' : ''}`}>
-                                <Trans i18nKey="third_page_h1">Витилиго ўзи <span>нима?</span></Trans>
-                                
+                        <Trans i18nKey="third_page_h1">Витилиго ўзи <span>нима?</span></Trans>
+
                     </motion.h1>
                     <motion.div
                         animate={backgroundAnimation}
@@ -86,7 +70,7 @@ function ThirdPage() {
                                 wrapperClassName: 'mute-text secondaryText'
                             }}
                             onInit={(typewriter) => {
-                                typewriter.typeString(isMobile ? smallTextForMobile : isTablet ? smallTextForTablet : smallText)
+                                typewriter.typeString(smallText)
                                     .callFunction((state) => {
                                         // turn off animation
                                         state.elements.cursor.style.animation = 'none'
@@ -106,13 +90,6 @@ function ThirdPage() {
                         src={Woman} alt="woman" style={{width: '95%'}}
                         className={`pe-none ${inView ? 'scaleImg' : ''}`} loading={'lazy'}/>
                 </div>
-            </motion.div>
-            <motion.div
-                animate={backgroundAnimation}
-                initial="hidden"
-                variants={backgroundVariants}
-                className={`backgroundImageCover position-absolute w-100 h-100 overflow-hidden ${inView ? 'animateBackgroundImageCover' : ''}`}>
-                <img src={Vitiligo} alt="Allavitti vitaligo"/>
             </motion.div>
         </section>
     )

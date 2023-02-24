@@ -9,11 +9,11 @@
 
 .secondSection::before {
     content: '';
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    right: 5px;
-    bottom: 0;
+    right: 0;
+    height: 100%;
     background: linear-gradient(90deg, rgb(2, 24, 56) 0%, rgba(65, 65, 65, 0.14) 100%);
     backdrop-filter: blur(10px) saturate(120%);
     z-index: 0;
@@ -23,6 +23,7 @@
     display: flex;
     overflow: hidden auto;
     padding: 1rem 0;
+    backdrop-filter: blur(10px);
 }
 
 .overlayTextCover {

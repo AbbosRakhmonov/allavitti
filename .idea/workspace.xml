@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c17844bc-71c0-499b-a5d2-61abafcac04b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/FifthPage/FifthPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/FifthPage/FifthPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/FifthPage/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/FifthPage/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/FirstPage/FirstPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/FirstPage/FirstPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Footer/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Footer/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/SecondPage/SecondPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/SecondPage/SecondPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/SecondPage/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/SecondPage/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/ThirdPage/ThirdPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ThirdPage/ThirdPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/ThirdPage/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ThirdPage/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +127,7 @@
       <workItem from="1676482177362" duration="3028000" />
       <workItem from="1676580437601" duration="15432000" />
       <workItem from="1677215038094" duration="2326000" />
-      <workItem from="1677232293093" duration="8026000" />
+      <workItem from="1677232293093" duration="8520000" />
     </task>
     <servers />
   </component>

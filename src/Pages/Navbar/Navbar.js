@@ -1,18 +1,19 @@
-import React, { useState } from "react";
+import React, {useState} from 'react'
 import './style.css'
-import Flags from "../../Components/Flags/Flags";
+import Flags from '../../Components/Flags/Flags'
 import {NavLink} from 'react-router-dom'
-import { useTranslation } from "react-i18next";
-import NavLogo from './../../assets/images/nav.png'
-function Navbar(){
-    const {t} = useTranslation();
-    const [active, setActive] = useState('nav__menu');
+import {useTranslation} from 'react-i18next'
+import NavLogo from '../../Assets/Images/nav.png'
+
+function Navbar() {
+    const {t} = useTranslation()
+    const [active, setActive] = useState('nav__menu')
     const [toggleIcon, setToggleIcon] = useState('nav__toggler')
     const [navBlock, setNavBlock] = useState('nav-block')
     const navToggle = () => {
-       active === 'nav__menu' ? setActive('nav__menu nav__active') : setActive('nav__menu');
+        active === 'nav__menu' ? setActive('nav__menu nav__active') : setActive('nav__menu')
 
-       //toggleIcon
+        //toggleIcon
        toggleIcon === 'nav__toggler' ? setToggleIcon('nav__toggler toggle') : setToggleIcon('nav__toggler');
 
        navBlock === 'nav-block' ? setNavBlock('nav-block nav-block-shadow') : setNavBlock('nav-block')

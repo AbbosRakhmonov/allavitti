@@ -1,15 +1,15 @@
 import React, {useEffect} from 'react'
-import P1 from './../../assets/images/p1.jpg'
-import P2 from './../../assets/images/p2.jpg'
-import P3 from './../../assets/images/p3.jpg'
-import P4 from './../../assets/images/p4.jpg'
+import P1 from '../../Assets/Images/p1.jpg'
+import P2 from '../../Assets/Images/p2.jpg'
+import P3 from '../../Assets/Images/p3.jpg'
+import P4 from '../../Assets/Images/p4.jpg'
 import {map, uniqueId} from 'lodash'
 import Product from '../../Components/Product/Product'
 import './style.css'
 import {useAnimationControls} from 'framer-motion'
 import {useInView} from 'react-intersection-observer'
 import ParticlesBg from 'particles-bg'
-import { useTranslation } from "react-i18next";
+import {useTranslation} from 'react-i18next'
 
 function ProductsPage() {
     const animation = useAnimationControls()

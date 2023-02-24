@@ -6,7 +6,7 @@ import {useInView} from 'react-intersection-observer'
 import Typewriter from 'typewriter-effect'
 import MoreBtn from '../../Components/MoreBtn/MoreBtn'
 import DetectScreenSize from '../../Hooks/DetectScreenSize'
-import { useTranslation, Trans } from "react-i18next";
+import {Trans, useTranslation} from 'react-i18next'
 
 const headerVariant = {
     visible: (custom) => ({

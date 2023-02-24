@@ -1,13 +1,14 @@
-import React, {useEffect, useState} from "react";
-import "./style.css";
-import Signet from './../../assets/images/pechatred.png';
+import React, {useEffect, useState} from 'react'
+import './style.css'
+import Signet from '../../Assets/pechatred.png'
 import {motion, useAnimationControls} from 'framer-motion'
 import {useInView} from 'react-intersection-observer'
 import Typewriter from 'typewriter-effect'
 import MoreBtn from './../../Components/MoreBtn/MoreBtn'
-import SecondBg from "../../Backgrounds/SecondBg";
-import { useTranslation } from "react-i18next";
-import DetectScreenSize from "../../Hooks/DetectScreenSize";
+import SecondBg from '../../Backgrounds/SecondBg'
+import {useTranslation} from 'react-i18next'
+import DetectScreenSize from '../../Hooks/DetectScreenSize'
+
 const headerVariant = {
     visible: (custom) => ({
         x: 0,

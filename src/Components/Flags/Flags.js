@@ -1,13 +1,14 @@
-import React from 'react';
-import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
+import React from 'react'
+import {MDBDropdown, MDBDropdownItem, MDBDropdownMenu, MDBDropdownToggle} from 'mdb-react-ui-kit'
 import './style.css'
-import i18next from 'i18next';
-import cookie from 'js-cookie';
-import uzbIcon from './../../assets/images/flags/uzb.png';
-import engIcon from './../../assets/images/flags/usa.png';
-import rusIcon from './../../assets/images/flags/rus.png';
-import turkIcon from './../../assets/images/flags/tr.png';
-import { useTranslation } from "react-i18next";
+import i18next from 'i18next'
+import cookie from 'js-cookie'
+import uzbIcon from '../../Assets/Images/flags/uzb.png'
+import engIcon from '../../Assets/Images/flags/usa.png'
+import rusIcon from '../../Assets/Images/flags/rus.png'
+import turkIcon from '../../Assets/Images/flags/tr.png'
+import {useTranslation} from 'react-i18next'
+
 const language = [
   {
    code : 'uz',

@@ -5,7 +5,7 @@ import './style.css'
 import {motion} from 'framer-motion'
 import {map, uniqueId} from 'lodash'
 import ArticlesMenu from '../../Components/ArticlesMenu/ArticlesMenu'
-import { useTranslation } from "react-i18next";
+import {useTranslation} from 'react-i18next'
 
 const variants = {
     'hidden': {

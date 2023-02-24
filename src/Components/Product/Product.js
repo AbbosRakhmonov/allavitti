@@ -3,7 +3,7 @@ import './style.css'
 import {IoIosEye, IoIosHeart} from 'react-icons/io'
 import {Link} from 'react-router-dom'
 import Zoom from 'react-medium-image-zoom'
-import { useTranslation } from "react-i18next";
+import {useTranslation} from 'react-i18next'
 
 function Product({product, inView}) {
     const {t} = useTranslation();

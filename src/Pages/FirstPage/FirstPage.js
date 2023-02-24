@@ -2,10 +2,9 @@ import React from 'react'
 import './style.css'
 import Navbar from '../Navbar/Navbar'
 // import MoreBtn from '../../Components/MoreBtn/MoreBtn'
-import { useTranslation } from "react-i18next";
-import { MDBBtn } from 'mdb-react-ui-kit';
-import { IoArrowDownSharp } from "react-icons/io5";
+import {useTranslation} from 'react-i18next'
 import ScrollBtn from './../../Components/ScrollDownBtn/ScrollBtn'
+
 function FirstPage() {
 
     const {t} = useTranslation();

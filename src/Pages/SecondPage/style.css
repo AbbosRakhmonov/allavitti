@@ -36,14 +36,14 @@
 }
 
 .diagnosis .diagnosis-img .paper-signet{
-    background-image: url('./../../assets/images/paper2.jpg');
+    background-image: url('../../Assets/images/paper2.jpg');
     background-size: cover;
     width: 80%;
     height: 80%;
     background-repeat: no-repeat;
     background-position: center center;
     position: relative;
-    top: 40px; 
+    top: 40px;
     display: flex;
     justify-content: center;
     align-items: center;

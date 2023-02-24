@@ -1,29 +1,28 @@
-import React, { useState, useEffect } from "react";
-import Logo from "./../../assets/images/foot-logo.png";
-import { MdEmail, MdPhone } from "react-icons/md";
-import { FaTelegram, FaYoutube } from "react-icons/fa";
-import { AiOutlineInstagram, AiOutlineFacebook } from "react-icons/ai";
+import React, {useEffect} from 'react'
+import Logo from '../../Assets/Images/foot-logo.png'
+import {MdEmail, MdPhone} from 'react-icons/md'
+import {FaTelegram, FaYoutube} from 'react-icons/fa'
+import {AiOutlineFacebook, AiOutlineInstagram} from 'react-icons/ai'
 import {useInView} from 'react-intersection-observer'
-import { Link } from "react-router-dom";
-import "./style.css";
-import Img1 from "../../assets/images/treated/dav1.png";
-import Img2 from "../../assets/images/treated/dav2.png";
-import Img3 from "../../assets/images/treated/dav3.png";
-import Img4 from "../../assets/images/treated/dav4.png";
-import Img5 from "../../assets/images/treated/dav5.png";
-import Img6 from "../../assets/images/treated/dav6.png";
-import Img7 from "../../assets/images/treated/dav7.png";
-import Img8 from "../../assets/images/treated/dav8.png";
-import { IoClose } from "react-icons/io5";
+import {Link} from 'react-router-dom'
+import './style.css'
+import Img1 from '../../Assets/Images/treated/dav1.png'
+import Img2 from '../../Assets/Images/treated/dav2.png'
+import Img3 from '../../Assets/Images/treated/dav3.png'
+import Img4 from '../../Assets/Images/treated/dav4.png'
+import Img5 from '../../Assets/Images/treated/dav5.png'
+import Img6 from '../../Assets/Images/treated/dav6.png'
+import Img7 from '../../Assets/Images/treated/dav7.png'
+import Img8 from '../../Assets/Images/treated/dav8.png'
 import {motion, useAnimationControls} from 'framer-motion'
-import { useTranslation } from "react-i18next";
+import {useTranslation} from 'react-i18next'
 import Zoom from 'react-medium-image-zoom'
 
 const footLeft = {
   visible: (custom) => ({
-      x: 0,
-      opacity: 1,
-      transition: {duration: 0.6, delay: custom * 0.2}
+    x: 0,
+    opacity: 1,
+    transition: {duration: 0.6, delay: custom * 0.2}
   }),
   hidden: {
       x: 100,

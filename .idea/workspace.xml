@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c17844bc-71c0-499b-a5d2-61abafcac04b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Flags/Flags.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Flags/Flags.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Product/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Product/Product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ScrollDownBtn/ScrollBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ScrollDownBtn/ScrollBtn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Articles/Articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Articles/Articles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/FifthPage/FifthPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/FifthPage/FifthPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/FirstPage/FirstPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/FirstPage/FirstPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Navbar/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/ProductsPage/ProductsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ProductsPage/ProductsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/SecondPage/SecondPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/SecondPage/SecondPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="c17844bc-71c0-499b-a5d2-61abafcac04b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -137,7 +124,7 @@
       <workItem from="1676417911950" duration="11895000" />
       <workItem from="1676482177362" duration="3028000" />
       <workItem from="1676580437601" duration="15432000" />
-      <workItem from="1677215038094" duration="668000" />
+      <workItem from="1677215038094" duration="1619000" />
     </task>
     <servers />
   </component>

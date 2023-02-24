@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './style.css'
-import Signet from '../../Assets/pechatred.png'
+import Signet from '../../Assets/Images/pechatred.png'
 import {motion, useAnimationControls} from 'framer-motion'
 import {useInView} from 'react-intersection-observer'
 import Typewriter from 'typewriter-effect'

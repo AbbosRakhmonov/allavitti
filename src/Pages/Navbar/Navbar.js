@@ -3,21 +3,27 @@ import './style.css'
 import Flags from "../../Components/Flags/Flags";
 import {NavLink} from 'react-router-dom'
 import { useTranslation } from "react-i18next";
-
+import NavLogo from './../../assets/images/nav.png'
 function Navbar(){
     const {t} = useTranslation();
     const [active, setActive] = useState('nav__menu');
     const [toggleIcon, setToggleIcon] = useState('nav__toggler')
+    const [navBlock, setNavBlock] = useState('nav-block')
     const navToggle = () => {
        active === 'nav__menu' ? setActive('nav__menu nav__active') : setActive('nav__menu');
 
        //toggleIcon
        toggleIcon === 'nav__toggler' ? setToggleIcon('nav__toggler toggle') : setToggleIcon('nav__toggler');
+
+       navBlock === 'nav-block' ? setNavBlock('nav-block nav-block-shadow') : setNavBlock('nav-block')
     }
     return(
-      <div className="nav-block">
+      <div className={navBlock}>
  <nav className="nav">
-            <NavLink to='/' className="nav__brand">Allavitti</NavLink>
+            <NavLink to='/' className="nav__brand">
+               <img src={NavLogo}/>
+               <p>Allavitti</p>
+            </NavLink>
             <ul className={active}>
                <li className="nav__item">
                   <NavLink className="nav__link" to='/'>{t('link_home')}</NavLink>

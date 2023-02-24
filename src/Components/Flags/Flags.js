@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 const language = [
   {
    code : 'uz',
-   name: "Uzbek",
+   name: "Узбек",
    country_code : 'tc',
    country_img: uzbIcon
   },
@@ -39,7 +39,7 @@ function Flags() {
    const currentLanguageCode = cookie.get('i18next') || 'en'
   return (
     <MDBDropdown>
-    <MDBDropdownToggle color='secondary'>{t('drop_toggle_name')}</MDBDropdownToggle>
+    <MDBDropdownToggle color='info'>{t('drop_toggle_name')}</MDBDropdownToggle>
     <MDBDropdownMenu className='dropdown-menu-style'>
       {
         language.map(({code, name, country_code, country_img})=> (

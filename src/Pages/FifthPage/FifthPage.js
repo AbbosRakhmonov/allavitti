@@ -6,7 +6,7 @@ import {useInView} from 'react-intersection-observer'
 import Typewriter from 'typewriter-effect'
 import MoreBtn from '../../Components/MoreBtn/MoreBtn'
 import DetectScreenSize from '../../Hooks/DetectScreenSize'
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 
 const headerVariant = {
     visible: (custom) => ({
@@ -45,19 +45,20 @@ function FifthPage() {
         }
     }, [animate, inView, isMobile])
     return (
-        <section ref={ref} className={'position-relative h-100 fifthSection'}>
+        <section ref={ref} className={'position-relative h-100 fifthSection'} id='fifth_page_id'>
             <SecondBg/>
             <div className={`fifth-bg ${inView ? 'fifth-bg-animate' : ''}`}></div>
              <div className={`circle-right ${inView ? 'animate-circle' : ''}`}></div>
             <div className={`circle-overlay ${inView ? 'animate-circle-overlay' : ''}`}></div>
             <div className={'fifthSection_content'}>
                 <div className="overlayText px-lg-5 align-self-center">
+               
                     <motion.h1 animate={animate}
                                initial="hidden"
                                custom={1}
                                variants={headerVariant}
-                               className={`fifthTitle mb-4 ${inView ? 'fifthTitleAnimate' : ''}`}>
-                          {t('fifth_page_h1')}
+                               className={`fifthTitle mb-4 ${inView ? 'fifthTitleAnimate' : ''}`}>         
+                             <Trans>{t('fifth_page_h1')}</Trans>  
                     </motion.h1>
                     <motion.div
                         animate={animate}

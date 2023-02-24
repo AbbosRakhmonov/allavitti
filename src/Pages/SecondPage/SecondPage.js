@@ -7,7 +7,7 @@ import Typewriter from 'typewriter-effect'
 import MoreBtn from './../../Components/MoreBtn/MoreBtn'
 import SecondBg from "../../Backgrounds/SecondBg";
 import { useTranslation } from "react-i18next";
-
+import DetectScreenSize from "../../Hooks/DetectScreenSize";
 const headerVariant = {
     visible: (custom) => ({
         x: 0,
@@ -38,6 +38,7 @@ function SecondPage() {
     const [showBtn, setShowBtn] = useState(false)
     const animate = useAnimationControls()
     const {ref, inView} = useInView({threshold: 0.5})
+    const {isMobile, isTablet} = DetectScreenSize()
     const smallText = t('second_title_desktop')
     const smallTextForMobile = t('second_title_mobile')
     const smallTextForTablet = t('second_title_tablet')
@@ -49,7 +50,7 @@ function SecondPage() {
             }, 1000)
             setTimeout(() => {
                 setShowBtn(true)
-            }, 7700)
+            }, isMobile ? 4000 : isTablet ? 7000 : 9800)
         } else {
             animate.start('hidden')
             setStartTyping(false)
@@ -58,13 +59,14 @@ function SecondPage() {
                 btn.classList.remove('animateFromLeft')
             })
         }
-    }, [animate, inView])
+    }, [animate, inView, isMobile])
 
   return (
     <div className="diagnosis" id="bg" ref={ref}>
       <SecondBg/>
-      <div className="row">
-      <div className="col-5 diagnosis-img">
+      <div className={`second-bg ${inView ? 'second-bg-animate' : ''}`}></div>
+      <div className="row2">
+      <div className="diagnosis-img">
           <motion.div 
             animate={animate}
             initial="hidden"
@@ -76,7 +78,7 @@ function SecondPage() {
               />
           </motion.div>
         </div>
-        <div className="col-7 allavitti-text">
+        <div className="allavitti-text">
             <div className="head-text">
             <motion.h1 animate={animate}
                                initial="hidden"
@@ -98,7 +100,7 @@ function SecondPage() {
                                 wrapperClassName: 'text-white secondaryText'
                             }}
                             onInit={(typewriter) => {
-                                typewriter.typeString(smallText)
+                                typewriter.typeString(isMobile ? smallTextForMobile : isTablet ? smallTextForTablet : smallText)
                                     .callFunction((state) => {
                                         // turn off animation
                                         state.elements.cursor.style.animation = 'none'

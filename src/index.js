@@ -27,7 +27,8 @@ i18n
     backend : {
       loadPath: './languages/locales/{{lng}}/translation.json',
     },
-    react: {useSuspanse : false}
+    react: {useSuspanse : false},
+    parseHtml : true
   });
 root.render(
     <BrowserRouter>

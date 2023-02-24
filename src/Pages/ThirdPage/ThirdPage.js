@@ -65,7 +65,7 @@ function ThirdPage() {
         }
     }, [backgroundAnimation, inView, isMobile])
     return (
-        <section ref={ref} className={'secondSection position-relative h-100'}>
+        <section ref={ref} className={'secondSection position-relative h-100'} id='third_page_id'>
             <motion.div className={'position-absolute topBox w-100 h-100'} style={{zIndex: 6}}>
                 <div className="overlayText px-lg-5 align-self-center">
                     <motion.h1 animate={backgroundAnimation}

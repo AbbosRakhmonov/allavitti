@@ -11,10 +11,10 @@ function App() {
 
     return (
         <Container>
-            <Section full={true}>
+             <Section full={true}>
                 <FirstPage/>
-            </Section>
-            <Section full={true}>
+            </Section> 
+             <Section full={true}>
                 <ProductsPage/>
             </Section>
             <Section full={true}>
@@ -26,9 +26,10 @@ function App() {
             <Section full={true}>
                 <FifthPage/>
             </Section>
-            <Section>
-                 <Footer/>
+            <Section full={false}>
+                <Footer/>
             </Section>
+            
         </Container>
     )
 }

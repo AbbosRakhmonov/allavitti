@@ -1,0 +1,15 @@
+.scroll-btn{
+    border: 1px solid #ccc;
+    padding: 5px 40px 10px 40px;
+    color: #ccc; 
+    font-size: 20px;
+    background: none;
+    border-radius: 7px;
+    transition: 0.3s ease-in all;
+}
+
+.scroll-btn:hover{
+    background-color: #54B4D3;
+    border: 1px solid #54B4D3;
+    color: #fff;
+}

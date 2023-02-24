@@ -17,6 +17,7 @@ import Img8 from "../../assets/images/treated/dav8.png";
 import { IoClose } from "react-icons/io5";
 import {motion, useAnimationControls} from 'framer-motion'
 import { useTranslation } from "react-i18next";
+import Zoom from 'react-medium-image-zoom'
 
 const footLeft = {
   visible: (custom) => ({
@@ -92,13 +93,13 @@ function Footer() {
     },
   ];
 
-  const [model, setModel] = useState(false);
-  const [tempImgSrc, setTempImgSrc] = useState("");
+  // const [model, setModel] = useState(false);
+  // const [tempImgSrc, setTempImgSrc] = useState("");
 
-  const getImg = (imgSrc) => {
-    setTempImgSrc(imgSrc);
-    setModel(true);
-  };
+  // const getImg = (imgSrc) => {
+  //   setTempImgSrc(imgSrc);
+  //   setModel(true);
+  // };
 
   useEffect(() => {
     if (inView) {
@@ -110,10 +111,10 @@ function Footer() {
 
   return (
     <>
-      <div className={model ? "model open" : "model"}>
+      {/* <div className={model ? "model open" : "model"} id='foot_page_id'>
         <img src={tempImgSrc} />
         <IoClose className="img-close" onClick={() => setModel(false)} />
-      </div>
+      </div> */}
       <div className="footer" ref={ref}>
         <div className="container">
           <div className="row">
@@ -174,29 +175,34 @@ function Footer() {
                 <h4>{t('foot_top_text_1')}</h4>
                 <ul>
                   <li>
-                    <Link to="/" className="foot-link">
+                    <a href="#first_page_id" className="foot-link">
                       {t('link_home')}
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link to="/" className="foot-link">
+                    <a href="#product_page_id" className="foot-link">
+                      {t('our_product')}
+                    </a>
+                  </li>
+                  <li>
+                    <Link to="/articles" className="foot-link">
                       {t('link_articles')}
                     </Link>
                   </li>
                   <li>
-                    <Link to="/" className="foot-link">
+                    <a href="#third_page_id" className="foot-link">
                       {t('link_first')}
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link to="/" className="foot-link">
+                    <a href="#bg" className="foot-link">
                       {t('link_second')}
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                     <Link to="/" className="foot-link">
+                     <a href="#fifth_page_id" className="foot-link">
                        {t('link_thirt')}
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -213,11 +219,13 @@ function Footer() {
                   {data?.map((item, index) => {
                     return (
                       <div
-                        className="col-3 pics"
+                        className=" col-3 pics"
                         key={index}
-                        onClick={() => getImg(item.imgSrc)}
+                        // onClick={() => getImg(item.imgSrc)}
                       >
-                        <img src={item.imgSrc} style={{ width: "100%" }} />
+                        <Zoom>
+                           <img src={item.imgSrc} className={'footImgZoom'} />
+                        </Zoom>
                       </div>
                     );
                   })}

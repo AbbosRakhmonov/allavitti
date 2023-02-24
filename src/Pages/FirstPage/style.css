@@ -1,16 +1,17 @@
 .main{
-    background-image: url('./../../assets/images/allavitti-bg_1.png');
+    background-image: url('./../../assets/Videos/mainBg.gif');
     width: 100%;
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    font-family: 'Allavitti', sans-serif !important;
 }
 
 .main .main-background{
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.5);
     color: #fff;
 }
 
@@ -18,15 +19,60 @@
     padding: 0 7rem;
     text-align: center;
     margin-top: 11rem;
+    transition: 0.5s ease all;
 }
 
 .main .main-text h3{
     font-size: 48px;
     font-weight: 700;
     padding-bottom: 10px;
+    transition: 0.5s ease all;
 }
 
 .main .main-text p{
     font-size: 17px;
     line-height: 1.5;
+    padding-bottom: 2rem;
+}
+
+.main-text .first_btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width:991px){
+    .main .main-text h3{
+        font-size: 40px;
+    }
+    .main .main-text{
+        padding: 0 5rem;
+    }
+}
+
+@media (max-width:767px){
+    .main .main-text h3{
+        font-size: 35px;
+    }
+    .main .main-text{
+        padding: 0 3rem;
+        margin-top: 9rem;
+    }
+}
+
+@media (max-width:500px){
+    .main .main-text h3{
+        font-size: 32px;
+    }
+    .main .main-text{
+        padding: 0 1rem;
+        margin-top: 9rem;
+    }
+}
+
+@media (max-width:400px){
+    .main .main-text{
+        margin-top: 7rem;
+        padding: 0 0.5rem;
+    }
 }

@@ -58,7 +58,7 @@ function ProductsPage() {
         }
     ]
     return (
-        <section ref={ref} className={'h-100 d-flex flex-column productsSection py-4'}>
+        <section ref={ref} className={'h-100 d-flex flex-column productsSection py-4'} id='product_page_id'>
             <ParticlesBg bg={true} type={'circle'}/>
             <h4 className={`productSectionTitle ${inView ? 'productSectionTextsAnimated' : ''}`}><span>{t('our_product')}</span>
             </h4>

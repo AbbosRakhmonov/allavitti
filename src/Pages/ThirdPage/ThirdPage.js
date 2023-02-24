@@ -7,7 +7,7 @@ import Woman from '../../Assets/Images/woman.png'
 import Typewriter from 'typewriter-effect'
 import MoreBtn from '../../Components/MoreBtn/MoreBtn'
 import DetectScreenSize from '../../Hooks/DetectScreenSize'
-import {useTranslation} from 'react-i18next'
+import { useTranslation, Trans } from "react-i18next";
 
 const backgroundVariants = {
     visible: {
@@ -69,7 +69,9 @@ function ThirdPage() {
                                initial="hidden"
                                custom={1}
                                variants={headerVariant}
-                               className={`text-light mb-4 thirdSectionTitle ${inView ? 'thirdSectionTitleAnimate' : ''}`}>{t('third_page_h1')}
+                               className={`text-light mb-4 thirdSectionTitle ${inView ? 'thirdSectionTitleAnimate' : ''}`}>
+                                <Trans i18nKey="third_page_h1">Витилиго ўзи <span>нима?</span></Trans>
+                                
                     </motion.h1>
                     <motion.div
                         animate={backgroundAnimation}
@@ -95,7 +97,7 @@ function ThirdPage() {
                             }}
                         />}
                         <MoreBtn linkName={t('third_page_btn')} linkPath={'/articles/1'} color={'secondary'}
-                                 classes={`mt-3 moreBtn ${showBtn ? 'animateFromLeft' : ''}`}/>
+                                 classes={`mt-3 moreBtn third_color_btn ${showBtn ? 'animateFromLeft' : ''}`}/>
                     </motion.div>
                 </div>
                 <div

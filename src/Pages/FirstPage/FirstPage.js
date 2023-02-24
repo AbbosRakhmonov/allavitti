@@ -1,15 +1,18 @@
 import React from 'react'
 import './style.css'
 import Navbar from '../Navbar/Navbar'
-// import MoreBtn from '../../Components/MoreBtn/MoreBtn'
 import {useTranslation} from 'react-i18next'
 import ScrollBtn from './../../Components/ScrollDownBtn/ScrollBtn'
-
+import myVideo from './../../assets/Videos/mainBg.webm'
 function FirstPage() {
 
     const {t} = useTranslation();
 
     return (
+        <> 
+          <video autoPlay loop muted className='my-video-style'>
+            <source src={myVideo} type="video/webm" />
+          </video>
         <div className="main" id='first_page_id'>
             <div className="main-background">
                 <div className="main-navbar">
@@ -22,6 +25,8 @@ function FirstPage() {
                 </div>
             </div>
         </div>
+        </>
+       
   );
 }
 

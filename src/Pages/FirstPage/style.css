@@ -1,17 +1,23 @@
-.main{
-    background-image: url('../../Assets/Videos/mainBg.gif');
+.my-video-style{ 
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+    object-fit: cover;
+    z-index: -1;
+ }
+
+.main{
+    width: 100%;
+    height: 100%;
     font-family: 'Allavitti', sans-serif !important;
 }
 
 .main .main-background{
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.6);
     color: #fff;
 }
 

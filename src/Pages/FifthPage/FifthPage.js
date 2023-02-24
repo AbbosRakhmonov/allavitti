@@ -58,7 +58,9 @@ function FifthPage() {
                                custom={1}
                                variants={headerVariant}
                                className={`fifthTitle mb-4 ${inView ? 'fifthTitleAnimate' : ''}`}>         
-                             <Trans>{t('fifth_page_h1')}</Trans>  
+                             <Trans i18nKey="fifth_page_h1">
+                                   <span>Витилиго</span> қандай касаллик тури?
+                                </Trans>  
                     </motion.h1>
                     <motion.div
                         animate={animate}

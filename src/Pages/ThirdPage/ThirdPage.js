@@ -2,12 +2,12 @@ import React, {useEffect, useState} from 'react'
 import './style.css'
 import {motion, useAnimationControls} from 'framer-motion'
 import {useInView} from 'react-intersection-observer'
-import Vitiligo from './../../assets/images/Vitiligo.webp'
-import Woman from './../../assets/images/woman.png';
+import Vitiligo from '../../Assets/Images/Vitiligo.webp'
+import Woman from '../../Assets/Images/woman.png'
 import Typewriter from 'typewriter-effect'
 import MoreBtn from '../../Components/MoreBtn/MoreBtn'
 import DetectScreenSize from '../../Hooks/DetectScreenSize'
-import { useTranslation } from "react-i18next";
+import {useTranslation} from 'react-i18next'
 
 const backgroundVariants = {
     visible: {
@@ -32,9 +32,6 @@ const headerVariant = {
         opacity: 0
     }
 }
-
-
-
 
 function ThirdPage() {
 

@@ -6,7 +6,7 @@ ul{
 .footer{
     padding: 40px 0;
     width: 100%;
-    background: linear-gradient(145deg, #192839 50%, #1ab4e2 115%);
+    background: #3E667F;
     box-shadow: 0 8px 32px 0 rgba(19, 19, 20, 0.37);
     backdrop-filter: blur(4px);
 }
@@ -14,8 +14,16 @@ ul{
     display: flex;
     justify-content: center;
 }
+.footer .foot-first{
+    position: relative;
+    bottom: 4px;
+}
+.footer .foot-first h2{
+    font-size: 36px;
+    color: #fff;
+}
 .footer .foot-first p{
-    font-size: 15px;
+    font-size: 18px;
     color: #fff;
     margin: 10px 0px;
 }
@@ -24,7 +32,8 @@ ul{
    align-items: center;
    gap: 8px;
    color: #fff;
-   margin-bottom: 6px;
+   margin-bottom: 10px !important;
+   font-size: 18px;
 }
 
 .footer .foot-first ul:nth-of-type(1) li .foot-icons{
@@ -75,14 +84,15 @@ ul{
     color: #fff;
 }
 .footer h4{
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 600;
     color: #fff;
+    margin-bottom: 15px;
 }
 
 .footer .foot-last ul li{
     border-bottom: 1px dashed #808080;
-    padding: 5px 0px;
+    padding: 5px 0px !important;
     width: 200px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -91,13 +101,13 @@ ul{
 .footer .foot-last ul li .foot-link{
     text-decoration: none;
     color: rgb(0, 204, 255);
-    font-size: 14px;
+    font-size: 16px;
     transition: all 0.3s ease-in-out;
 }
 
 .footer .foot-last ul li:hover{
     background-color: rgb(0, 204, 255);
-    padding: 5px 0px 5px 10px;
+    padding: 5px 0px 5px 10px !important;
     color: #fff;
 }
 
@@ -195,5 +205,14 @@ ul{
     .foot-thirt .pics img{
         width: 100%;
         height: 80px;
+    }
+    .footer .foot-first h2{
+        font-size: 30px;
+    }
+    .footer h4{
+        font-size: 22px;
+    }
+    .footer{
+        padding: 20px 0 10px 0px;
     }
 }

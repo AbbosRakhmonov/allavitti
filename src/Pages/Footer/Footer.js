@@ -1,11 +1,9 @@
 import React, {useEffect} from 'react'
-import Logo from '../../Assets/Images/foot-logo.png'
 import {MdEmail, MdPhone} from 'react-icons/md'
 import {FaTelegram, FaYoutube} from 'react-icons/fa'
 import {AiOutlineFacebook, AiOutlineInstagram} from 'react-icons/ai'
-import {useInView} from 'react-intersection-observer'
 import {HashLink} from 'react-router-hash-link'
-import './style.css'
+import './style.css';
 import Img1 from '../../Assets/Images/treated/dav1.png'
 import Img2 from '../../Assets/Images/treated/dav2.png'
 import Img3 from '../../Assets/Images/treated/dav3.png'
@@ -14,49 +12,14 @@ import Img5 from '../../Assets/Images/treated/dav5.png'
 import Img6 from '../../Assets/Images/treated/dav6.png'
 import Img7 from '../../Assets/Images/treated/dav7.png'
 import Img8 from '../../Assets/Images/treated/dav8.png'
-import {motion, useAnimationControls} from 'framer-motion'
-import {useTranslation} from 'react-i18next'
-import Zoom from 'react-medium-image-zoom'
-
-const footLeft = {
-  visible: (custom) => ({
-    x: 0,
-    opacity: 1,
-    transition: {duration: 0.6, delay: custom * 0.2}
-  }),
-  hidden: {
-      x: 100,
-      opacity: 0
-  }
-}
-
-const footRight = {
-  visible: (custom) => ({
-      x: 0,
-      opacity: 1,
-      transition: {duration: 0.6, delay: custom * 0.2}
-  }),
-  hidden: {
-      x: -100,
-      opacity: 0
-  }
-}
-
-const footCenter = {
-  visible: (custom) => ({
-      y: 0,
-      opacity: 1,
-      transition: {duration: 0.6, delay: custom * 0.2}
-  }),
-  hidden: {
-      Y: -100,
-      opacity: 0
-  }
-}
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 function Footer() {
-  const {t} = useTranslation();
-  const animate = useAnimationControls()
-  const {ref, inView} = useInView({threshold: 0.5})
+  useEffect(() => {
+    AOS.init();
+  }, [])
   let data = [
     {
       id: 1,
@@ -92,29 +55,17 @@ function Footer() {
     },
   ];
 
-  useEffect(() => {
-    if (inView) {
-        animate.start('visible')
-    } else {
-        animate.start('hidden')
-    }
-}, [animate, inView])
-
   return (
-      <div className="footer h-100" ref={ref}>
+      <div className="footer h-100">
         <div className="container">
           <div className="row">
-            <motion.div
-                className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 foot-first-col"
-                animate={animate}
-                initial="hidden"
-                custom={1}
-                variants={footLeft}
+            <div
+              className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 foot-first-col"
             >
               <div className="foot-first">
-                <img src={Logo} alt={'allavitti.com'}/>
+                 <h2>Allavitti.com</h2>
                 <p>
-                  {t('foot_text')}
+                Bizda maxsulotlarimizni onlinye yetkazib byerish xizmati mavjud !
                 </p>
                 <ul>
                   <li>
@@ -149,58 +100,50 @@ function Footer() {
                   </li>
                 </ul>
               </div>
-            </motion.div>
-            <motion.div
-                className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 foot-col-second"
-                animate={animate}
-                initial="hidden"
-                custom={1}
-                variants={footCenter}
+            </div>
+            <div
+             className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 foot-col-second"
             >
               <div className="foot-last">
-                <h4>{t('foot_top_text_1')}</h4>
+                <h4>Foydali Havolalar</h4>
                 <ul>
                   <li>
                     <HashLink smooth to="#first_page_id" className="foot-link">
-                      {t('link_home')}
+                      Bosh Sahifa
                     </HashLink>
                   </li>
                   <li>
                     <HashLink smooth to="#product_page_id" className="foot-link">
-                      {t('our_product')}
+                      Maxsulotlarimiz
                     </HashLink>
                   </li>
                   <li>
                     <HashLink smooth to="/articles" className="foot-link">
-                      {t('link_articles')}
+                      Maqolallar
                     </HashLink>
                   </li>
                   <li>
                     <HashLink smooth to="#third_page_id" className="foot-link">
-                      {t('link_first')}
+                        Витилиго ўзи нима?
                     </HashLink>
                   </li>
                   <li>
                     <HashLink smooth to="#bg" className="foot-link">
-                      {t('link_second')}
+                    Витилиго ташхиси қандай қўйилади?
                     </HashLink>
                   </li>
                   <li>
                     <HashLink smooth to="#fifth_page_id" className="foot-link">
-                      {t('link_thirt')}
+                        Витилиго қандай касаллик тури?
                     </HashLink>
                   </li>
                 </ul>
               </div>
-            </motion.div>
-            <motion.div
-                animate={animate}
-                initial="hidden"
-                custom={1}
-                variants={footRight}
-                className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12">
+            </div>
+            <div
+                className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12" >
               <div className="foot-thirt">
-                <h4>{t('foot_top_text_2')}</h4>
+                <h4>Bizning Natijalar</h4>
                 <div className="row">
                   {data?.map((item, index) => {
                     return (<div
@@ -214,7 +157,7 @@ function Footer() {
                   })}
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

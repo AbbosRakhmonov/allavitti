@@ -1,56 +1,98 @@
 .nav-block{
-    padding: 5px 4rem;
-    background: #fff;
-    box-shadow: 0px 1px 10px #999;
+    padding: 3px 3rem;
+    /* background: rgb(250, 243, 234); */
+    background: rgb(254, 250, 245);
+    /* box-shadow: 0px 1px 10px #999; */
     transition: 0.5s ease all;
     z-index: 9999 !important;
+    position: fixed;
+    width: 100%;
+}
+
+.nav-block.sticy{
+    box-shadow: 0px 1px 10px #999;
+    background: rgb(250, 243, 234);
+}
+
+.nav-block.sticy .flag-bottom-box{
+    opacity: 0;
 }
  
  .nav{
      display: flex;
      justify-content: space-between ;
      align-items: center;
-     padding: 2px 0px;
      width: 100%;
+     position: relative;
  }
  
  .nav .nav__link {
      text-decoration: none;
-     color: #6c6c6c;
+     color: #616364;
      font-size: 17px;
      cursor: pointer;
      transition: 0.3s ease-in;
-     font-weight: 600;
-     font-family: 'Allavitti', sans-serif;
- }
- 
- .nav .nav__link:hover{
-     color: #000000;
- }
+     font-weight: 400;
+     padding-bottom: 3px;
+     position: relative;
+}
+  
+.nav .nav__link::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background-color: #3E667F;
+    position: absolute;
+    top: 30px;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .nav .nav__link:hover::after {
+    width: 100%;
+    color: #000000;
+  }
 
- 
- .nav .nav__brand{
+.nav .nav__brand{
     display: flex;
     align-items: center;
-    gap: 5px;
-    font-size: 26px;
-    font-weight: bold;
-    color: #2B7383;
+    gap: 15px;
+    color: #3E667F;
  }
- .nav .nav__brand p{
+ .nav .nav__brand h2{
     margin: 0;
+    font-size: 37px;
+    font-weight: bold;
+    transition: all 0.4s ease;
+ }
+
+ .nav .nav__brand div{
+    text-align: center;
+    padding-top: 10px;
+ }
+
+ .nav .nav__brand span{
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    bottom: 10px;
+    transition: all 0.4s ease;
  }
  .nav .nav__brand img{
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
     object-fit: cover;
- }
+    transition: all 0.4s ease;
+}
  
  .nav__menu{
      display: flex;
      justify-content: space-around;
      align-items: center;
-     gap: 3rem;
+     gap: 2.5rem;
      list-style-type: none;
      margin: 0;
  }
@@ -58,49 +100,13 @@
  .nav__toggler div{
      width: 28px;
      height: 3px;
-     background: black;
+     background: #3E667F;
      transition: 0.4s ease-in;
  }
  
  .nav__toggler{
      cursor: pointer;
      display: none;
- }
- 
- @media (max-width: 768px){
-    .nav-block{
-        padding: 5px 2rem;
-    }
-     .nav__toggler{
-         display: flex;
-         flex-direction: column;
-         gap: 5px;
-         z-index: 9999;
-     }
-     .nav__menu{
-         display: flex;
-         position: fixed;
-         top: 0px;
-         right: 0%;
-         bottom: 0%;
-         width: 100%;
-         background:#fff;
-         transform: translateY(-100%);
-         transition: 0.3s ease-in;
-         z-index: 99;
-         height: 100px;
-     }
- }
- 
- @media (max-width: 450px){
-    .nav-block{
-        padding: 5px 1rem;
-    }
-}
- .nav__active{
-     transform: translateY(0%); 
-     top: 85px;
-     border-top: 1px solid #ccc;
  }
  
  .toggle .line1{
@@ -113,13 +119,101 @@
      transform: rotate(45deg) translate(-14px, 5px); 
 
  }
- @media (max-width: 500px){
-    .nav__menu{
+
+.nav .flag-bottom-number{
+    position: relative;
+}
+
+.nav .flag-bottom-number .flag-img-ul{
+    display: flex;
+     justify-content: space-around;
+     align-items: center;
+     gap: 2.5rem;
+     list-style-type: none;
+     margin: 0;
+}
+
+.nav .flag-bottom-number .flag-img-ul .nav__img img{
+    width: 45px;
+    height: 25px;
+    object-fit: cover;
+}
+ 
+.nav .flag-bottom-number .flag-bottom-box{
+    position: absolute;
+    bottom: -50px;
+    right: 0px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: #3E667F; 
+    transition: all 0.3s ease;
+}
+
+.nav .flag-bottom-number .flag-bottom-box p{
+    margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+}  
+
+@media (max-width: 910px){
+    .nav-block{
+        padding: 5px 2rem;
+    }
+     .nav__toggler{
+         display: flex;
+         flex-direction: column;
+         gap: 5px;
+         z-index: 9999;
+     }
+     .nav__menu{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 2rem;
         height: 300px;
+        position: fixed;
+         top: 0px;
+         right: 0%;
+         bottom: 0%;
+         width: 100%;
+         background:rgb(254, 250, 245);
+         transition: 0.3s ease-in;
+         z-index: 99;
+         transform: translateY(-120%) !important;
+         padding-bottom: 30px !important;
+     } 
+     .nav .flag-bottom-number .flag-bottom-box{
+        position: absolute;
+        left: 70px;
+    }
+ }
+
+ @media (max-width: 500px){
+    .nav .nav__brand h2{
+        font-size: 32px;
+     }
+     .nav .nav__brand span{
+        font-size: 11px;
+     }
+     .nav .nav__brand img{
+        width: 30px;
+        height: 30px;
     }
 }
+
+@media (max-width: 450px){
+    .nav-block{
+        padding: 5px 1rem;
+    }
+}
+
+.nav__active{
+    z-index: 999;
+    transform: translateY(0%); 
+    top: 440px;
+    border-top: 1px solid #ccc;
+    box-shadow: -2px 13px 13px -8px rgba(34, 60, 80, 0.2);
+}
+

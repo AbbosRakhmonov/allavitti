@@ -56,7 +56,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+/* 
 .snap-parent-y-mandatory {
     scroll-snap-type: y mandatory;
     overflow: hidden auto;
@@ -222,14 +222,14 @@ section::-webkit-scrollbar {
 ::-webkit-scrollbar {
     width: 5px;
     z-index: 5000;
-}
-
-::-webkit-scrollbar-thumb { /* Foreground */
+} */
+/* 
+::-webkit-scrollbar-thumb { 
     background: #202834;
 }
 
-::-webkit-scrollbar-track { /* Background */
+::-webkit-scrollbar-track { 
     background: #ffffff;
     border-radius: 10px;
-}
+} */
 

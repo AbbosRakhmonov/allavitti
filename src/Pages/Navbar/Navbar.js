@@ -1,6 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef} from "react";
 import "./style.css";
-// import Flags from '../../Components/Flags/Flags'
 import { NavLink } from "react-router-dom";
 // import {useTranslation} from 'react-i18next'
 import NavLogo from "./../../Assets/Images/nav-logo.png";
@@ -9,12 +8,9 @@ import Flag2 from "./../../Assets/Images/flags/uzb.png";
 import Flag3 from "./../../Assets/Images/flags/tr.png";
 import Flag4 from "./../../Assets/Images/flags/rus.png";
 import { FaMobileAlt } from "react-icons/fa";
-import AOS from 'aos';
 import 'aos/dist/aos.css';
-function Navbar() {
-  useEffect(() => {
-    AOS.init();
-  }, [])
+function Navbar({numberView=false}) {
+
   //  const {t} = useTranslation()
   const [active, setActive] = useState("nav__menu");
   const [toggleIcon, setToggleIcon] = useState("nav__toggler");
@@ -28,10 +24,6 @@ function Navbar() {
     toggleIcon === "nav__toggler"
       ? setToggleIcon("nav__toggler toggle")
       : setToggleIcon("nav__toggler");
-
-    navBlock === "nav-block"
-      ? setNavBlock("nav-block nav-block-shadow")
-      : setNavBlock("nav-block");
   };
 
   const headerRef = useRef(null);
@@ -42,7 +34,7 @@ function Navbar() {
   return (
     <div className={navBlock} ref={headerRef}>
       <nav className="nav">
-        <NavLink to="/" className="nav__brand" data-aos="fade-down" data-aos-duration="1000">
+        <NavLink to="/" className="nav__brand" >
           <img src={NavLogo} />
           <div>
             <h2>Allavitti</h2>
@@ -56,13 +48,8 @@ function Navbar() {
             </NavLink>
           </li>
           <li className="nav__item">
-            <NavLink className="nav__link" to="/">
-              Bizning Maxsulotlarimiz
-            </NavLink>
-          </li>
-          <li className="nav__item">
             <NavLink className="nav__link" to="/articles">
-              Malumotlar
+            Maqolalar
             </NavLink>
           </li>
           <div className="flag-bottom-number">
@@ -88,12 +75,17 @@ function Navbar() {
                 </NavLink>
               </li>
             </ul>
+            {
+              numberView === false ? (
             <div className="flag-bottom-box">
               <span>
                 <FaMobileAlt size={`1.5rem`} className="head-phone" />
               </span>
               <p>+998 99 753 17 57</p>
             </div>
+              ):""
+            }
+            
           </div>
         </ul>
         <div className={toggleIcon} onClick={navToggle}>

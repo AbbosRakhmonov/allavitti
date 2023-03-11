@@ -1,7 +1,7 @@
 .allavitti{
     position: relative;
     padding: 0px 7rem;
-    background-color: rgb(250, 243, 234);
+    background-color: rgba(250, 243, 234, 0.7);
 }
 
 .row, .col-12{
@@ -14,6 +14,12 @@
     padding-top: 30px; 
     padding-bottom: 40px;
     color: #3E667F;
+}
+ 
+.allavitti-pattern-left, .allavitti-pattern-right{
+    width: 20%;
+    position: absolute;
+    top: 15%;
 }
 
 .allavitti .all-text h2{
@@ -184,7 +190,7 @@
         padding-top: 130px !important;
     }
     .allavitti .all-text h2{
-        font-size: 40px;
+        font-size: 40px !important;
     }
 }
 
@@ -217,6 +223,6 @@
         padding-top: 120px !important;
     }
     .allavitti .all-text h2{
-        font-size: 36px;
+        font-size: 36px !important;
     }
 }

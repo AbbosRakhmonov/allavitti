@@ -61,13 +61,14 @@ function Footer() {
           <div className="row">
             <div
               className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 foot-first-col"
+              data-aos="fade-up" data-aos-duration="1000"
             >
               <div className="foot-first">
                  <h2>Allavitti.com</h2>
                 <p>
                 Bizda maxsulotlarimizni onlinye yetkazib byerish xizmati mavjud !
                 </p>
-                <ul>
+                <ul className='first-ul-foot'>
                   <li>
                     <MdPhone className="foot-icons"/>
                     +998 99 753 17 57
@@ -77,7 +78,7 @@ function Footer() {
                     jasurbektoshev9@gmail.com
                   </li>
                 </ul>
-                <ul>
+                <ul className='second-ul-foot'>
                   <li>
                     <HashLink smooth to="#" className="teleg">
                       <FaTelegram size={`1.25rem`}/>
@@ -103,6 +104,7 @@ function Footer() {
             </div>
             <div
              className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12 foot-col-second"
+             data-aos="fade-up" data-aos-duration="1000"
             >
               <div className="foot-last">
                 <h4>Foydali Havolalar</h4>
@@ -141,7 +143,7 @@ function Footer() {
               </div>
             </div>
             <div
-                className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12" >
+                className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12" data-aos="fade-up" data-aos-duration="1000">
               <div className="foot-thirt">
                 <h4>Bizning Natijalar</h4>
                 <div className="row">

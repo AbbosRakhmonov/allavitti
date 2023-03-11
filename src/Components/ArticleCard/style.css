@@ -17,7 +17,8 @@
     left: 0;
     width: 10px;
     height: 10px;
-    background-color: #68a6e5;
+    /* background-color: #68a6e5; */
+    background-color: rgba(255, 255, 255, 0.51);
     border-radius: 50%;
     z-index: 2;
     outline: 4px solid rgba(255, 255, 255, 0.16);
@@ -51,8 +52,8 @@
 }
 
 .activeArticle::before {
-    background-color: #FFA200;
-    outline-color: rgba(255, 162, 0, 0.37);
+     background-color: #FFA200;
+     outline-color: rgba(255, 162, 0, 0.37); 
 }
 
 .activeArticle .title {

@@ -148,8 +148,9 @@ function Articles() {
         ref.current?.scrollIntoView({behavior: 'smooth'})
     }, [id])
     return (
-        <section className={'d-flex flex-column min-vh-100 bg-lightWhite'}>
-            <Navbar/>
+        <section className={'d-flex flex-column min-vh-100 bg-lightWhite article-box'}>
+            <Navbar numberView={true}/>
+            <div className='pattern-left-box main-pattern-left'></div>
             <div className={`bottomOfSection`}>
                 <div className="leftOfBottomSection position-absolute vh-100">
                     <div className="articles-content p-md-5" ref={ref}>

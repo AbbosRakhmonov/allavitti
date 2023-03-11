@@ -13,18 +13,20 @@ function Allavitti(){
     }, [])
     return(
         <div className="allavitti">
+                <div className='pattern-left-box allavitti-pattern-left'></div> 
+               <div className='pattern-right-box allavitti-pattern-right'></div> 
            <div className="all-container">
                 <div className="all-text" data-aos-duration="1000">
-                     <h2>Allavitti</h2>
-                     <p>By Vitiligo</p>
+                     <h2 data-aos="fade-up" data-aos-duration="1000">Allavitti</h2>
+                     <p data-aos="fade-up" data-aos-duration="1000">By Vitiligo</p>
                 </div>
                 <div className="row">
                     <div className="col-xl-6 col-lg-6 col-12 order-2 order-lg-1 all-left-text">
-                        <div className="absolut-text-all" data-aos-duration="1000">
+                        <div className="absolut-text-all" data-aos="fade-up" data-aos-duration="1000" >
                            SIzni vitiligo (oq dog’) qiynamoqdami?
                         </div>
                         <ul>
-                           <li>
+                           <li data-aos="fade-up" data-aos-duration="1000">
                               <p className="li-text">
                                  stres tuSHkunlikKa tushib qoliSH
                               </p>
@@ -32,7 +34,7 @@ function Allavitti(){
                                   <img src={Icon1}/>
                               </div>
                            </li>
-                           <li>
+                           <li data-aos="fade-up" data-aos-duration="1000">
                               <p className="li-text">
                                  Odamlarni gap so'zidan uyalish
                               </p>
@@ -40,7 +42,7 @@ function Allavitti(){
                                   <img src={Icon2}/>
                               </div>
                            </li>
-                           <li>
+                           <li data-aos="fade-up" data-aos-duration="1000">
                               <p className="li-text">
                                  Libos tanlovida no erkinlik
                               </p>
@@ -48,7 +50,7 @@ function Allavitti(){
                                   <img src={Icon3}/>
                               </div>
                            </li>
-                           <li>
+                           <li data-aos="fade-up" data-aos-duration="1000">
                               <p className="li-text" data-aos-duration="1000">
                                  O'zini boshqalardan farqli his etish
                               </p>
@@ -59,7 +61,7 @@ function Allavitti(){
                         </ul>
                     </div>
                     <div className="col-xl-5 col-lg-6 col-md-6 col-12 order-1 order-lg-2">
-                         <div className="all-right-img">
+                         <div className="all-right-img" data-aos="fade-up" data-aos-duration="1000">
                             <img src={Boy} data-aos-duration="1000"/>
                          </div>
                     </div>

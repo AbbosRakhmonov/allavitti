@@ -34,15 +34,20 @@ function Products(){
 
     return(
         <div className='products'>
+              <div className='pattern-left-box product-pattern-left'></div> 
+               <div className='pattern-right-box product-pattern-right'></div> 
+               <div className='pattern-left-box product-pattern-left'></div> 
+               <div className='pattern-right-box product-pattern-right'></div> 
+               <div className='pattern-center-box'></div> 
             <div className='product-container'>
-                <div className='general-div-style'>
+                <div className='general-div-style' data-aos="fade-up" data-aos-duration="1000">
                      Bizning Maxsulotlarimiz
                 </div>
                <ul className='our-products'>
                     {
                        productData?.map((item,index)=>{
                            return(
-                            <li key={index}>
+                            <li key={index} data-aos="fade-up" data-aos-duration="1000">
                              <ProductComponent productName={item.productName} productText={item.productText} productImg={item.productImg} reverseBlok={item.reverseBlock}/> 
                             </li> 
                            )
@@ -51,7 +56,6 @@ function Products(){
                     
                 </ul>      
             </div>
-          
         </div>
     )
 }

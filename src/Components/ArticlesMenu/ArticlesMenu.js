@@ -20,6 +20,7 @@ function ArticlesMenu({articles, id}) {
     }
     return (
         <div className={`rightOfBottomSection position-absolute vh-100 ${!openArticles ? 'closedMenu' : ''}`}>
+               
             <div className={`articles-menu`}>
                 {
                     map(articles, (article) => <ArticleCard key={uniqueId('article_')}

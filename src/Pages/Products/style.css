@@ -1,6 +1,26 @@
 .products{
+    position: relative;
     padding: 60px 7rem 30px 7rem;
-    background-color: rgb(250, 243, 234);
+    background-color: rgba(250, 243, 234, 0.7);
+}
+
+.product-pattern-left, .product-pattern-right{
+    width: 25%;
+    position: absolute;
+    top: 16%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.pattern-center-box{
+    position: absolute;
+    top: 8%;
+    left: 20%;
+    height: 200px;
+    width: 60%;
+    background-image: url('./../../Assets/Images/naqshbottom.png');
+    background-size: cover;
+    z-index: -1;
 }
 
 .products ul{
@@ -44,6 +64,9 @@
     .products ul li{
         margin-bottom: 40px !important;
     }
+    .products ul{
+        padding-top: 50px !important;
+    }
 }
 
 @media (max-width:500px){
@@ -55,5 +78,8 @@
     }
     .products ul li{
         margin-bottom: 20px !important;
+    }
+    .products ul{
+        padding-top: 40px !important;
     }
 }

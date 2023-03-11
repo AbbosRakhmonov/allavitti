@@ -56,7 +56,36 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-/* 
+
+.pattern-left-box{
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    top: 0%;
+    height: 100vh;
+    background-image: url('./Assets/Images/naqshleft.png');
+    background-size: cover;
+    background-position: center center;
+    /* width: 20%; */
+
+}
+.pattern-right-box{
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    top: 0%;
+    height: 100vh;
+    background-image: url('./Assets/Images/naqshrigth.png');
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: center center;
+    /* width: 20%; */
+    background-repeat: repeat;
+}
+
+
+
+
 .snap-parent-y-mandatory {
     scroll-snap-type: y mandatory;
     overflow: hidden auto;
@@ -222,8 +251,8 @@ section::-webkit-scrollbar {
 ::-webkit-scrollbar {
     width: 5px;
     z-index: 5000;
-} */
-/* 
+} 
+
 ::-webkit-scrollbar-thumb { 
     background: #202834;
 }
@@ -231,5 +260,5 @@ section::-webkit-scrollbar {
 ::-webkit-scrollbar-track { 
     background: #ffffff;
     border-radius: 10px;
-} */
+} 
 

@@ -190,14 +190,31 @@ ul{
 @media (max-width: 768px){
     .foot-col-second{
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         margin: 30px 0px;
+        text-align: center;
     }
     .footer .foot-first-col{
         margin-bottom: 30px !important;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .footer .foot-first-col .first-ul-foot{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer .foot-first ul:nth-of-type(2){
+        display: flex;
+        justify-content: center;
     }
     .foot-col-second{
         margin-bottom: 30px !important; 
+    }
+    .footer h4{
+        text-align: center;
     }
 }
 

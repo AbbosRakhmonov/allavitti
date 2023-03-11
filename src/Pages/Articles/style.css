@@ -1,6 +1,7 @@
 .bottomOfSection {
     flex: 1;
     position: relative;
+    background-color: rgba(250, 243, 234, 0.7)
 }
 
  .article-box{
@@ -34,8 +35,7 @@
 
 .articles-menu {
     overflow: auto;
-    /* background-color: #202834; */
-    background-color: rgb(110, 75, 75);
+    background-color: rgba(62, 102, 127, 0.23);
     padding: 3rem 1.5rem;
     position: sticky;
     top: 0;
@@ -55,8 +55,7 @@
 .actionBtn {
     border-radius: 50%;
     border: none;
-    /* background-color: #202834; */
-    background-color: rgb(110, 75, 75);
+    background-color: #306485;
     color: #ffffff;
     position: absolute;
     font-size: 1.2rem;

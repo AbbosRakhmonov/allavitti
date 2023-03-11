@@ -17,8 +17,7 @@
     left: 0;
     width: 10px;
     height: 10px;
-    /* background-color: #68a6e5; */
-    background-color: rgba(255, 255, 255, 0.51);
+    background-color: rgba(62, 102, 127, 0.25);
     border-radius: 50%;
     z-index: 2;
     outline: 4px solid rgba(255, 255, 255, 0.16);
@@ -40,7 +39,7 @@
 
 .article-card .title {
     font-size: 1rem;
-    color: #ffffff;
+    color: #686868ed;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -52,16 +51,16 @@
 }
 
 .activeArticle::before {
-     background-color: #FFA200;
-     outline-color: rgba(255, 162, 0, 0.37); 
+     background-color: #3E667F;
+     outline-color: rgba(62, 102, 127, 0.31);
 }
 
 .activeArticle .title {
-    color: #FFA200;
+    color: #3E667F;
 }
 
 .activeArticle .title:hover {
-    color: #FFA200;
+    color: #3E667F;
     text-decoration: none;
 }
 
@@ -70,11 +69,11 @@
     font-weight: 300;
     font-style: italic;
     font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.51);
+    color: #616364;
     margin-top: 0.5rem;
     margin-bottom: 0;
 }
 
 .activeArticle .text {
-    color: #ffffff;
+    color: #3E667F;
 }

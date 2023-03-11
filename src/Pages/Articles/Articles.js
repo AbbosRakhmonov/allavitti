@@ -140,7 +140,6 @@ function Articles() {
             ]
         }
     ]
-    console.log(articles)
     const ref = useRef()
     const {id = 1} = useParams()
     const {title, texts} = articles[Number(id) - 1]
@@ -149,7 +148,7 @@ function Articles() {
     }, [id])
     return (
         <section className={'d-flex flex-column min-vh-100 bg-lightWhite article-box'}>
-            <Navbar numberView={true}/>
+            <Navbar numberView={true} articles={true}/>
             <div className='pattern-left-box main-pattern-left'></div>
             <div className={`bottomOfSection`}>
                 <div className="leftOfBottomSection position-absolute vh-100">

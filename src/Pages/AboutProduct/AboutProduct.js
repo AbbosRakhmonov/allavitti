@@ -33,7 +33,7 @@ function AboutProduct() {
                         <ul data-aos="fade-up" data-aos-duration="1000">
                             <li><span></span> Sinovdan o'tgan</li>
                             <li><span></span> 8 yillik tajriba</li>
-                            <li><span></span> 30-40 da natija</li>
+                            <li><span></span> 30-40 kunda natija</li>
                         </ul>
                     </div>
                 </div>

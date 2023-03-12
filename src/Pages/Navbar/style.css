@@ -3,14 +3,14 @@
     transition: all 0.3s linear;
     width: 100%;
     z-index: 9999 !important;
-    background-color: rgba(250, 243, 234, 0.7);
 }
 
 .nav-block.sticy {
     position: sticky;
     top: 0;
     box-shadow: 0 1px 10px #999;
-    background: rgb(250, 243, 234);
+    background-color: #fff;
+    /* background: rgb(250, 243, 234); */
 }
 
 .nav-block.sticy .flag-bottom-box{

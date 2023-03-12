@@ -1,7 +1,6 @@
 .products{
     position: relative;
     padding: 60px 7rem 30px 7rem;
-    background-color: rgba(250, 243, 234, 0.7);
 }
 
 .product-pattern-left, .product-pattern-right{

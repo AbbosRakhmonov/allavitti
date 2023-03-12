@@ -1,7 +1,7 @@
 .about-product-style{
     padding: 0px 7rem;
     position: relative;
-    background-color: rgba(250, 243, 234, 0.7);
+    /* background-color: rgba(250, 243, 234, 0.7); */
 }
 
 .about-pattern-left, .about-pattern-right{
@@ -44,11 +44,12 @@ ul, li{
 }
 .about-product-style .about-right-text{
    height: 300px;
-   position: relative;
-   top: 40px;
+   /* position: relative;
+   top: 40px; */
 }
 .about-product-style .about-left-text{
-   height: 350px;
+   /* height: 350px; */
+   height: 300px;
 }
 /* 
 .about-product-style .about-left-text ul li:nth-last-of-type(1){

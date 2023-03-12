@@ -24,7 +24,6 @@ function Main(){
                   <div className='row'>
                      <div className='col-xl-6 col-lg-6 col-12 col-first-6 order-2 order-md-1' >
                         <div className='main-left-box'>
-                              <span className='main-left-span' data-aos="fade-up" data-aos-duration="1000">100% Quality Guranty</span>
                               <div className='text'>
                                  <h2 data-aos="fade-up" data-aos-duration="1000">VITILIGOni yo'q qilish vaqti kelmadimi?</h2>
                                  <p data-aos="fade-up" data-aos-duration="1000">Bizning saytimizda siz Vitiligo haqida ma'lumotga ega bo'lishingiz mumkin.</p>

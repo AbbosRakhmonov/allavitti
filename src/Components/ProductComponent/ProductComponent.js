@@ -34,10 +34,10 @@ function ProductComponent({
           </>
         ) : (
           <>
-            <div className="col-xl-3 col-lg-3 col-12 product-img">
+            <div className="col-xl-4 col-lg-4 col-12 product-img">
               <img src={productImg} />
             </div>
-            <div className="col-xl-9 col-lg-9 col-12 product-text">
+            <div className="col-xl-8 col-lg-8 col-12 product-text">
               <div className="product-text-head">
               <h3 >{productName}</h3>
                 <p>{productText}</p>

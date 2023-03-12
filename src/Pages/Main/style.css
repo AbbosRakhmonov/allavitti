@@ -12,7 +12,7 @@
 .main{
     transition: all 0.4s ease;
     padding: 0px 7rem;
-    background-color: rgba(250, 243, 234, 0.7);
+    background-color: #fff;
     position: relative;
 }
 
@@ -44,7 +44,7 @@
     font-size: 52px;
     font-weight: 600;
     color: #306485;
-    padding:25px 0px;
+    padding:5px 0px 25px 0px;
 }
 
 .main .main-left-box .text p{

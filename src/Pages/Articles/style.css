@@ -1,7 +1,7 @@
 .bottomOfSection {
     flex: 1;
     position: relative;
-    background-color: rgba(250, 243, 234, 0.7)
+    /* background-color: rgba(250, 243, 234, 0.7) */
 }
 
  .article-box{

@@ -1,7 +1,7 @@
 .allavitti{
     position: relative;
     padding: 0px 7rem;
-    background-color: rgba(250, 243, 234, 0.7);
+    /* background-color: rgba(250, 243, 234, 0.7); */
 }
 
 .row, .col-12{
@@ -89,7 +89,7 @@
 
 .allavitti .absolut-text-all{
     position: absolute;
-    left: 0%;
+    left: 5%;
     top: 19%;
     color: #3E667F;
     background-color: #D3DCE2;
@@ -147,6 +147,7 @@
     .allavitti .absolut-text-all{
         font-size: 24px;
         right: 10px;
+        left: 3%;
     }
     .allavitti .all-text h2{
         font-size: 45px;
@@ -163,6 +164,7 @@
     .allavitti .absolut-text-all{
         position: absolute;
         top: 11%;
+        left: 0%;
     }
 }
 

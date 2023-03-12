@@ -1,8 +1,9 @@
-import React, {useEffect} from "react";
-import ProductBtn from "../ProductBtn/ProductBtn";
-import "./style.css";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React, {useEffect} from 'react'
+import ProductBtn from '../ProductBtn/ProductBtn'
+import './style.css'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 function ProductComponent({
   productName,
   productText,
@@ -29,7 +30,7 @@ function ProductComponent({
               </div>
             </div>
             <div className="col-xl-3 col-lg-3 col-12 product-img order-1 order-lg-2">
-              <img src={productImg} />
+              <img src={productImg} alt={'product image by allaviti'}/>
             </div>
           </>
         ) : (

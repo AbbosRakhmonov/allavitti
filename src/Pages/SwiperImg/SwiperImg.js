@@ -5,7 +5,7 @@ import 'swiper/css'
 import {Autoplay} from 'swiper'
 import SwipImg1 from './../../Assets/Images/aaa1.png'
 import SwipImg2 from './../../Assets/Images/bbb1.jpg'
-import SwipImg3 from './../../Assets/Images/bbb3.jpg'
+import SwipImg3 from './../../Assets/Images/bbb3.png'
 
 function SwiperImg() {
     return (

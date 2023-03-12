@@ -61,10 +61,11 @@
     color: #3E667F;
  }
  .nav .nav__brand h2{
-    margin: 0;
-    font-size: 37px;
-    font-weight: bold;
-    transition: all 0.4s ease;
+     font-family: 'Allavitti', serif;
+     margin: 0;
+     font-size: 37px;
+     font-weight: bold;
+     transition: all 0.4s ease;
  }
 
  .nav .nav__brand div{
@@ -150,11 +151,11 @@
     z-index: 77;
 }
 
-.nav .flag-bottom-number .flag-bottom-box p{
+.nav .flag-bottom-number .flag-bottom-box * {
     margin: 0;
     font-size: 17px;
-    font-weight: 600;
-}  
+    color: #3E667F;
+}
 
 @media (max-width: 910px){
     .nav-block{

@@ -1,6 +1,6 @@
-import React, {useRef, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './style.css'
-import {NavLink} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 import NavLogo from './../../Assets/Images/nav-logo.png'
 import Flag1 from './../../Assets/Images/flags/usa.png'
 import Flag2 from './../../Assets/Images/flags/uzb.png'
@@ -12,6 +12,7 @@ import 'aos/dist/aos.css'
 function Navbar({numberView = false, articles}) {
   const [active, setActive] = useState('nav__menu')
   const [toggleIcon, setToggleIcon] = useState('nav__toggler')
+  const [fixed, setFixed] = useState(false)
   const navToggle = () => {
     active === 'nav__menu' ? setActive('nav__menu nav__active') : setActive('nav__menu')
 
@@ -19,14 +20,18 @@ function Navbar({numberView = false, articles}) {
     toggleIcon === 'nav__toggler' ? setToggleIcon('nav__toggler toggle') : setToggleIcon('nav__toggler')
   }
 
-  const headerRef = useRef(null)
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        setFixed(true)
+      } else {
+        setFixed(false)
+      }
+    })
+  }, [])
 
-  window.addEventListener('scroll', function () {
-    headerRef.current.classList.toggle('sticy', window.scrollY > 50)
-  })
 
-
-  return (<div className={'nav-block'} ref={headerRef}>
+  return (<div className={`nav-block ${fixed ? 'sticy' : ''}`}>
         <nav className="nav">
           <NavLink to="/" className="nav__brand">
             <img src={NavLogo} alt={'allavitti logo'}/>
@@ -73,7 +78,7 @@ function Navbar({numberView = false, articles}) {
               <span>
                 <FaMobileAlt size={`1.5rem`} className="head-phone"/>
               </span>
-                <p>+998 99 753 17 57</p>
+                <Link to={'tel:998997531757'}>+998 99 753 17 57</Link>
               </div>)}
 
             </div>

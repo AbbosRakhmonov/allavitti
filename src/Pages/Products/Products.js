@@ -25,8 +25,12 @@ function Products() {
             reverseBlock: true
         },
         {
-            productName: 'B12 500mcg',
-            productText: 'O’tkazilgan ilmiy tadqiqotlar ma’lum vitaminlar (masalan, E, C, alfa-lipoik kislota) qabul qilish kasallikning kechishiga ta’sir qilishi va terapevtik samarani kuchaytirishi mumkinligini isbotladi. Shuning uchun shifokorlar bu teri kasalligi bilan og’rigan bemorlarga ko’pincha  ushbu guruhdan ma’lum preparatlarni buyuradilar.Eng mashhurlari orasida tiamin, askorbin kislota, pantoten kislota va riboflavinni ajratib ko’rsatish mumkin. Eng mashhurlari orasida tiamin, askorbin kislota, pantoten kislota va riboflavinni ajratib ko’rsatish mumkin. Eng mashhurlari orasida tiamin, askorbin kislota, pantoten kislota va riboflavinni ajratib ko’rsatish mumkin.',
+            productName: 'B12 500 mcg',
+            productText: 'O’tkazilgan ilmiy tadqiqotlar ma’lum vitaminlar (masalan, E, C, alfa-lipoik kislota) qabul qilish kasallikning kechishiga ta’sir qilishi va terapevtik samarani kuchaytirishi mumkinligini isbotladi. Shuning uchun shifokorlar bu teri kasalligi bilan og’rigan bemorlarga ko’pincha  ushbu guruhdan ma’lum preparatlarni buyuradilar. Eng mashhurlari orasida tiamin, askorbin kislota, pantoten kislota va riboflavinni ajratib ko’rsatish mumkin.\n' +
+                '\n' +
+                'Foliy kislotaning roli\n' +
+                '\n' +
+                'Shvetsiyada foliy kislota va vitamin B12`ning vitiligoga ta’siri bo’yicha tadqiqotlar o’tkazildi. Tadqiqotda vitiligo bilan kasallangan 100 bemor ishtirok etdi, ularning barchasi kuniga 2 marta 5 mg foliy kislotasi va 1 mg miqdorda kuniga 1 marta B12 vitamini qabul qilishdi. Shartli muolaja terigahar kuni ultrabinafsha nurlarini ta’sir ettirish edi. 3 oydan keyin natijalar umumlashtirildi. Barcha ishtirokchilarning yarmidan ortig’i ijobiy natijalarga erishdi',
             productImg: ProductImg3,
             reverseBlock: false
         }

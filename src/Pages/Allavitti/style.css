@@ -23,14 +23,15 @@
 }
 
 .allavitti .all-text h2{
+    font-family: 'Allavitti', serif;
     font-size: 56px;
     font-weight: 700;
     margin: 0;
     letter-spacing: 3px;
 }
 
-.allavitti .all-text p{
-    font-weight: 600;
+.allavitti .all-text p {
+    font-weight: bold;
     font-size: 14px;
     text-transform: uppercase;
     position: relative;

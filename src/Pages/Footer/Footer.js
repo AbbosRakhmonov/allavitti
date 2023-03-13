@@ -16,7 +16,11 @@ import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import {useTranslation} from 'react-i18next'
+
 function Footer() {
+  const {t} = useTranslation();
+
   useEffect(() => {
     AOS.init();
   }, [])
@@ -66,7 +70,7 @@ function Footer() {
               <div className="foot-first">
                  <h2>Allavitti.com</h2>
                 <p>
-                Bizda maxsulotlarimizni onlinye yetkazib byerish xizmati mavjud !
+                {t('foot_text')}
                 </p>
                 <ul className='first-ul-foot'>
                   <li>
@@ -107,7 +111,7 @@ function Footer() {
              data-aos="fade-up" data-aos-duration="1000"
             >
               <div className="foot-last">
-                <h4>Foydali Havolalar</h4>
+                <h4> {t('foot_top_text_1')}</h4>
                 <ul>
                   <li>
                     <HashLink smooth to="#first_page_id" className="foot-link">
@@ -145,7 +149,7 @@ function Footer() {
             <div
                 className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-12" data-aos="fade-up" data-aos-duration="1000">
               <div className="foot-thirt">
-                <h4>Bizning Natijalar</h4>
+                <h4>{t('foot_top_text_2')}</h4>
                 <div className="row">
                   {data?.map((item, index) => {
                     return (<div

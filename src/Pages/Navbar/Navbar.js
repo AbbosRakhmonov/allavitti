@@ -1,94 +1,125 @@
-import React, {useEffect, useState} from 'react'
-import './style.css'
-import {Link, NavLink} from 'react-router-dom'
-import NavLogo from './../../Assets/Images/nav-logo.png'
-import Flag1 from './../../Assets/Images/flags/usa.png'
-import Flag2 from './../../Assets/Images/flags/uzb.png'
-import Flag3 from './../../Assets/Images/flags/tr.png'
-import Flag4 from './../../Assets/Images/flags/rus.png'
-import {FaMobileAlt} from 'react-icons/fa'
-import 'aos/dist/aos.css'
+import React, { useEffect, useState } from "react";
+import "./style.css";
+import { Link, NavLink } from "react-router-dom";
+import NavLogo from "./../../Assets/Images/nav-logo.png";
+import engIcon from "./../../Assets/Images/flags/usa.png";
+import uzbIcon from "./../../Assets/Images/flags/uzb.png";
+import turkIcon from "./../../Assets/Images/flags/tr.png";
+import rusIcon from "./../../Assets/Images/flags/rus.png";
+import { FaMobileAlt } from "react-icons/fa";
+import "aos/dist/aos.css";
+import i18next from "i18next";
+import cookie from "js-cookie";
+import { useTranslation } from "react-i18next";
 
-function Navbar({numberView = false, articles}) {
-  const [active, setActive] = useState('nav__menu')
-  const [toggleIcon, setToggleIcon] = useState('nav__toggler')
-  const [fixed, setFixed] = useState(false)
+function Navbar({ numberView = false, articles }) {
+  const language = [
+    {
+      code: "uz",
+      name: "Узбек",
+      country_code: "tc",
+      country_img: uzbIcon,
+    },
+    {
+      code: "en",
+      name: "English",
+      country_code: "gb",
+      country_img: engIcon,
+    },
+    {
+      code: "ru",
+      name: "Русский",
+      country_code: "mc",
+      country_img: rusIcon,
+    },
+    {
+      code: "tr",
+      name: "Türkiye",
+      country_code: "th",
+      country_img: turkIcon,
+    },
+  ];
+
+  const { t } = useTranslation();
+  const currentLanguageCode = cookie.get("i18next") || "en";
+
+  const [active, setActive] = useState("nav__menu");
+  const [toggleIcon, setToggleIcon] = useState("nav__toggler");
+  const [fixed, setFixed] = useState(false);
   const navToggle = () => {
-    active === 'nav__menu' ? setActive('nav__menu nav__active') : setActive('nav__menu')
+    active === "nav__menu"
+      ? setActive("nav__menu nav__active")
+      : setActive("nav__menu");
 
     //toggleIcon
-    toggleIcon === 'nav__toggler' ? setToggleIcon('nav__toggler toggle') : setToggleIcon('nav__toggler')
-  }
+    toggleIcon === "nav__toggler"
+      ? setToggleIcon("nav__toggler toggle")
+      : setToggleIcon("nav__toggler");
+  };
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
       if (window.scrollY > 50) {
-        setFixed(true)
+        setFixed(true);
       } else {
-        setFixed(false)
+        setFixed(false);
       }
-    })
-  }, [])
+    });
+  }, []);
 
-
-  return (<div className={`nav-block ${fixed ? 'sticy' : ''}`}>
-        <nav className="nav">
-          <NavLink to="/" className="nav__brand">
-            <img src={NavLogo} alt={'allavitti logo'}/>
-            <div>
-              <h2>Allavitti</h2>
-              <span>By vitiligo</span>
-            </div>
-          </NavLink>
-          <ul className={active}>
-            <li className="nav__item">
-              <NavLink className="nav__link" to="/">
-                Bosh Sahifa
-              </NavLink>
-            </li>
-            <li className="nav__item">
-              <NavLink className="nav__link" to="/articles">
-                Maqolalar
-              </NavLink>
-            </li>
-            <div className="flag-bottom-number">
-              <ul className="flag-img-ul">
-                <li>
-                  <NavLink className="nav__img" to="/">
-                    <img src={Flag1} alt={'USA flag'}/>
-                  </NavLink>
-                </li>
-                <li className="nav__item">
-                  <NavLink className="nav__img" to="/">
-                    <img src={Flag2} alt={'UZBEKISTAN flag'}/>
-                  </NavLink>
-                </li>
-                <li className="nav__item">
-                  <NavLink className="nav__img" to="/">
-                    <img src={Flag3} alt={'TURKEY flag'}/>
-                  </NavLink>
-                </li>
-                <li className="nav__item">
-                  <NavLink className="nav__img" to="/">
-                    <img src={Flag4} alt={'RUSSIA flag'}/>
-                  </NavLink>
-                </li>
-              </ul>
-              {!numberView && (<div className="flag-bottom-box">
-              <span>
-                <FaMobileAlt size={`1.5rem`} className="head-phone"/>
-              </span>
-                <Link to={'tel:998997531757'}>+998 99 753 17 57</Link>
-              </div>)}
-
-            </div>
-          </ul>
-          <div className={toggleIcon} onClick={navToggle}>
-            <div className="line1"></div>
-            <div className="line2"></div>
-            <div className="line3"></div>
+  return (
+    <div className={`nav-block ${fixed ? "sticy" : ""}`}>
+      <nav className="nav">
+        <NavLink to="/" className="nav__brand">
+          <img src={NavLogo} alt={"allavitti logo"} />
+          <div>
+            <h2>Allavitti</h2>
+            <span>By vitiligo</span>
           </div>
-        </nav>
+        </NavLink>
+        <ul className={active}>
+          <li className="nav__item">
+            <NavLink className="nav__link" to="/">
+              {t('link_home')}
+            </NavLink>
+          </li>
+          <li className="nav__item">
+            <NavLink className="nav__link" to="/articles">
+            {t('link_articles')}
+            </NavLink>
+          </li>
+          <div className="flag-bottom-number">
+            <ul className="flag-img-ul">
+              {language.map(({ code, name, country_code, country_img }) => (
+                <li key={country_code}>
+                  <NavLink
+                    className={`nav__img ${
+                      code === currentLanguageCode ? "nav__img__active" : ""
+                    }`}
+                    to="/"
+                    onClick={() => i18next.changeLanguage(code)}
+                  >
+                    <img src={country_img} alt={name} />
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+            {!numberView && (
+              <div className="flag-bottom-box">
+                <span>
+                  <FaMobileAlt size={`1.5rem`} className="head-phone" />
+                </span>
+                <Link to={"tel:998997531757"}>+998 99 753 17 57</Link>
+              </div>
+            )}
+          </div>
+        </ul>
+        <div className={toggleIcon} onClick={navToggle}>
+          <div className="line1"></div>
+          <div className="line2"></div>
+          <div className="line3"></div>
+        </div>
+      </nav>
     </div>
   );
 }

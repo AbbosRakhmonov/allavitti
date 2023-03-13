@@ -138,6 +138,10 @@
     height: 25px;
     object-fit: cover;
 }
+
+.nav .flag-bottom-number .flag-img-ul .nav__img.nav__img__active img{
+    box-shadow: -2px -1px 16px 9px rgba(34, 60, 80, 0.2);
+}
  
 .nav .flag-bottom-number .flag-bottom-box{
     position: absolute;

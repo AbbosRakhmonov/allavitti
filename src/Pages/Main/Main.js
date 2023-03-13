@@ -5,8 +5,10 @@ import SwiperImg from '../SwiperImg/SwiperImg'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import './style.css'
-
+import {useTranslation} from 'react-i18next'
 function Main() {
+    const {t} = useTranslation();
+
     useEffect(() => {
         AOS.init()
     }, [])
@@ -21,26 +23,26 @@ function Main() {
                         <div className="col-xl-6 col-lg-6 col-12 col-first-6 order-2 order-md-1">
                             <div className="main-left-box">
                                 <div className="text">
-                                    <h2 data-aos="fade-up" data-aos-duration="1000">VITILIGOni yo'q qilish vaqti
-                                        kelmadimi?</h2>
-                                    <p data-aos="fade-up" data-aos-duration="1000">Bizning saytimizda siz Vitiligo
-                                        haqida ma'lumotga ega bo'lishingiz mumkin.</p>
+                                    <h2 data-aos="fade-up" data-aos-duration="1000">
+                                    {t('welcome_to_react')}
+                                        </h2>
+                                    <p data-aos="fade-up" data-aos-duration="1000">
+                                    {t('main_p_text')}
+                                    </p>
                                     <ul data-aos="fade-up" data-aos-duration="1000">
                                         <li>
-                                            <p>Vitiligo nima?</p>
+                                            <p>{t('main_ul_li_1')}</p>
                                         </li>
                                         <li>
-                                            <p>Vitiligo tashxisi qanday qoyiladi?</p>
+                                            <p>{t('main_ul_li_2')}</p>
                                         </li>
                                         <li>
-                                            <p>Vitiligo qanday kasallik haqida va bizning unga qarshi maxsulotlarimiz
-                                                haqida ma'lumotga ma'lumotga ega bo'lishingiz mumkin</p>
+                                            <p>{t('main_ul_li_3')}</p>
                                         </li>
                                     </ul>
                                     <div className="more-btn-padding" data-aos="fade-up" data-aos-duration="1000">
-                                        <MainBottom/>
+                                        <MainBottom nameBtn={t('first_page_btn')}/>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

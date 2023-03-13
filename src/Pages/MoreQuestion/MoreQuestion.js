@@ -3,14 +3,18 @@ import "./style.css";
 import { Link } from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import {useTranslation} from 'react-i18next'
+
 function MoreQuestion() {
+  const {t} = useTranslation();
+
   useEffect(() => {
     AOS.init();
   }, [])
   return (
     <div className="question-box">
       <div className="question-container">
-        <h3 data-aos="fade-up" data-aos-duration="1000">Eng ko’p berilgan savollar?</h3>
+        <h3 data-aos="fade-up" data-aos-duration="1000">{t('question_text')}</h3>
         <ul>
           <li data-aos="fade-up" data-aos-duration="1000">
             <span>1.</span><Link to='/' className="question-link">Витилиго кимларда куп учрайди</Link>

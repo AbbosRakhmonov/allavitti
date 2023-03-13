@@ -7,8 +7,11 @@ import Icon4 from './../../Assets/Images/icons/icon4.png'
 import Boy from './../../Assets/Images/little-boy.png'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import {useTranslation} from 'react-i18next'
 
 function Allavitti() {
+    const {t} = useTranslation();
+
     useEffect(() => {
         AOS.init()
     }, [])
@@ -24,12 +27,12 @@ function Allavitti() {
                 <div className="row">
                     <div className="col-xl-6 col-lg-6 col-12 order-2 order-lg-1 all-left-text">
                         <div className="absolut-text-all" data-aos="fade-up" data-aos-duration="1000">
-                            SIzni vitiligo (oq dog’) qiynamoqdami?
+                            {t('allavitti_absolute_text')}
                         </div>
                         <ul>
                             <li data-aos="fade-up" data-aos-duration="1000">
                                 <p className="li-text">
-                                    stres tuSHkunlikKa tushib qoliSH
+                                {t('allavitti_ul_li_1')}
                                 </p>
                                 <div className="li-icons">
                                     <img src={Icon1} alt={'allavitti stress'}/>
@@ -37,7 +40,7 @@ function Allavitti() {
                             </li>
                             <li data-aos="fade-up" data-aos-duration="1000">
                                 <p className="li-text">
-                                    Odamlarni gap so'zidan uyalish
+                                {t('allavitti_ul_li_2')}
                                 </p>
                                 <div className="li-icons">
                                     <img src={Icon2} alt={'allavitti uyalish'}/>
@@ -45,7 +48,8 @@ function Allavitti() {
                             </li>
                             <li data-aos="fade-up" data-aos-duration="1000">
                                 <p className="li-text">
-                                    Libos tanlovida no erkinlik
+                                {t('allavitti_ul_li_3')}
+                                   
                                 </p>
                                 <div className="li-icons">
                                     <img src={Icon3} alt={'allavtti erkinlik'}/>
@@ -53,7 +57,7 @@ function Allavitti() {
                             </li>
                             <li data-aos="fade-up" data-aos-duration="1000">
                                 <p className="li-text" data-aos-duration="1000">
-                                    O'zini boshqalardan farqli his etish
+                                {t('allavitti_ul_li_4')}
                                 </p>
                                 <div className="li-icons" data-aos-duration="1000">
                                     <img src={Icon4} alt={'allavitti farqli his qilish'}/>

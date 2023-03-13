@@ -3,10 +3,13 @@ import { MDBBtn } from 'mdb-react-ui-kit';
 import { SlBasket } from "react-icons/sl";
 import { IoHeartOutline, IoEyeOutline } from "react-icons/io5";
 import './style.css';
+import {useTranslation} from 'react-i18next'
+
 function ProductBtn({likes=false, views=false, sell=false}){
+    const {t} = useTranslation();
     const btnData = {
       selling: {
-        btnName: 'Sotib olish',
+        btnName: t('product_btn'),
         btnIcon: <SlBasket size={`1.25rem`} color="green" fontWeight={`700`}/>,
       },
       like: {

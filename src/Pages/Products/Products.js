@@ -6,8 +6,11 @@ import ProductImg3 from './../../Assets/Images/product3.png'
 import './style.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import {useTranslation} from 'react-i18next'
 
 function Products() {
+    const {t} = useTranslation();
+
     useEffect(() => {
         AOS.init()
     }, [])
@@ -44,7 +47,7 @@ function Products() {
                <div className='pattern-center-box'></div> 
             <div className='product-container'>
                 <div className='general-div-style' data-aos="fade-up" data-aos-duration="1000">
-                     Bizning Maxsulotlarimiz
+                     {t('our_product')}
                 </div>
                <ul className='our-products'>
                     {

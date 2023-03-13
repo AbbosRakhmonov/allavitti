@@ -8,6 +8,7 @@ import i18n from 'i18next'
 import {initReactI18next} from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import HttpApi from 'i18next-http-backend'
+import Admin from './Pages/Admin/Admin'
 
 const App = lazy(() => import('./App'))
 const Articles = lazy(() => import('./Pages/Articles/Articles'))
@@ -37,6 +38,7 @@ root.render(
                 <Route path="/" element={<App/>}/>
                 <Route path="/articles" element={<Articles/>}/>
                 <Route path="/articles/:id" element={<Articles/>}/>
+                <Route path="/dashboard/*" element={<Admin/>}/>
                 <Route path="*" element={<div>404</div>}/>
             </Routes>
         </Suspense>

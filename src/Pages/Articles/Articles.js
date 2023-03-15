@@ -1,11 +1,13 @@
-import React, {useEffect, useRef} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import Navbar from '../Navbar/Navbar'
 import {useParams} from 'react-router-dom'
 import './style.css'
 import {motion} from 'framer-motion'
-import {map, uniqueId} from 'lodash'
+import {filter, map, uniqueId} from 'lodash'
 import ArticlesMenu from '../../Components/ArticlesMenu/ArticlesMenu'
-import {useTranslation} from 'react-i18next'
+import {useDispatch, useSelector} from 'react-redux'
+import {getArticle, getArticles} from '../Admin/articlesSlice'
+import {changeLanguage} from '../Navbar/navbarSlice'
 
 const variants = {
     'hidden': {
@@ -19,160 +21,87 @@ const variants = {
 }
 
 function Articles() {
-    const {t} = useTranslation();
-    const articles = [
-        {
-            id: 1,
-            title: t('articles_title1'),
-            texts: [
-                t('articles_text1_arr1'),
-                t('articles_text1_arr2'),
-                t('articles_text1_arr3')
-            ]
-        },
-        {
-            id: 2,
-            title: t('articles_title2'),
-            texts: [
-                t('articles_text2_arr1'),
-                t('articles_text2_arr2'),
-                t('articles_text2_arr3')
-            ]
-        },
-        {
-            id: 3,
-            title: t('articles_title3'),
-            texts: [
-                t('articles_text3_arr1'),
-                t('articles_text3_arr2'),
-            ]
-        },
-        {
-            id: 4,
-            title: t('articles_title4'),
-            texts: [
-                t('articles_text4_arr1'),
-                t('articles_text4_arr2'),
-            ]
-        },
-        {
-            id: 5,
-            title: t('articles_title5'),
-            texts: [
-                t('articles_text5_arr1'),
-            ]
-        },
-        {
-            id: 6,
-            title: t('articles_title6'),
-            texts: [
-                t('articles_text6_arr1'),
-            ]
-        },
-        {
-            id: 7,
-            title: t('articles_title7'),
-            texts: [
-                t('articles_text7_arr1'),
-                t('articles_text7_arr2'),
-                t('articles_text7_arr3')
-            ]
-        },
-        {
-            id: 8,
-            title: t('articles_title8'),
-            texts: [t('articles_text8_arr1')]
-        },
-        {
-            id: 9,
-            title: t('articles_title9'),
-            texts: [
-                t('articles_text9_arr1'),
-                t('articles_text9_arr2'),
-            ]
-        },
-        {
-            id: 10,
-            title: t('articles_title10'),
-            texts: [
-                t('articles_text10_arr1'),
-                t('articles_text10_arr2'),
-                t('articles_text10_arr3')
-            ]
-        },
-        {
-            id: 11,
-            title: t('articles_title11'),
-            texts: [
-                t('articles_text11_arr1'),
-                t('articles_text11_arr2'),
-                t('articles_text11_arr3')
-            ]
-        },
-        {
-            id: 12,
-            title: t('articles_title12'),
-            texts: [
-                t('articles_text12_arr1'),
-                t('articles_text12_arr2'),
-            ]
-        },
-        {
-            id: 13,
-            title: t('articles_title13'),
-            texts: [
-                t('articles_text13_arr1')
-            ]
-        },
-        {
-            id: 14,
-            title: t('articles_title14'),
-            texts: [
-                t('articles_text14_arr1'),
-            ]
-        },
-        {
-            id: 15,
-            title: t('articles_title15'),
-            texts: [
-                t('articles_text15_arr1'),
-                t('articles_text15_arr2'),
-            ]
-        }
-    ]
+    const dispatch = useDispatch()
+    const {article} = useSelector(state => state.articles)
+    const [activeArticles, setActiveArticles] = useState([])
+    const [activeArticle, setActiveArticle] = useState(null)
+    const {articles} = useSelector(state => state.articles)
+    const {language} = useSelector(state => state.language)
     const ref = useRef()
-    const {id = 1} = useParams()
-    const {title, texts} = articles[Number(id) - 1]
+    const contentRef = useRef()
+    const {id} = useParams()
     useEffect(() => {
         ref.current?.scrollIntoView({behavior: 'smooth'})
     }, [id])
+    useEffect(() => {
+        if (id) dispatch(getArticle(id))
+    }, [id, dispatch])
+    useEffect(() => {
+        if (articles.length > 0) {
+            if (!id) {
+                dispatch(getArticle(articles[0]._id))
+            }
+            const filtered = filter(articles, (article) => {
+                return article.title[language].trim() !== ''
+            })
+            const res = map(filtered, (article) => {
+                return {
+                    id: article._id,
+                    title: article.title[language],
+                    text: article.description[language]
+                }
+            })
+            setActiveArticles(res)
+        }
+    }, [articles, language])
+    useEffect(() => {
+        const parser = new DOMParser()
+        if (article) {
+            setActiveArticle({
+                id: article._id,
+                title: article.title[language],
+                text: parser.parseFromString(article.description[language], 'text/html').body.textContent
+            })
+            console.log(article.title[language])
+        }
+    }, [article, language])
+
+    useEffect(() => {
+        dispatch(getArticles())
+    }, [dispatch])
+    useEffect(() => {
+        const lang = localStorage.getItem('lang')
+        if (lang) {
+            dispatch(changeLanguage(lang))
+        }
+    }, [dispatch])
     return (
         <section className={'d-flex flex-column min-vh-100 bg-lightWhite article-box'}>
             <Navbar numberView={true} articles={true}/>
-            <div className='pattern-left-box main-pattern-left'></div>
+            <div className="pattern-left-box main-pattern-left"></div>
             <div className={`bottomOfSection`}>
                 <div className="leftOfBottomSection position-absolute vh-100">
                     <div className="articles-content p-md-5" ref={ref}>
                         <motion.h1
-                            key={title}
+                            key={uniqueId('article_title_')}
                             initial={'hidden'}
                             animate={'visible'}
                             variants={variants}
                             transition={{duration: 0.5}}
-                            className={'article-title mb-4'}>{title}</motion.h1>
-                        {
-                            map(texts, (text) =>
-                                <motion.p
-                                    initial={'hidden'}
-                                    animate={'visible'}
-                                    variants={variants}
-                                    transition={{delay: 0.2, duration: 0.5}}
-                                    key={uniqueId('article_text_')}
-                                    className={'article-text'}>{text}</motion.p>)
-                        }
+                            className={'article-title mb-4'}>{activeArticle && activeArticle?.title}</motion.h1>
+                        <motion.div
+                            initial={'hidden'}
+                            animate={'visible'}
+                            variants={variants}
+                            transition={{delay: 0.2, duration: 0.5}}
+                            key={uniqueId('article_text_')}
+                            ref={contentRef}
+                            dangerouslySetInnerHTML={{__html: activeArticle && activeArticle?.text}}
+                            className={'article-text'}>
+                        </motion.div>
                     </div>
                 </div>
-                <ArticlesMenu id={id} articles={articles}/>
+                <ArticlesMenu id={id || (articles.length > 0 ? articles[0]._id : 1)} articles={activeArticles}/>
             </div>
         </section>
     )

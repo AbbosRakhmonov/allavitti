@@ -1,30 +1,33 @@
-import React, { useEffect, useState } from "react";
-import "./style.css";
-import { Link, NavLink } from "react-router-dom";
-import NavLogo from "./../../Assets/Images/nav-logo.png";
-import engIcon from "./../../Assets/Images/flags/usa.png";
-import uzbIcon from "./../../Assets/Images/flags/uzb.png";
-import turkIcon from "./../../Assets/Images/flags/tr.png";
-import rusIcon from "./../../Assets/Images/flags/rus.png";
-import { FaMobileAlt } from "react-icons/fa";
-import "aos/dist/aos.css";
-import i18next from "i18next";
-import cookie from "js-cookie";
-import { useTranslation } from "react-i18next";
+import React, {useEffect, useState} from 'react'
+import './style.css'
+import {Link, NavLink} from 'react-router-dom'
+import NavLogo from './../../Assets/Images/nav-logo.png'
+import engIcon from './../../Assets/Images/flags/usa.png'
+import uzbIcon from './../../Assets/Images/flags/uzb.png'
+import turkIcon from './../../Assets/Images/flags/tr.png'
+import rusIcon from './../../Assets/Images/flags/rus.png'
+import {FaMobileAlt} from 'react-icons/fa'
+import 'aos/dist/aos.css'
+import i18next from 'i18next'
+import cookie from 'js-cookie'
+import {useTranslation} from 'react-i18next'
+import {useDispatch} from 'react-redux'
+import {changeLanguage} from './navbarSlice'
 
-function Navbar({ numberView = false, articles }) {
+function Navbar({numberView = false, articles}) {
+  const dispatch = useDispatch()
   const language = [
     {
-      code: "uz",
-      name: "Узбек",
-      country_code: "tc",
-      country_img: uzbIcon,
+      code: 'uz',
+      name: 'Узбек',
+      country_code: 'tc',
+      country_img: uzbIcon
     },
     {
-      code: "en",
-      name: "English",
-      country_code: "gb",
-      country_img: engIcon,
+      code: 'en',
+      name: 'English',
+      country_code: 'gb',
+      country_img: engIcon
     },
     {
       code: "ru",
@@ -33,39 +36,45 @@ function Navbar({ numberView = false, articles }) {
       country_img: rusIcon,
     },
     {
-      code: "tr",
-      name: "Türkiye",
-      country_code: "th",
-      country_img: turkIcon,
+      code: 'tr',
+      name: 'Türkiye',
+      country_code: 'th',
+      country_img: turkIcon
     },
   ];
 
-  const { t } = useTranslation();
-  const currentLanguageCode = cookie.get("i18next") || "en";
+  const {t} = useTranslation()
+  const currentLanguageCode = cookie.get('i18next') || 'en'
 
-  const [active, setActive] = useState("nav__menu");
-  const [toggleIcon, setToggleIcon] = useState("nav__toggler");
-  const [fixed, setFixed] = useState(false);
+  const [active, setActive] = useState('nav__menu')
+  const [toggleIcon, setToggleIcon] = useState('nav__toggler')
+  const [fixed, setFixed] = useState(false)
   const navToggle = () => {
-    active === "nav__menu"
-      ? setActive("nav__menu nav__active")
-      : setActive("nav__menu");
+    active === 'nav__menu'
+        ? setActive('nav__menu nav__active')
+        : setActive('nav__menu')
 
     //toggleIcon
-    toggleIcon === "nav__toggler"
-      ? setToggleIcon("nav__toggler toggle")
-      : setToggleIcon("nav__toggler");
-  };
+    toggleIcon === 'nav__toggler'
+        ? setToggleIcon('nav__toggler toggle')
+        : setToggleIcon('nav__toggler')
+  }
+
+  const changeLang = (code) => {
+    i18next.changeLanguage(code)
+    localStorage.setItem('lang', code)
+    dispatch(changeLanguage(code))
+  }
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
-        setFixed(true);
+        setFixed(true)
       } else {
-        setFixed(false);
+        setFixed(false)
       }
-    });
-  }, []);
+    })
+  }, [])
 
   return (
     <div className={`nav-block ${fixed ? "sticy" : ""}`}>
@@ -93,13 +102,17 @@ function Navbar({ numberView = false, articles }) {
               {language.map(({ code, name, country_code, country_img }) => (
                 <li key={country_code}>
                   <NavLink
-                    className={`nav__img ${
-                      code === currentLanguageCode ? "nav__img__active" : ""
-                    }`}
-                    to="/"
-                    onClick={() => i18next.changeLanguage(code)}
+                      className={`nav__img ${
+                          code === currentLanguageCode ? 'nav__img__active' : ''
+                      }`}
+                      to="/"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        changeLang(code)
+                      }
+                      }
                   >
-                    <img src={country_img} alt={name} />
+                    <img src={country_img} alt={name}/>
                   </NavLink>
                 </li>
               ))}

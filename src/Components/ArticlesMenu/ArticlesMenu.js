@@ -15,6 +15,7 @@ function ArticlesMenu({articles, id}) {
     }
     const onClickTitle = (e) => {
         const id = e.target.getAttribute('data_id')
+        console.log(id)
         navigate(`/articles/${id}`)
         if (isMobile) setOpenArticles(true)
     }
@@ -24,7 +25,7 @@ function ArticlesMenu({articles, id}) {
             <div className={`articles-menu`}>
                 {
                     map(articles, (article) => <ArticleCard key={uniqueId('article_')}
-                                                            activeArticleId={Number(id)}
+                                                            activeArticleId={id}
                                                             article={article}
                                                             onClickTitle={onClickTitle}/>)
                 }

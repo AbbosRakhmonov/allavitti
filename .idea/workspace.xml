@@ -5,9 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c17844bc-71c0-499b-a5d2-61abafcac04b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/AdminNavbar/AdminNavbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pages/Admin/Admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/AdminTable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/DragAndDrop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/PrevLink.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/RichTextEditor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Config/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/Admin/ArticleEdit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/Admin/Articles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/Admin/ProductEdit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/Admin/Products.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/Admin/articlesSlice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/Admin/productsSlice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/Login/Login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/Login/loginSlice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PrivateRoute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/languages/locales/en/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/languages/locales/en/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/languages/locales/ru/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/languages/locales/ru/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/languages/locales/tr/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/languages/locales/tr/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/languages/locales/uz/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/languages/locales/uz/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AdminNavbar/AdminNavbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AdminNavbar/AdminNavbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Admin/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Admin/Admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Articles/Articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Articles/Articles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Products/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Products/Products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,20 +65,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="responsive-abbos" />
-                    <option name="lastUsedInstant" value="1676668272" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="articles" />
-                    <option name="lastUsedInstant" value="1676502095" />
-                  </RecentBranch>
-                  <RecentBranch>
                     <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1676486893" />
+                    <option name="lastUsedInstant" value="1678688988" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="abbos" />
-                    <option name="lastUsedInstant" value="1676485154" />
+                    <option name="branchName" value="admin-abbos" />
+                    <option name="lastUsedInstant" value="1678688935" />
                   </RecentBranch>
                 </list>
               </option>
@@ -89,6 +106,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Rakhmonov\Desktop\allavitti\src\Pages\Login" />
       <recent name="C:\Users\Rakhmonov\Desktop\allavitti\src\assets" />
       <recent name="C:\Users\Rakhmonov\Desktop\allavitti\src\Components\Product" />
     </key>
@@ -131,7 +149,8 @@
       <workItem from="1678538147527" duration="5629000" />
       <workItem from="1678618745273" duration="1589000" />
       <workItem from="1678633125230" duration="4033000" />
-      <workItem from="1678683555387" duration="3296000" />
+      <workItem from="1678683555387" duration="9003000" />
+      <workItem from="1678770505905" duration="55081000" />
     </task>
     <servers />
   </component>

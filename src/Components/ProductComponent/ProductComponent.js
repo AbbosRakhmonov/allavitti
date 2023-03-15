@@ -11,7 +11,7 @@ function ProductComponent({
   reverseBlok = false,
 }) {
   useEffect(() => {
-    AOS.init();
+    AOS.init()
   }, [])
   return (
     <div className="products-component-style">
@@ -21,7 +21,7 @@ function ProductComponent({
             <div className="col-xl-9 col-lg-9 col-12 product-text order-2 order-lg-1">
               <div className="product-text-head">
                 <h3>{productName}</h3>
-                <p>{productText}</p>
+                {productText}
               </div>
               <div className="product-btns">
                 <ProductBtn sell={true} />
@@ -30,23 +30,23 @@ function ProductComponent({
               </div>
             </div>
             <div className="col-xl-3 col-lg-3 col-12 product-img order-1 order-lg-2">
-              <img src={productImg} alt={'product image by allaviti'}/>
+              <img src={productImg} crossOrigin="anonymous"/>
             </div>
           </>
         ) : (
           <>
             <div className="col-xl-4 col-lg-4 col-12 product-img">
-              <img src={productImg} />
+              <img src={productImg} crossOrigin="anonymous"/>
             </div>
             <div className="col-xl-8 col-lg-8 col-12 product-text">
               <div className="product-text-head">
-              <h3 >{productName}</h3>
-                <p>{productText}</p>
+                <h3>{productName}</h3>
+                {productText?.uz}
               </div>
-              <div className="product-btns product-btns-false" >
-                <ProductBtn sell={true} />
-                <ProductBtn views={true} />
-                <ProductBtn likes={true} />
+              <div className="product-btns product-btns-false">
+                <ProductBtn sell={true}/>
+                <ProductBtn views={true}/>
+                <ProductBtn likes={true}/>
               </div>
             </div>
           </>

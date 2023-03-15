@@ -251,14 +251,30 @@ section::-webkit-scrollbar {
 ::-webkit-scrollbar {
     width: 5px;
     z-index: 5000;
-} 
+}
 
-::-webkit-scrollbar-thumb { 
+::-webkit-scrollbar-thumb {
     background: #202834;
 }
 
-::-webkit-scrollbar-track { 
+::-webkit-scrollbar-track {
     background: #ffffff;
     border-radius: 10px;
-} 
+}
+
+.overlay-drag {
+    opacity: 0;
+}
+
+.drag-and-drop:hover .overlay-drag {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .drag-and-drop {
+        min-height: 250px;
+        max-height: 250px;
+    }
+
+}
 

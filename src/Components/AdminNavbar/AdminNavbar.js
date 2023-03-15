@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import {
     MDBCollapse,
     MDBContainer,
@@ -10,28 +10,26 @@ import {
     MDBNavbar,
     MDBNavbarBrand,
     MDBNavbarItem,
-    MDBNavbarLink,
     MDBNavbarNav,
     MDBNavbarToggler
 } from 'mdb-react-ui-kit'
+import {Link} from 'react-router-dom'
+import {useDispatch, useSelector} from 'react-redux'
+import {logOut} from '../../Pages/Login/loginSlice'
 
 
 function AdminNavbar() {
+    const dispatch = useDispatch()
+    const {user} = useSelector(state => state.auth)
     const [isOpen, setIsOpen] = useState(false)
-    const [activeLink, setActiveLink] = useState(1)
-
     const toggleCollapse = () => {
         setIsOpen(!isOpen)
     }
-    useEffect(() => {
-        //     get active link from url
-        const url = window.location.pathname.split('/')
-        if (url[2] === 'maxsulotlar') {
-            setActiveLink(2)
-        } else {
-            setActiveLink(1)
-        }
-    }, [])
+
+    const exit = () => {
+        dispatch(logOut())
+        window.location.href = '/'
+    }
     return (
         <MDBNavbar expand="lg" light bgColor="light">
             <MDBContainer fluid>
@@ -47,22 +45,32 @@ function AdminNavbar() {
                 <MDBCollapse navbar show={isOpen}>
                     <MDBNavbarNav left={true} className={'w-auto'}>
                         <MDBNavbarItem>
-                            <MDBNavbarLink active={activeLink === 1} aria-current="page" href="/dashboard">
+                            <Link to={'/dashboard'} className={`nav-link`}>
                                 Maqolalar
-                            </MDBNavbarLink>
+                            </Link>
                         </MDBNavbarItem>
                         <MDBNavbarItem>
-                            <MDBNavbarLink active={activeLink === 2}
-                                           href="/dashboard/maxsulotlar">Maxsulotlar</MDBNavbarLink>
+                            <Link to={'/dashboard/mahsulotlar'}
+                                  className={`nav-link`}>
+                                Mahsulotlar
+                            </Link>
                         </MDBNavbarItem>
                     </MDBNavbarNav>
                     <MDBNavbarNav right={true} className={'w-auto'}>
                         <MDBDropdown group className="shadow-0">
-                            <MDBDropdownToggle color="light">Action</MDBDropdownToggle>
+                            <MDBDropdownToggle color="light">
+                                {user ?
+                                    <img
+                                        crossOrigin="anonymous"
+                                        src={window.location.protocol + '//' + window.location.hostname + ':5000/uploads/' + user.avatar}
+                                        alt={user.name} height={25} className={'rounded-circle'}/> :
+                                    <MDBIcon icon="user" fas/>}
+                            </MDBDropdownToggle>
                             <MDBDropdownMenu>
-                                <MDBDropdownItem link>Action</MDBDropdownItem>
-                                <MDBDropdownItem link>Another action</MDBDropdownItem>
-                                <MDBDropdownItem link>Something else here</MDBDropdownItem>
+                                <MDBDropdownItem link onClick={exit}>
+                                    {/*    mdb icon door*/}
+                                    <MDBIcon icon="door-open" fas/> Chiqish
+                                </MDBDropdownItem>
                             </MDBDropdownMenu>
                         </MDBDropdown>
                     </MDBNavbarNav>

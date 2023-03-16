@@ -26,7 +26,6 @@ function ArticleEdit({page = 'add'}) {
     const dispatch = useDispatch()
     const {id} = useParams()
     const {article, loading, error} = useSelector(state => state.articles)
-    const [currentArticle, setCurrentArticle] = useState(null)
     const [titleUz, setTitleUz] = useState('')
     const [titleRu, setTitleRu] = useState('')
     const [titleEn, setTitleEn] = useState('')

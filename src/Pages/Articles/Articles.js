@@ -53,7 +53,7 @@ function Articles() {
             })
             setActiveArticles(res)
         }
-    }, [articles, language])
+    }, [articles, language, dispatch])
     useEffect(() => {
         const parser = new DOMParser()
         if (article) {

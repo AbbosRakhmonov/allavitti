@@ -1,8 +1,8 @@
-import React from "react";
-import { MDBBtn } from 'mdb-react-ui-kit';
-import { SlBasket } from "react-icons/sl";
-import { IoHeartOutline, IoEyeOutline } from "react-icons/io5";
-import './style.css';
+import React from 'react'
+import {MDBBtn} from 'mdb-react-ui-kit'
+import {SlBasket} from 'react-icons/sl'
+import {IoEyeOutline, IoHeartOutline} from 'react-icons/io5'
+import './style.css'
 import {useTranslation} from 'react-i18next'
 import {HashLink} from 'react-router-hash-link'
 

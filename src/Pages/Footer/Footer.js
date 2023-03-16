@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react'
 import {MdEmail, MdPhone} from 'react-icons/md'
 import {FaTelegram, FaYoutube} from 'react-icons/fa'
-import { AiOutlineInstagram} from 'react-icons/ai'
+import {AiOutlineInstagram} from 'react-icons/ai'
 import {HashLink} from 'react-router-hash-link'
-import './style.css';
+import './style.css'
 import Img1 from '../../Assets/Images/treated/1.jpg'
 import Img2 from '../../Assets/Images/treated/2.jpg'
 import Img3 from '../../Assets/Images/treated/3.jpg'
@@ -12,10 +12,10 @@ import Img5 from '../../Assets/Images/treated/5.jpg'
 import Img6 from '../../Assets/Images/treated/6.jpg'
 import Img7 from '../../Assets/Images/treated/7.jpg'
 import Img8 from '../../Assets/Images/treated/8.jpg'
-import Zoom from 'react-medium-image-zoom';
+import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import {useTranslation} from 'react-i18next'
 
 function Footer() {

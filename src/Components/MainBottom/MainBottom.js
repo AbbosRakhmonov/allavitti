@@ -1,7 +1,8 @@
-import React from "react";
-import { MDBBtn } from 'mdb-react-ui-kit';
-import { BsFillCheckCircleFill } from "react-icons/bs";
+import React from 'react'
+import {MDBBtn} from 'mdb-react-ui-kit'
+import {BsFillCheckCircleFill} from 'react-icons/bs'
 import './style.css'
+
 function MainBottom({nameBtn}){
     return(
         <MDBBtn className="main-btn-style">

@@ -4,6 +4,7 @@ import { SlBasket } from "react-icons/sl";
 import { IoHeartOutline, IoEyeOutline } from "react-icons/io5";
 import './style.css';
 import {useTranslation} from 'react-i18next'
+import {HashLink} from 'react-router-hash-link'
 
 function ProductBtn({likes=false, views=false, sell=false}){
     const {t} = useTranslation();
@@ -22,18 +23,41 @@ function ProductBtn({likes=false, views=false, sell=false}){
       },
     }
     return(
-        <MDBBtn className="product-btn-style">
+      <>
+      {
+         sell === true ? (
+          <HashLink className="product-btn-style product-order-link" smooth to="https://t.me/turkiye_saliha">
+          <span className="product-btn-icon">
+                {
+                  btnData.selling.btnIcon
+                }
+            </span>
+            <span>
+            {
+                btnData.selling.btnName 
+            }
+            </span>
+          </HashLink>
+         ):""
+      }
+      {
+         sell === false ? (
+         <MDBBtn className="product-btn-style">
            <span className="product-btn-icon">
                {
-                 likes === true ? btnData.like.btnIcon : sell === true ? btnData.selling.btnIcon : views === true ? btnData.view.btnIcon: ''
+                 likes === true ? btnData.like.btnIcon : views === true ? btnData.view.btnIcon: ''
                }
            </span>
            <span>
            {
-                 likes === true ? btnData.like.btnName : sell === true ? btnData.selling.btnName : views === true ? btnData.view.btnName: ''
+                 likes === true ? btnData.like.btnName : views === true ? btnData.view.btnName: ''
                }
            </span>
         </MDBBtn>
+         ): ""
+      }
+      </>
+        
     )
 }
 

@@ -97,6 +97,11 @@ function Navbar({numberView = false, articles}) {
             {t('link_articles')}
             </NavLink>
           </li>
+          <li className="nav__item">
+            <NavLink className="nav__link" to="/dashboard">
+            {t('link_admin')}
+            </NavLink>
+          </li>
           <div className="flag-bottom-number">
             <ul className="flag-img-ul">
               {language.map(({ code, name, country_code, country_img }) => (
@@ -122,7 +127,7 @@ function Navbar({numberView = false, articles}) {
                 <span>
                   <FaMobileAlt size={`1.5rem`} className="head-phone" />
                 </span>
-                <Link to={"tel:998997531757"}>+998 99 753 17 57</Link>
+                <Link to={"tel:998946534884"}>+998 94 653 48 84</Link>
               </div>
             )}
           </div>

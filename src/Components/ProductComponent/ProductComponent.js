@@ -30,18 +30,18 @@ function ProductComponent({
               </div>
             </div>
             <div className="col-xl-3 col-lg-3 col-12 product-img order-1 order-lg-2">
-              <img src={productImg} crossOrigin="anonymous"/>
+              <img src={productImg} alt={productName} crossOrigin="anonymous"/>
             </div>
           </>
         ) : (
           <>
             <div className="col-xl-4 col-lg-4 col-12 product-img">
-              <img src={productImg} crossOrigin="anonymous"/>
+              <img src={productImg} crossOrigin="anonymous" alt={productName}/>
             </div>
             <div className="col-xl-8 col-lg-8 col-12 product-text">
               <div className="product-text-head">
                 <h3>{productName}</h3>
-                {productText?.uz}
+                {productText}
               </div>
               <div className="product-btns product-btns-false">
                 <ProductBtn sell={true}/>

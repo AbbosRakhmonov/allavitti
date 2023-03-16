@@ -62,7 +62,6 @@ function Articles() {
                 title: article.title[language],
                 text: parser.parseFromString(article.description[language], 'text/html').body.textContent
             })
-            console.log(article.title[language])
         }
     }, [article, language])
 

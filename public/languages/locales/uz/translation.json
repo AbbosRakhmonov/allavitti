@@ -1,6 +1,10 @@
 {
     "link_articles": "Maqolalar",
     "link_home": "Bosh Sahifa",
+    "link_admin": "Admin",
+    "link_foot_1": "Витилиго ўзи нима?",
+    "link_foot_2": "Витилиго ташхиси қандай қўйилади?",
+    "link_foot_3": "Витилиго қандай касаллик тури?",
     "welcome_to_react": "VITILIGOni yo'q qilish vaqti kelmadimi?",
     "main_p_text": "Bizning saytimizda siz Vitiligo haqida ma'lumotga ega bo'lishingiz mumkin.",
     "main_ul_li_1": "Vitiligo nima?",

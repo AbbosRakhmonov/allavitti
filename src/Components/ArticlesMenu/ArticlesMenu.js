@@ -15,7 +15,6 @@ function ArticlesMenu({articles, id}) {
     }
     const onClickTitle = (e) => {
         const id = e.target.getAttribute('data_id')
-        console.log(id)
         navigate(`/articles/${id}`)
         if (isMobile) setOpenArticles(true)
     }

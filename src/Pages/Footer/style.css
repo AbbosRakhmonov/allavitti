@@ -132,10 +132,11 @@ ul{
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
 .foot-thirt .pics img{
-    width: 100%;
+    width: 100px;
     height: 100px;
     object-fit: cover;
     padding: 5px;

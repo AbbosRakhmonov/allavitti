@@ -9,6 +9,11 @@
     gap: 10px !important;
 }
 
+.product-order-link{
+    color: #fff !important;
+    box-shadow: 0 4px 9px -4px #3b71ca;
+}
+
 .product-btn-style .product-btn-icon{
     border: 1px solid #fff;
     width: 30px;

@@ -1,17 +1,17 @@
 import React, {useEffect} from 'react'
 import {MdEmail, MdPhone} from 'react-icons/md'
 import {FaTelegram, FaYoutube} from 'react-icons/fa'
-import {AiOutlineFacebook, AiOutlineInstagram} from 'react-icons/ai'
+import { AiOutlineInstagram} from 'react-icons/ai'
 import {HashLink} from 'react-router-hash-link'
 import './style.css';
-import Img1 from '../../Assets/Images/treated/dav1.png'
-import Img2 from '../../Assets/Images/treated/dav2.png'
-import Img3 from '../../Assets/Images/treated/dav3.png'
-import Img4 from '../../Assets/Images/treated/dav4.png'
-import Img5 from '../../Assets/Images/treated/dav5.png'
-import Img6 from '../../Assets/Images/treated/dav6.png'
-import Img7 from '../../Assets/Images/treated/dav7.png'
-import Img8 from '../../Assets/Images/treated/dav8.png'
+import Img1 from '../../Assets/Images/treated/1.jpg'
+import Img2 from '../../Assets/Images/treated/2.jpg'
+import Img3 from '../../Assets/Images/treated/3.jpg'
+import Img4 from '../../Assets/Images/treated/4.jpg'
+import Img5 from '../../Assets/Images/treated/5.jpg'
+import Img6 from '../../Assets/Images/treated/6.jpg'
+import Img7 from '../../Assets/Images/treated/7.jpg'
+import Img8 from '../../Assets/Images/treated/8.jpg'
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css'
 import AOS from 'aos';
@@ -75,32 +75,27 @@ function Footer() {
                 <ul className='first-ul-foot'>
                   <li>
                     <MdPhone className="foot-icons"/>
-                    +998 99 753 17 57
+                     +998 94 653 48 84    
                   </li>
                   <li>
                     <MdEmail className="foot-icons" />
-                    jasurbektoshev9@gmail.com
+                    allavitticream@gmail.com
                   </li>
                 </ul>
                 <ul className='second-ul-foot'>
                   <li>
-                    <HashLink smooth to="#" className="teleg">
+                    <HashLink smooth to="https://t.me/turkiye_saliha" className="teleg">
                       <FaTelegram size={`1.25rem`}/>
                     </HashLink>
                   </li>
                   <li>
-                    <HashLink smooth to="#" className="yout">
+                    <HashLink smooth to="https://youtube.com/@allavitti_cream" className="yout">
                       <FaYoutube size={`1.25rem`}/>
                     </HashLink>
                   </li>
                   <li>
-                    <HashLink smooth to="#" className="insta">
+                    <HashLink smooth to="https://instagram.com/allavitti_vitiligo_cream?igshid=YmMyMTA2M2Y=" className="insta">
                       <AiOutlineInstagram size={`1.25rem`}/>
-                    </HashLink>
-                  </li>
-                  <li>
-                    <HashLink smooth to="#" className="face">
-                      <AiOutlineFacebook size={`1.25rem`}/>
                     </HashLink>
                   </li>
                 </ul>
@@ -115,32 +110,27 @@ function Footer() {
                 <ul>
                   <li>
                     <HashLink smooth to="#first_page_id" className="foot-link">
-                      Bosh Sahifa
-                    </HashLink>
-                  </li>
-                  <li>
-                    <HashLink smooth to="#product_page_id" className="foot-link">
-                      Maxsulotlarimiz
+                       {t('link_home')}
                     </HashLink>
                   </li>
                   <li>
                     <HashLink smooth to="/articles" className="foot-link">
-                      Maqolallar
+                      {t('link_articles')}
                     </HashLink>
                   </li>
                   <li>
-                    <HashLink smooth to="#third_page_id" className="foot-link">
-                        Витилиго ўзи нима?
+                    <HashLink smooth to="/" className="foot-link">
+                    {t('link_foot_1')}
                     </HashLink>
                   </li>
                   <li>
                     <HashLink smooth to="#bg" className="foot-link">
-                    Витилиго ташхиси қандай қўйилади?
+                    {t('link_foot_2')}
                     </HashLink>
                   </li>
                   <li>
                     <HashLink smooth to="#fifth_page_id" className="foot-link">
-                        Витилиго қандай касаллик тури?
+                    {t('link_foot_3')}
                     </HashLink>
                   </li>
                 </ul>

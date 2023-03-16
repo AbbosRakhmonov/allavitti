@@ -1,6 +1,10 @@
 {
     "link_articles": "Nesne",
     "link_home": "Ana Sayfa",
+    "link_admin": "Yönetici",
+    "link_foot_1": "VITİLİGO NEDİR ?",
+    "link_foot_2": "VİTİLİGO TANISI NASIL KONULUR ?",
+    "link_foot_3": "VİTİLİGO NASIL BİR HASTALIK TÜRÜDÜR ?",
     "welcome_to_react": "VITILIGO'yu yok etmenin zamanı gelmedi mi?",
     "main_p_text": "Sitemizde Vitiligo hakkında bilgi alabilirsiniz.",
     "main_ul_li_1": "Vitiligo nedir?",

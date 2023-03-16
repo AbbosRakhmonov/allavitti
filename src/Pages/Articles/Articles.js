@@ -51,7 +51,7 @@ function Articles() {
                     text: article.description[language]
                 }
             })
-            setActiveArticles(res)
+            setActiveArticles(res.slice(0, 7))
         }
     }, [articles, language, dispatch])
     useEffect(() => {

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {MdEmail, MdPhone} from 'react-icons/md'
 import {FaTelegram, FaYoutube} from 'react-icons/fa'
 import {AiOutlineInstagram} from 'react-icons/ai'
@@ -17,21 +17,42 @@ import 'react-medium-image-zoom/dist/styles.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import {useTranslation} from 'react-i18next'
+import {useSelector} from 'react-redux'
+import {filter, map} from 'lodash'
+import {Link} from 'react-router-dom'
 
 function Footer() {
-  const {t} = useTranslation();
+  const [currentArticles, setCurrentArticles] = useState([])
+  const {articles} = useSelector(state => state.articles)
+  const {language} = useSelector(state => state.language)
+  const {t} = useTranslation()
 
   useEffect(() => {
-    AOS.init();
+    AOS.init()
   }, [])
+  useEffect(() => {
+    if (articles.length > 0) {
+      const filtered = filter(articles, (article) => {
+        return article.title[language].trim() !== ''
+      })
+      const res = map(filtered, (article) => {
+        return {
+          id: article._id,
+          title: article.title[language],
+          text: article.description[language]
+        }
+      })
+      setCurrentArticles(res.slice(0, 3))
+    }
+  }, [articles, language])
   let data = [
     {
       id: 1,
-      imgSrc: Img1,
+      imgSrc: Img1
     },
     {
       id: 2,
-      imgSrc: Img2,
+      imgSrc: Img2
     },
     {
       id: 3,
@@ -109,30 +130,22 @@ function Footer() {
                 <h4> {t('foot_top_text_1')}</h4>
                 <ul>
                   <li>
-                    <HashLink smooth to="#first_page_id" className="foot-link">
-                       {t('link_home')}
+                    <HashLink smooth to="#main" className="foot-link">
+                      {t('link_home')}
                     </HashLink>
                   </li>
                   <li>
-                    <HashLink smooth to="/articles" className="foot-link">
+                    <Link to="/articles" className="foot-link">
                       {t('link_articles')}
-                    </HashLink>
+                    </Link>
                   </li>
-                  <li>
-                    <HashLink smooth to="/" className="foot-link">
-                    {t('link_foot_1')}
-                    </HashLink>
-                  </li>
-                  <li>
-                    <HashLink smooth to="#bg" className="foot-link">
-                    {t('link_foot_2')}
-                    </HashLink>
-                  </li>
-                  <li>
-                    <HashLink smooth to="#fifth_page_id" className="foot-link">
-                    {t('link_foot_3')}
-                    </HashLink>
-                  </li>
+                  {
+                    map(currentArticles, (item) => <li>
+                      <Link to={'/articles/' + item.id} className="foot-link">
+                        {item.title}
+                      </Link>
+                    </li>)
+                  }
                 </ul>
               </div>
             </div>

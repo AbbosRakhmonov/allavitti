@@ -29,7 +29,6 @@ instance.interceptors.response.use(
         // }
         if (response.response.status === 401) {
             Store.dispatch(logOut('Авторизация устарела'))
-            window.location = '/login'
         }
         return Promise.reject(response?.response?.data)
     }

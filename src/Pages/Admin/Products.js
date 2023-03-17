@@ -27,8 +27,8 @@ function Products() {
                     </MDBRow>
                     <AdminTable page={'product'} data={products}/>
                 </>}/>
-                <Route path="/:id" element={<ProductEdit page={'edit'}/>}/>
-                <Route path="/add" element={<ProductEdit/>}/>
+                <Route path=":id" element={<ProductEdit page={'edit'}/>}/>
+                <Route path="add" element={<ProductEdit/>}/>
                 <Route path="*" element={<div>404</div>}/>
             </Routes>
         </>

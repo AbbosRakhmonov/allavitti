@@ -18,7 +18,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import {useTranslation} from 'react-i18next'
 import {useSelector} from 'react-redux'
-import {filter, map} from 'lodash'
+import {filter, map, uniqueId} from 'lodash'
 import {Link} from 'react-router-dom'
 
 function Footer() {
@@ -140,7 +140,7 @@ function Footer() {
                     </Link>
                   </li>
                   {
-                    map(currentArticles, (item) => <li>
+                    map(currentArticles, (item) => <li key={uniqueId('link__')}>
                       <Link to={'/articles/' + item.id} className="foot-link">
                         {item.title}
                       </Link>

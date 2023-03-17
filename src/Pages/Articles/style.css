@@ -2,6 +2,7 @@
     flex: 1;
     position: relative;
     /* background-color: rgba(250, 243, 234, 0.7) */
+    overflow: hidden auto;
 }
 
  .article-box{

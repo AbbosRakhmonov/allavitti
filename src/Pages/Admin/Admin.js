@@ -22,7 +22,7 @@ function Admin() {
             <div className={'container-fluid mt-2'}>
                 <Routes>
                     <Route path="/*" element={<Articles/>}/>
-                    <Route path="/mahsulotlar/*" element={<Products/>}/>
+                    <Route path="mahsulotlar/*" element={<Products/>}/>
                     <Route path="*" element={<div>404</div>}/>
                 </Routes>
             </div>

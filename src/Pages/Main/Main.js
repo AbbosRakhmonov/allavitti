@@ -16,7 +16,7 @@ function Main() {
     return (
         <>
             <Navbar/>
-            <div className="main">
+            <div className="main" id={'#main'}>
                 <div className="pattern-left-box main-pattern-left" data-aos="fade-up" data-aos-duration="1000"></div>
                 <div className="pattern-right-box main-pattern-right" data-aos="fade-up" data-aos-duration="1000"></div>
                 <div className="main-container">
@@ -25,10 +25,10 @@ function Main() {
                             <div className="main-left-box">
                                 <div className="text">
                                     <h2 data-aos="fade-up" data-aos-duration="1000">
-                                    {t('welcome_to_react')}
-                                        </h2>
+                                        {t('welcome_to_react')}
+                                    </h2>
                                     <p data-aos="fade-up" data-aos-duration="1000">
-                                    {t('main_p_text')}
+                                        {t('main_p_text')}
                                     </p>
                                     <ul data-aos="fade-up" data-aos-duration="1000">
                                         <li>

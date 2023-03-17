@@ -22,14 +22,14 @@ function App() {
         dispatch(getProducts())
     }, [dispatch])
     return (
-        <>
+        <section>
             <Main/>
             <Allavitti/>
             <Products/>
             <AboutProduct/>
             <MoreQuestion/>
             <Footer/>
-        </>
+        </section>
     )
 }
 

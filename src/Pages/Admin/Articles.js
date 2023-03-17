@@ -26,8 +26,8 @@ function Articles() {
                     </MDBRow>
                     <AdminTable data={articles}/>
                 </>}/>
-                <Route path="/maqolalar/add" element={<ArticleEdit/>}/>
-                <Route path="/maqolalar/:id" element={<ArticleEdit page={'edit'}/>}/>
+                <Route path="maqolalar/add" element={<ArticleEdit/>}/>
+                <Route path="maqolalar/:id" element={<ArticleEdit page={'edit'}/>}/>
                 <Route path="*" element={<div>404</div>}/>
             </Routes>
         </>

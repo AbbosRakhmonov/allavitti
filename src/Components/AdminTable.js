@@ -57,7 +57,8 @@ function AdminTable({data, page = 'article'}) {
                         <td>
                             <p className="text-muted mb-0">
                                 <img width={100} crossOrigin="anonymous"
-                                     src={'http://localhost:5000/uploads/' + item?.image} alt={item?.image}/>
+                                     src={window.location.protocol + '//' + window.location.hostname + ':5000/uploads/' + item?.image}
+                                     alt={item?.image}/>
                             </p>
                         </td>
                         <td>

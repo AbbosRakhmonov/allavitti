@@ -27,16 +27,35 @@
     font-weight: bold;
 }
 
-@media (max-width:450px){
-    .product-btn-style{
-        font-size: 12px !important;
+@media (max-width: 470px) {
+    .product-btn-style {
+        font-size: 10px !important;
         padding: 4px 15px 2px 2px !important;
         border-radius: 20px !important;
         gap: 6px !important;
     }
-    .product-btn-style .product-btn-icon{
+
+    .product-btn-style .product-btn-icon {
         border: 1px solid #fff;
-        width: 27px;
-        height: 27px;
+    }
+}
+
+@media (max-width: 345px) {
+    .product-btn-style {
+        font-size: 8px !important;
+        padding: 4px 10px 2px 2px !important;
+        border-radius: 20px !important;
+        gap: 6px !important;
+    }
+
+    .product-btn-style .product-btn-icon {
+        min-width: 20px !important;
+        width: 20px !important;
+        min-height: 20px !important;
+        height: 20px !important;
+    }
+
+    .product-btn-style .product-btn-icon svg {
+        width: 15px;
     }
 }

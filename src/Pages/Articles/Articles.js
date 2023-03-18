@@ -51,9 +51,9 @@ function Articles() {
                     text: article.description[language]
                 }
             })
-            setActiveArticles(res.slice(0, 7))
+            setActiveArticles(res)
         }
-    }, [articles, language])
+    }, [articles, language, dispatch, id])
     useEffect(() => {
         const parser = new DOMParser()
         if (article) {
@@ -74,6 +74,8 @@ function Articles() {
             dispatch(changeLanguage(lang))
         }
     }, [dispatch])
+
+    console.log(activeArticles)
     return (
         <section className={'d-flex flex-column min-vh-100 bg-lightWhite article-box'}>
             <Navbar numberView={true} articles={true}/>

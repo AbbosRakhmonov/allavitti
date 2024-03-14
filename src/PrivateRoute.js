@@ -6,7 +6,7 @@ const PrivateRoute = () => {
     const isLoggedIn = useSelector(state => state.auth.isLoggedIn) || localStorage.getItem('allavittiToken')
 
     return (
-        isLoggedIn ? <Outlet/> : <Navigate to="login"/>
+        isLoggedIn ? <Outlet/> : <Navigate to="login" replace={true}/>
     )
 }
 

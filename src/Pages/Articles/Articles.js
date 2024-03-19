@@ -75,7 +75,6 @@ function Articles() {
         }
     }, [dispatch])
 
-    console.log(activeArticles)
     return (
         <section className={'d-flex flex-column min-vh-100 bg-lightWhite article-box'}>
             <Navbar numberView={true} articles={true}/>

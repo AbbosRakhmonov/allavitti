@@ -1,9 +1,13 @@
 import axios from 'axios'
 import Store from '../App/store'
-import {logOut} from '../Pages/Login/loginSlice'
+import { logOut } from '../Pages/Login/loginSlice'
 
 const instance = axios.create({
-    baseURL: 'http://localhost:5000/api/v1',
+    baseURL: '/api/v1',
+    proxy: {
+        host: "http://localhost",
+        port: 5000
+    },
     headers: {
         'Content-Type': 'application/json'
     }

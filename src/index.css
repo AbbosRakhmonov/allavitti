@@ -57,7 +57,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.pattern-left-box{
+.pattern-left-box {
     position: absolute;
     left: 0%;
     bottom: 0%;
@@ -69,14 +69,14 @@ body {
     /* width: 20%; */
 
 }
-.pattern-right-box{
+
+.pattern-right-box {
     position: absolute;
     right: 0%;
     bottom: 0%;
     top: 0%;
     height: 100vh;
     background-image: url('./Assets/Images/naqshrigth.png');
-    background-repeat: repeat-y;
     background-size: cover;
     background-position: center center;
     /* width: 20%; */
@@ -84,19 +84,17 @@ body {
 }
 
 
-
-
 .snap-parent-y-mandatory {
-    scroll-snap-type: y mandatory;
-    overflow: hidden auto;
-    height: 100vh;
+    /*scroll-snap-type: y mandatory;*/
+    /*overflow: hidden auto;*/
+    /*height: 100vh;*/
     width: 100%;
     -webkit-overflow-scrolling: touch;
 }
 
 .snap-child-start {
     z-index: 10;
-    scroll-snap-align: start;
+    /*scroll-snap-align: start;*/
 }
 
 .mute-text {
@@ -107,9 +105,9 @@ body {
     position: relative;
 }
 
-section {
-    overflow: auto;
-}
+/*section {*/
+/*    overflow: auto;*/
+/*}*/
 
 section::-webkit-scrollbar {
     display: none;

@@ -1,16 +1,11 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import AboutProductImg from './../../Assets/Images/bargliopa.jpg'
 import './style.css'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 import {useTranslation} from 'react-i18next'
 
 function AboutProduct() {
     const {t} = useTranslation();
 
-    useEffect(() => {
-        AOS.init()
-    }, [])
     return (
         <div className="about-product-style">
             <div className="pattern-left-box about-pattern-left"></div>

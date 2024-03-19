@@ -10,9 +10,18 @@ import {useDispatch} from 'react-redux'
 import {getArticles} from './Pages/Admin/articlesSlice'
 import {getProducts} from './Pages/Admin/productsSlice'
 import {changeLanguage} from './Pages/Navbar/navbarSlice'
+import AOS from "aos";
+import 'aos/dist/aos.css'
+
 
 function App() {
     const dispatch = useDispatch()
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+        });
+        AOS.refresh();
+    }, []);
     useEffect(() => {
         const lang = localStorage.getItem('lang')
         if (lang) {

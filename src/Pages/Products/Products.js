@@ -1,8 +1,6 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import ProductComponent from '../../Components/ProductComponent/ProductComponent'
 import './style.css'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 import {useTranslation} from 'react-i18next'
 import {map, uniqueId} from 'lodash'
 import {useSelector} from 'react-redux'
@@ -12,11 +10,8 @@ function Products() {
     const {language} = useSelector((state) => state.language)
 
     const {t} = useTranslation()
-    
-    useEffect(() => {
-        AOS.init()
-    }, [])
-    
+
+
     return (
         <div className="products">
             <div className="pattern-left-box product-pattern-left"></div>

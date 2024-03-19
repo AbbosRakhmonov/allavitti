@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './style.css'
 import {Link} from 'react-router-dom'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 import {useTranslation} from 'react-i18next'
 import {useSelector} from 'react-redux'
 import {map, uniqueId} from 'lodash'
@@ -12,10 +10,6 @@ function MoreQuestion() {
   const {t} = useTranslation()
   const {articles} = useSelector(state => state.articles)
   const {language} = useSelector(state => state.language)
-
-  useEffect(() => {
-    AOS.init()
-  }, [])
 
   useEffect(() => {
     setArticlesObj(map(articles, (article, index) => {

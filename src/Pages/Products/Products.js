@@ -1,15 +1,15 @@
 import React from 'react'
 import ProductComponent from '../../Components/ProductComponent/ProductComponent'
 import './style.css'
-import {useTranslation} from 'react-i18next'
-import {map, uniqueId} from 'lodash'
-import {useSelector} from 'react-redux'
+import { useTranslation } from 'react-i18next'
+import { map, uniqueId } from 'lodash'
+import { useSelector } from 'react-redux'
 
 function Products() {
-    const {products} = useSelector(state => state.products)
-    const {language} = useSelector((state) => state.language)
+    const { products } = useSelector(state => state.products)
+    const { language } = useSelector((state) => state.language)
 
-    const {t} = useTranslation()
+    const { t } = useTranslation()
 
 
     return (
@@ -29,8 +29,8 @@ function Products() {
                             <li key={uniqueId('product_')} data-aos="fade-up"
                                 data-aos-duration="1000">
                                 <ProductComponent productName={item.title} productText={item.description[language]}
-                                                  productImg={window.location.protocol + '//' + window.location.hostname + ':5000/uploads/' + item.image}
-                                                  reverseBlok={index % 2 !== 0}/>
+                                    productImg={'/uploads/' + item.image}
+                                    reverseBlok={index % 2 !== 0} />
                             </li>)
                     }
                 </ul>

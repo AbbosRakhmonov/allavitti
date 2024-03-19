@@ -56,7 +56,7 @@ function ProductEdit({page = 'add'}) {
         dispatch(resetProduct())
         if (product) {
             setTitle(product.title)
-            setImg('http://localhost:5000/uploads/' + product.image)
+            setImg('/uploads/' + product.image)
             setDescription(product.description)
         }
     }, [product, dispatch])

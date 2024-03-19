@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import {
     MDBCollapse,
     MDBContainer,
@@ -13,14 +13,14 @@ import {
     MDBNavbarNav,
     MDBNavbarToggler
 } from 'mdb-react-ui-kit'
-import {Link} from 'react-router-dom'
-import {useDispatch, useSelector} from 'react-redux'
-import {logOut} from '../../Pages/Login/loginSlice'
+import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { logOut } from '../../Pages/Login/loginSlice'
 
 
 function AdminNavbar() {
     const dispatch = useDispatch()
-    const {user} = useSelector(state => state.auth)
+    const { user } = useSelector(state => state.auth)
     const [isOpen, setIsOpen] = useState(false)
     const toggleCollapse = () => {
         setIsOpen(!isOpen)
@@ -40,7 +40,7 @@ function AdminNavbar() {
                     aria-label="Toggle navigation"
                     onClick={toggleCollapse}
                 >
-                    <MDBIcon icon="bars" fas/>
+                    <MDBIcon icon="bars" fas />
                 </MDBNavbarToggler>
                 <MDBCollapse navbar show={isOpen}>
                     <MDBNavbarNav left={true} className={'w-auto'}>
@@ -51,7 +51,7 @@ function AdminNavbar() {
                         </MDBNavbarItem>
                         <MDBNavbarItem>
                             <Link to={'/dashboard/mahsulotlar'}
-                                  className={`nav-link`}>
+                                className={`nav-link`}>
                                 Mahsulotlar
                             </Link>
                         </MDBNavbarItem>
@@ -62,14 +62,14 @@ function AdminNavbar() {
                                 {user ?
                                     <img
                                         crossOrigin="anonymous"
-                                        src={window.location.protocol + '//' + window.location.hostname + ':5000/uploads/' + user.avatar}
-                                        alt={user.name} height={25} className={'rounded-circle'}/> :
-                                    <MDBIcon icon="user" fas/>}
+                                        src={'/uploads/' + user.avatar}
+                                        alt={user.name} height={25} className={'rounded-circle'} /> :
+                                    <MDBIcon icon="user" fas />}
                             </MDBDropdownToggle>
                             <MDBDropdownMenu>
                                 <MDBDropdownItem link onClick={exit}>
                                     {/*    mdb icon door*/}
-                                    <MDBIcon icon="door-open" fas/> Chiqish
+                                    <MDBIcon icon="door-open" fas /> Chiqish
                                 </MDBDropdownItem>
                             </MDBDropdownMenu>
                         </MDBDropdown>

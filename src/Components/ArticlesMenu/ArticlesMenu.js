@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { map, uniqueId } from "lodash";
 import ArticleCard from "../ArticleCard/ArticleCard";
 import { useNavigate } from "react-router-dom";
@@ -10,14 +10,14 @@ function ArticlesMenu({ articles, id }) {
   const { isMobile } = DetectScreenSize();
 
   const [openArticles, setOpenArticles] = useState(false);
-  const handleClickButton = () => {
+  const handleClickButton = useCallback(() => {
     setOpenArticles(!openArticles);
-  };
-  const onClickTitle = (e) => {
+  }, [openArticles])
+  const onClickTitle = useCallback((e) => {
     const id = e.target.getAttribute("data_id");
     navigate(`/articles/${id}`);
     if (isMobile) setOpenArticles(true);
-  };
+  }, [isMobile, navigate]);
   return (
     <div
       className={`rightOfBottomSection position-absolute vh-100 ${

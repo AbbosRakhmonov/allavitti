@@ -41,10 +41,8 @@ function ProductComponent({
                                 <h3>{productName}</h3>
                                 {productText}
                             </div>
-                            <div className="product-btns product-btns-false">
+                            <div className="product-btns product-btns-false mt-2">
                                 <ProductBtn sell={true}/>
-                                <ProductBtn views={true}/>
-                                <ProductBtn likes={true}/>
                             </div>
                         </div>
                     </>

@@ -12,7 +12,6 @@ function AboutProduct() {
             <div className="pattern-right-box about-pattern-right"></div>
             <div className="about-product-container">
                 <div className="general-div-style" data-aos="fade-up" data-aos-duration="1000">
-                    <p>{t('about_product_head_text1')}</p>
                     <span>{t('about_product_head_text2')}</span>
                 </div>
                 <div className="row about-box">

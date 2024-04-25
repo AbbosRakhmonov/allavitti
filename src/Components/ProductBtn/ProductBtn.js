@@ -13,14 +13,14 @@ function ProductBtn({likes=false, views=false, sell=false}){
         btnName: t('product_btn'),
         btnIcon: <SlBasket size={`1.25rem`} color="green" fontWeight={`700`}/>,
       },
-      like: {
-        btnName: 3333,
-        btnIcon: <IoHeartOutline size={`1.25rem`} color="red" fontWeight={`700`}/>,
-      },
-      view: {
-        btnName: 9999,
-        btnIcon: <IoEyeOutline size={`1.25rem`} color="blue" fontWeight={`700`}/>,
-      },
+      // like: {
+      //   btnName: 3333,
+      //   btnIcon: <IoHeartOutline size={`1.25rem`} color="red" fontWeight={`700`}/>,
+      // },
+      // view: {
+      //   btnName: 9999,
+      //   btnIcon: <IoEyeOutline size={`1.25rem`} color="blue" fontWeight={`700`}/>,
+      // },
     }
     return(
       <>

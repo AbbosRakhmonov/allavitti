@@ -23,9 +23,12 @@ function Main() {
                                         {t('welcome_to_react')}
                                     </h2>
                                     <p data-aos="fade-up">
-                                        {t('main_p_text')}
+                                        {t('main_ul_li_0')}
                                     </p>
                                     <ul data-aos="fade-up">
+                                        <li>
+                                            <p>{t('main_p_text')}</p>
+                                        </li>
                                         <li>
                                             <p>{t('main_ul_li_1')}</p>
                                         </li>
@@ -35,9 +38,15 @@ function Main() {
                                         <li>
                                             <p>{t('main_ul_li_3')}</p>
                                         </li>
+                                        <li>
+                                            <p>{t('main_ul_li_4')}</p>
+                                        </li>
+                                        <li>
+                                            <p>{t('main_ul_li_5')}</p>
+                                        </li>
                                     </ul>
                                     <div className="more-btn-padding" data-aos="fade-up">
-                                        <MainBottom nameBtn={t('first_page_btn')}/>
+                                    <MainBottom nameBtn={t('first_page_btn')}/>
                                     </div>
                                 </div>
                             </div>
